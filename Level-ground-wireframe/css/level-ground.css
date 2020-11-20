@@ -74,17 +74,16 @@ header > a{
 } 
 
 nav {
-    border:2px solid red;
+    padding-top: 1rem;
 }
 
-nav > * {
-    border:2px solid red;
-    width: max-content;
-    margin: 1rem 2rem;
+nav > div {
+    width: 33.33%;
+    padding: 0 3rem;
 }
 
 
-nav > a.nav-button{
+nav  a.nav-button{
     background-color: rgb(226, 219, 219);
     padding: 0.3rem 1rem;
     border-radius: 10%;
@@ -157,7 +156,7 @@ width: 20%
 /* ADDITIONAL STYLES
 /*******************************************/
 .menu {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 ul li{
@@ -227,7 +226,11 @@ footer a{
 }
 
 @media screen and (max-width:820px){
-   h1{
+    nav > div {
+        padding: 0 5rem;
+    }
+   
+    h1{
        line-height: 4.5rem ;
    }
 
@@ -241,14 +244,20 @@ footer a{
     }
 }
 
+@media screen and (max-width:820px){
+    nav > div {
+        padding: 0 0.5rem;
+    }
+}
+
 @media screen and (max-width:520px){
     section{
         padding: 2rem;
     }
 
-    nav > * {
-        margin: 0.7rem ;
-        float: left;
+    nav > div {
+        padding: 0 0.2rem;
+        font-size: 0.8rem;
     }
     
     h1{
@@ -284,3 +293,9 @@ footer a{
     }
 }
 
+@media screen and (max-width:440px){
+    nav > div {
+        padding: 0 0.1rem;
+        font-size: 0.8rem;
+    }
+}
