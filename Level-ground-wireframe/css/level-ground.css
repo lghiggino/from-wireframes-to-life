@@ -34,6 +34,7 @@ section{
 
 a, h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 p , a, h1,h2,h3,h4,h5,h6{
@@ -70,28 +71,41 @@ header > a{
 
 .floated { 
     float: left;
-}; 
+} 
 
 nav {
     border:2px solid red;
 }
 
 nav > * {
-    width: auto;
+    border:2px solid red;
+    width: max-content;
     margin: 1rem 2rem;
 }
+
 
 nav > a.nav-button{
     background-color: rgb(226, 219, 219);
     padding: 0.3rem 1rem;
     border-radius: 10%;
     color:rgba(102,118,138);
+    float: right;
+}
+
+.video{
+    color: white;
+    font-size: 1.5rem;
 }
 
 h1{
     margin-top: 3rem;
     font-size: 4rem;
     font-weight: 400;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .ctas{
@@ -112,7 +126,7 @@ article > p{
 }
 
 footer{
-    background-color: rgb(22,31,42);
+    background-color: rgb(22,31,42); 
     padding-bottom: 1rem;
 }
 
@@ -176,6 +190,29 @@ color: black;
 font-weight: 400;
 }
 
+footer > section > section {
+    margin-top: 1rem;
+}
+
+footer  li{
+    margin-right: 1rem;
+    text-transform: capitalize;
+}
+
+footer h6{
+    color: rgb(219,223,226);
+    text-align: left;
+}
+
+footer a{
+    color: white;
+    font-size: 0.8rem;
+}
+
+.address{
+    text-align: center;
+}
+
 
 /* MEDIA QUERIES */
 
@@ -191,7 +228,7 @@ font-weight: 400;
 
 @media screen and (max-width:820px){
    h1{
-       line-height: 5rem ;
+       line-height: 4.5rem ;
    }
 
    .ctas article{
@@ -204,21 +241,46 @@ font-weight: 400;
     }
 }
 
-@media screen and (max-width:420px){
+@media screen and (max-width:520px){
     section{
-        border: 1px solid red;
         padding: 2rem;
+    }
+
+    nav > * {
+        margin: 0.7rem ;
+        float: left;
     }
     
     h1{
         padding: 0rem;
+        margin-top: 1rem;
     }
 
-    .social, .address {
-        float: left;
-        width: 80%;
-        margin: 1rem auto;
+    .social, .address, .disclaimer {
+        width: 100%;
+        margin: 2rem 0 0;
     }
 
+    .social ul, .social h6{
+        text-align: center;
+    }
+
+    .social i{
+        font-size: 2em;
+    }
+
+    .address a{
+        font-size: 1.25rem;
+    }
+
+    .disclaimer {
+        float: none;
+        padding: 0 2rem;
+    }
+
+    .disclaimer img{
+       float: none;
+       padding-top: 1rem;
+    }
 }
 
