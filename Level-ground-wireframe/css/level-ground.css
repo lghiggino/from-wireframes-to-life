@@ -1,0 +1,108 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  
+  html{
+      font-size: 62,5%;
+  }
+  
+  body{
+  
+  }
+
+  a, h1,h2,h3,h4,h5,h6{
+      text-transform: uppercase;
+  }
+
+  p , a, h1,h2,h3,h4,h5,h6{
+      text-align: center;
+      line-height: 2rem;
+  }
+
+  ul{
+      list-style: none;
+  }
+
+  
+
+  
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  header, footer {
+      background-color: rgba(102,118,138);
+      color: white;
+  }
+
+  .floated { 
+      float: left;
+  }
+
+  nav > * {
+      width: 25%;
+  }
+  
+  .cta{
+    background-color: rgb(219,223,226);
+  }
+  section > article {
+    width: 50%;
+  }
+  
+  footer{
+      background-color: rgb(22,31,42);
+  }
+
+  .social, .address {
+    width: 20%
+  }
+
+  .address{
+      float:right;
+  }
+
+
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  ul li{
+      display: inline-block
+  }
+  
+  img{
+      display: block;
+      margin: 0 auto;
+  }
+  
+  nav > img{
+      height: 40px;
+      width: auto;
+  }
+  
+  a.button{
+    display: block;
+    border: 1px solid black;
+  }
+
+  
