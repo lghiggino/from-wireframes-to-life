@@ -116,6 +116,10 @@ section > article {
 width: 50%;
 }
 
+article > img{
+    box-shadow: 0.2rem 0.2rem 0.5rem grey;
+}
+
 article > h3{
     margin-top:2rem;
 }
@@ -246,18 +250,22 @@ footer a{
 
 @media screen and (max-width:820px){
     nav > div {
+        width: 33%;
         padding: 0 0.5rem;
+    }
+
+    nav > div > ul {
+        margin-left: 0.3rem;
+    }
+
+    nav > div > a{
+        margin-right: 0.5rem;
     }
 }
 
 @media screen and (max-width:520px){
     section{
         padding: 2rem;
-    }
-
-    nav > div {
-        padding: 0 0.2rem;
-        font-size: 0.8rem;
     }
     
     h1{
