@@ -1,0 +1,47 @@
+/* ******* GLOBAL ******* */
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+body{
+    background-color: linen;
+}
+/* ******* HEADER ******* */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+nav li p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+nav li p span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ******* MAIN ******* */
+main{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card{
+    max-width: 325px;
+    flex: 1;
+    box-shadow: 2px 2px 5px black;
+    margin-bottom: 2rem;
+}
+
+.card img {
+    width: 325px;
+    height: auto;
+
+}
