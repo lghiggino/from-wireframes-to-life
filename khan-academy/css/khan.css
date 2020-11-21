@@ -1,0 +1,143 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.floated {
+    float: left;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 600;
+}
+
+h1, h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+a {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5%;
+    border: 1px solid white;
+}
+
+a:hover{
+    border: 2px solid blue;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid rgba(128, 126, 126, 0.5);
+}
+
+header nav ul li{
+    display: inline-block;
+    width: 16.4%;
+    margin: 0;
+    padding: 0;
+}
+
+header a{
+    background-color: transparent;
+    color: rgb(22, 36, 163)
+}
+
+main {
+    margin-bottom: 5rem;
+}
+
+main > section {
+    float: left;
+    width: 50%;
+}
+
+.image{
+    padding-left: 20rem;
+}
+
+.text{
+    padding-right: 13rem;
+    padding-top: 6rem;
+}
+
+.text p, .text h1 {
+    margin-bottom: 3rem;
+}
+
+#next h2{
+    text-align: center;
+}
+
+footer {
+    margin-top: 3rem;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media screen and (max-width: 1700px) {
+    .image{
+        padding-left: 8rem;
+    }
+    
+    .text{
+        padding-right: 8rem;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .image{
+        padding-left: 4rem;
+    }
+    
+    .text{
+        padding-right: 4rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .image{
+        padding-left: 1rem;
+    }
+    
+    .text{
+        padding-right: 1rem;
+    }
+}
+
