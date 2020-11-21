@@ -10,7 +10,7 @@ body{
 nav {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0 3rem;
 }
 
 nav li p{
@@ -21,8 +21,6 @@ nav li p{
 }
 
 nav li p span{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -36,12 +34,23 @@ main{
 .card{
     max-width: 325px;
     flex: 1;
-    box-shadow: 2px 2px 5px black;
     margin-bottom: 2rem;
+    border-radius: 0 0 5% 5%;
+    box-shadow: 2px 2px 5px rgb(63, 63, 63);
+}
+
+.card a {
+    text-decoration: none;
+    color: red;
 }
 
 .card img {
     width: 325px;
     height: auto;
-
+    margin-bottom: 1rem;
 }
+
+.card span, .card p{
+    margin: 1rem 1rem;
+}
+
