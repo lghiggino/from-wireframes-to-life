@@ -59,18 +59,25 @@ a:hover{
 header {
     margin-bottom: 6rem;
     border-bottom: 1px solid rgba(128, 126, 126, 0.5);
+
 }
 
-header nav ul li{
-    display: inline-block;
-    width: 16.4%;
+header nav ul li a, header nav ul li img, header nav ul li input{
+    float: left;
     margin: 0;
     padding: 0;
+    border: 1px solid red;
+    width: fit-content;
 }
 
-header a{
+header li a{
     background-color: transparent;
-    color: rgb(22, 36, 163)
+    color: rgb(22, 36, 163);
+    width: 10%;
+}
+
+header nav ul li input{
+    padding-top: 1rem;
 }
 
 main {
@@ -79,16 +86,19 @@ main {
 
 main > section {
     float: left;
-    width: 50%;
+    width: 30%;
 }
 
 .image{
-    padding-left: 20rem;
+    margin-left: 20%;
+}
+
+.image img{
+    max-width: 100%;
 }
 
 .text{
-    padding-right: 13rem;
-    padding-top: 6rem;
+    width: 40%;
 }
 
 .text p, .text h1 {
@@ -111,33 +121,19 @@ footer {
 /* MEDIA QUERIES
 /*******************************************/
 
-@media screen and (max-width: 1700px) {
-    .image{
-        padding-left: 8rem;
+ @media screen and (max-width: 800px) {
+    main > section {
+    width: 50%;
     }
-    
-    .text{
-        padding-right: 8rem;
+    .image{
+        margin-left: 0;
+    }
+} 
+
+@media screen and (max-width: 420px) {
+    main > section, .text {
+    width: 100%;
+    padding: 1rem;
+
     }
 }
-
-@media screen and (max-width: 1380px) {
-    .image{
-        padding-left: 4rem;
-    }
-    
-    .text{
-        padding-right: 4rem;
-    }
-}
-
-@media screen and (max-width: 1250px) {
-    .image{
-        padding-left: 1rem;
-    }
-    
-    .text{
-        padding-right: 1rem;
-    }
-}
-
