@@ -73,7 +73,21 @@ footer {
 
 #main-story{
     border: 1px solid red;
-    background-image: url("./assets/index.jpeg") ;
+    background: url("../assets/index.jpeg") no-repeat;
 }
 
+#canada-border{
+    background: url("../assets/canada-border.jpeg") no-repeat;
+}
 
+#productivity{
+    background: url("../assets/productivity.jpg") no-repeat;
+}
+
+#vaccine{
+    background: url("../assets/vaccine.jpeg") no-repeat;
+}
+
+#folk{
+    background: url("../assets/folk.jpeg") no-repeat;
+}
