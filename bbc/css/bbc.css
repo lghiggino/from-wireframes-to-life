@@ -73,21 +73,26 @@ footer {
 
 #main-story{
     border: 1px solid red;
-    background: url("../assets/index.jpeg") no-repeat;
+    background: url("../assets/index.jpeg") no-repeat center;
+    background-size: cover;
 }
 
 #canada-border{
-    background: url("../assets/canada-border.jpeg") no-repeat;
+    background: url("../assets/canada-border.jpeg") no-repeat center;
+    background-size: cover;
 }
 
 #productivity{
-    background: url("../assets/productivity.jpg") no-repeat;
+    background: url("../assets/productivity.jpg") no-repeat center;
+    background-size: cover;
 }
 
 #vaccine{
-    background: url("../assets/vaccine.jpeg") no-repeat;
+    background: url("../assets/vaccine.jpeg") no-repeat center;
+    background-size: cover;
 }
 
 #folk{
-    background: url("../assets/folk.jpeg") no-repeat;
+    background: url("../assets/folk.jpeg") no-repeat center;
+    background-size: cover;
 }
