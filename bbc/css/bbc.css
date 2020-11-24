@@ -103,14 +103,18 @@ header nav ul li a{
 }
 
 .title{
-    padding-top:20rem;
+    padding-top:16rem;
     margin-bottom: 1rem;
     font-weight: bold;
 }
 
+.storyline{
+    margin-bottom: 1rem;
+}
+
 
 .sub-title{
-    padding-top:7rem;
+    padding-top: 6rem;
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -129,7 +133,7 @@ header nav ul li a{
     height: auto;
 }
 
-.third-width > a + a, .quarter-box > div > a + a, #main-story > a > div > a{
+.third-width > a + a, .quarter-box > div > a + a, #main-story  div > a:last-child{
     border-left: 2px solid red;
     padding-left: 1rem;;
 }
@@ -168,4 +172,71 @@ footer {
 #folk{
     background: url("../assets/folk.jpeg") no-repeat center;
     background-size: cover;
+}
+
+/**********************/
+/*   MEDIA QUERIES    */
+/**********************/
+
+@media screen and (max-width: 1120px){
+    header nav ul li a{
+        width: 7%;
+    }
+}
+
+@media screen and (max-width: 952px){
+    
+    .is-full-width-tablet{
+        width: 100%;
+    }
+
+    .asidebox > *{
+        width: 50%;
+        float: left;
+    }
+
+    #main-story h3.title{
+        padding-top: 3rem;
+    }
+
+    h3.title{
+        padding-top:18rem;
+    }
+}
+
+@media screen and (max-width: 820px){
+
+    header nav ul li a{
+        width: 14%;
+    }
+
+    .is-hidden-mobile{
+        display: none;
+    }
+
+
+    .asidebox{
+        background-origin: red;
+    }
+}
+
+@media screen and (max-width: 550px){
+
+    header nav ul li a{
+        width: 19%;
+    }
+
+    header nav ul li input{
+        margin: 0.5rem 2.5rem;
+        width: 80%;
+    }
+
+   
+}
+
+@media screen and (max-width: 440px){
+
+    .third-width{
+        width: 100%;
+    }
 }
