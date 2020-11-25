@@ -1,0 +1,206 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 3rem;
+  font-weight: bold;
+  padding-top: 1%;
+  margin-bottom: 1%;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+h2{
+  font-size: 1rem;
+  color: orange;
+  font-weight: 400;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+p, span{
+  padding-top: 2%;
+  margin-bottom: 2%;
+  line-height: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+section{
+  border: 1px solid red;
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  background-color: green;
+  min-height: 40px;
+  padding-top: 0.5%;
+}
+
+header nav img, header nav ul > *{
+  float: left;
+}
+
+.hero{
+  background: url("../assets/hero-image.jpg") no-repeat top right;
+}
+
+.hero > section {
+  width: 70%;
+  padding: 10% 10% 5%;
+}
+
+#about-us > section{
+  padding: 0 10%;
+}
+
+#about-us > section > p + p {
+  margin-bottom: 3%;
+}
+
+#about-us > section > div {
+  padding: 0 25%;
+}
+
+#about-us > section {
+  background: url("../assets/about-us-oats.jpg") no-repeat bottom right;
+}
+
+#about-us > aside {
+  width: 30%;
+  float:left;
+}
+
+#menu article{
+  padding: 1% 6%;
+}
+
+#menu nav {
+  width: 100%;
+  border: 1px solid red;
+}
+
+#menu  nav ul li, #testimonials  nav ul li {
+  border: 1px solid green;
+  float: left;
+  width: 20%;
+}
+
+.dots {
+  width: 50%;
+}
+
+#menu .image-display{
+  padding: 5%;
+}
+
+#menu .image-display img{
+  width: 22%;
+  height: auto;
+  margin: 1%
+}
+
+#book, #testimonials{
+  text-align: center;
+}
+
+#book > section > section{
+  width: 50%;
+  float: left;
+}
+
+#testimonials {
+  padding: 3%
+}
+
+#testimonials nav{
+  border: 2px solid yellow;
+  width: 100%;
+}
+
+#testimonials .circle-image{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* If push comes to shove
+nav ul{
+  display: flex ;
+  justify-content: space-around;
+} */
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.button{
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 2% 5%;
+  text-decoration: none;
+}
+
+.button + span {
+  background-color: yellow;
+  padding: 2%;
+}
+
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media screen and (max-width: 767px){
+  #about-us > aside {
+    display: none;
+  }
+ 
+  
+}
+
+@media screen and (max-width: 615px){
+  #menu .image-display img{
+    width: 30%;
+    height: auto;
+    margin: 1%
+  }
+}
+
+@media screen and (max-width: 415px){
+  #menu .image-display img{
+    width: 40%;
+    margin: 4%
+  }
+}
