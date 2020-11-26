@@ -126,17 +126,35 @@ header nav ul li a{
   padding: 0;
 }
 
-
-
-
 .notice{
   background-color: black;
 }
 
 .ad{
-  /* background: url("../assets/model-07.jpg") no-repeat top; */
+  background: url("../assets/model-02.jpg") no-repeat top;
   min-height: 40vh;
   width: 100%;
+  margin: 0 auto;
+}
+
+.ad > div{
+  width: 40%;
+  border: 1px solid yellow;
+  margin: 0 10vw;
+  padding: 10vh 0;
+}
+
+.ad > div > p{
+  padding: 5% 0 0;
+  font-size: 1.5rem;
+}
+
+.ad > div > p > span{
+  font-size: 2rem;
+}
+
+#ad-cta{
+
 }
 
 footer {
@@ -206,5 +224,19 @@ a.is-inverted{
 @media screen and (max-width: 900px){
   #services > section{
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px){
+  #about > section, #lookbook > section, #people > section{
+    width: 100%;
+    padding: 5%;
+    background: yellow;
+  }
+}
+
+@media screen and (max-width: 700px){
+  header nav ul li a.is-hidden-mobile{
+    display: none;
   }
 }
