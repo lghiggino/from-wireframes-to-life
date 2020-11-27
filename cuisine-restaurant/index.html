@@ -16,22 +16,22 @@
 	<body>
 		<header class="clearfix">
 			<nav>
-				<img src="/assets/logo.jpg" alt="logo">
 				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about-us">About Us</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#book">Book</a></li>
-					<li><a href="#location">Location</a></li>
+					<li class="nav-item-four"><img src="./assets/logo.jpg" alt="logo"></li>
+					<li class="nav-item-double is-hidden-mobile"><a href="#home">Home</a></li>
+					<li class="nav-item-double is-hidden-mobile"><a href="#about-us">About Us</a></li>
+					<li class="nav-item-double"><a href="#menu">Menu</a></li>
+					<li class="nav-item-double"><a href="#book">Book</a></li>
+					<li class="nav-item-double"><a href="#location">Location</a></li>
+					<li class="nav-item-single"><i class="fas fa-shopping-cart"></i></li>
+					<li class="nav-item-single"><i class="fas fa-search"></i></li>
 				</ul>
-				<img src="" alt="cart">
-				<img src="" alt="search">
 			</nav>
 		</header>
 
 		<section class="hero clear" id="hero">
 			<section>
-				<h1>Welcome to Our Cuisine Restaurant</h1>
+				<h1 class="title">Welcome to Our Cuisine Restaurant</h1>
 				<form action="">
 					<input type="text" placeholder="search here">
 					<a class="button">Location v</a>
@@ -47,40 +47,45 @@
 			</section>
 		</section>
 
-		<section id="about-us" class="clear clearfix">
+		<section class="about-us clear" id="about">
+			<section>
+				<h2>About us</h2>
+				<h3>Discover Our Restaurant Story</h3>
+				<p>Lorem ipsum dolor sit amet consectetur. Cumque aperiam libero esse eius accusamus perspiciatis, vel nihil laboriosam culpa, aspernatur assumenda suscipit quaerat asperiores unde mollitia consequuntur odit atque illum cum ex ratione. Placeat eos, dolorem voluptatum hic voluptatibus veniam ex consectetur distinctio! Impedit beatae quisquam ipsum earum eius fuga.</p>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In voluptatem qui ipsa odio quidem, ab inventore rerum eos fuga modi!</p>
+				<div class="clear">
+					<a class="button" href="">Discover Menu<span> arrow </span> </a>
+				</div>
+			</section>
+		</section>
+
+		<!-- <section id="about-us" class="clear clearfix">
 			<aside>
 				<img src="./assets/about-us-pie.jpg" alt="half eaten pie">
 			</aside>
 			<section class="clearfix">
-				<h2>About us</h2>
-				<h3>Discover Our Restaurant Story</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aperiam libero esse eius accusamus perspiciatis, vel nihil laboriosam culpa, aspernatur assumenda suscipit quaerat asperiores unde mollitia consequuntur odit atque illum cum ex ratione. Placeat eos, dolorem voluptatum hic voluptatibus veniam ex consectetur distinctio! Impedit beatae quisquam ipsum earum eius fuga.</p>
-				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In voluptatem qui ipsa odio quidem, ab inventore rerum eos fuga modi!</p>
-				<div class="clear">
-					<a class="button" href="">Discover Menu </a>
-					<span> arrow </span>
-				</div>
+				
 				
 			</section>
 			
-		</section>
+		</section> -->
 
 		<section id="menu" class="clear clearfix">
-			<article>
+			<section>
 				<h2> Order Online Now </h2>
-				<h3> Our Specialty Cuisine</h3>
+				<h3 class="section-header"> Our Specialty Cuisine</h3>
 				<nav class="clear clearfix">
-					<ul>
-						<li>Breakfast</li>
-						<li>Lunch</li>
-						<li>Dinner</li>
-						<li>Deserts</li>
-						<li>Shakes</li>
+					<ul class="menu">
+						<li class="nav-item"><a href="">Breakfast</a></li>
+						<li class="nav-item"><a href="">Lunch</a></li>
+						<li class="nav-item"><a href="">Dinner</a></li>
+						<li class="nav-item"><a href="">Deserts</a></li>
+						<li class="nav-item"><a href="">Shakes</a></li>
 					</ul>
 				</nav>
-			</article>
+			</section>
 			
-			<section class="clear clearfix image-display">
+			<section class="clear clearfix gallery">
 				<img src="assets/menu-01.jpg" alt="">
 				<img src="assets/menu-02.jpg" alt="">
 				<img src="assets/menu-03.jpg" alt="">
@@ -90,26 +95,30 @@
 				<img src="assets/menu-07.jpg" alt="">
 				<img src="assets/menu-08.jpg" alt="">
 			</section>
-			<nav class="dots">
-				<ul>
-					<li><a href="#d">d</a></li>
-					<li><a href="#o">o</a></li>
-					<li><a href="#t">t</a></li>
-					<li><a href="#s">s</a></li>
-					<li><a href="#s">d</a></li>
-				</ul>
-			</nav>
+			<section class="dots">
+				<nav>
+					<ul class="menu">
+						<li class="nav-item"><a href="#d"><i class="fas fa-circle"></i></a></li>
+						<li class="nav-item"><a href="#o"><i class="fas fa-circle"></i></a></li>
+						<li class="nav-item"><a href="#t"><i class="fas fa-circle"></i></a></li>
+						<li class="nav-item"><a href="#s"><i class="fas fa-circle"></i></a></li>
+						<li class="nav-item"><a href="#s"><i class="fas fa-circle"></i></a></li>
+					</ul>
+				</nav>
+			</section>
 		</section>
 
 		<section id="book" class="clear clearfix">
-			<h2>Book Table</h2>
-			<h3>Opening Hours</h3>
-			<aside>
-				<span>fone icon</span>
-				<span>Call Now</span>
-				<p>+12345 678 910</p>
-			</aside>
 			<section>
+				<h2>Book Table</h2>
+				<h3 class="section-header">Opening Hours</h3>
+				<section class="phone">
+					<span><i class="fas fa-phone-alt"></i></span>
+					<span>Call Now</span>
+					<p id="number">+12345 678 910</p>
+				</section>
+			</section>
+			<section class="hours">
 				<section>
 					<p> Monday to Tuesday </p>
 					<p> 09:00 am - 22:00 pm</p>
@@ -119,28 +128,40 @@
 					<p> 11:00 am - 20:00 pm</p>
 				</section>
 			</section>
-			<video src="" controls poster="assets/video-preview.jpg">
+			<div>
+				<video src="" controls poster="./assets/restaurant.gif">
 					<!-- fallback file -->	
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/HLY-7ZkhhLE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</video>
+					<iframe src="https://www.youtube.com/embed/HLY-7ZkhhLE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</video>
+			</div>
+			
 		</section>
 
 		<section id="testimonials" class="clear clearfix">
-			<h2>Testimonials</h2>
-			<h3>Customer Say</h3>
-			<img src="assets/menu-01.jpg" alt="" class="circle-image">
-			<p class="costumer-name">Mr John Smith</p>
-			<span class="costumer-extra">Art Director</span>
-			<span class="ratings"></span>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ut fugiat eveniet nulla, quas non nesciunt earum aliquam distinctio quos dolore dolor nam, quia, laborum cumque! Perferendis mollitia corrupti suscipit illo quidem ullam quo harum, itaque facere in. Et iusto libero mollitia recusandae maiores molestiae ipsum ea nesciunt optio officia!</p>
-			<nav class="clear clearfix">
-				<ul>
-					<li><a href="#d">d</a></li>
-					<li><a href="#o">o</a></li>
-					<li><a href="#t">t</a></li>
-					<li><a href="#s">s</a></li>
-				</ul>
-			</nav>
+			<section>
+				<h2>Testimonials</h2>
+				<h3 class="section-header">Customer Say</h3>
+				<div class="client-info">
+					<img src="assets/model.jpg" alt="" class="circle-image">
+					<p class="costumer-name">Miss Alissa Smith</p>
+					<span class="costumer-extra">Art Director</span>
+					<span class="ratings"></span>
+					<p class="testify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ut fugiat eveniet nulla, quas non nesciunt earum aliquam distinctio quos dolore dolor nam, quia, laborum cumque! Perferendis mollitia corrupti suscipit illo quidem ullam quo harum, itaque facere in. Et iusto libero mollitia recusandae maiores molestiae ipsum ea nesciunt optio officia!</p>
+				</div>
+				
+				
+				<section class="dots">
+					<nav>
+						<ul class="menu">
+							<li class="nav-item"><a href="#d"><i class="fas fa-circle"></i></a></li>
+							<li class="nav-item"><a href="#o"><i class="fas fa-circle"></i></a></li>
+							<li class="nav-item"><a href="#t"><i class="fas fa-circle"></i></a></li>
+							<li class="nav-item"><a href="#s"><i class="fas fa-circle"></i></a></li>
+							<li class="nav-item"><a href="#s"><i class="fas fa-circle"></i></a></li>
+						</ul>
+					</nav>
+				</section>
+			</section>
 		</section>
 
 		<script type="text/javascript" src="js/main.js"></script>

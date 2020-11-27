@@ -36,21 +36,19 @@ h2{
   font-size: 1rem;
   color: orange;
   font-weight: 400;
+  text-align: center;
 }
 
-h3{
-  font-size: 2rem;
-}
-
-p, span{
+p, span, a{
   padding-top: 2%;
   margin-bottom: 2%;
   line-height: 1.25rem;
   font-family: 'Roboto', sans-serif;
 }
 
-section{
-  border: 1px solid red;
+section > section{
+  /* border: 1px solid red; */
+  margin: 2% 5%;
 }
 
 
@@ -58,149 +56,172 @@ section{
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-  background-color: green;
-  min-height: 40px;
-  padding-top: 0.5%;
-}
 
-header nav img, header nav ul > *{
-  float: left;
-}
-
-.hero{
-  background: url("../assets/hero-image.jpg") no-repeat top right;
-}
-
-.hero > section {
-  width: 70%;
-  padding: 10% 10% 5%;
-}
-
-#about-us > section{
-  padding: 0 10%;
-}
-
-#about-us > section > p + p {
-  margin-bottom: 3%;
-}
-
-#about-us > section > div {
-  padding: 0 25%;
-}
-
-#about-us > section {
-  background: url("../assets/about-us-oats.jpg") no-repeat bottom right;
-}
-
-#about-us > aside {
-  width: 30%;
-  float:left;
-}
-
-#menu article{
-  padding: 1% 6%;
-}
-
-#menu nav {
-  width: 100%;
-  border: 1px solid red;
-}
-
-#menu  nav ul li, #testimonials  nav ul li {
-  border: 1px solid green;
-  float: left;
-  width: 20%;
-}
-
-.dots {
-  width: 50%;
-}
-
-#menu .image-display{
-  padding: 5%;
-}
-
-#menu .image-display img{
-  width: 22%;
-  height: auto;
-  margin: 1%
-}
-
-#book, #testimonials{
-  text-align: center;
-}
-
-#book > section > section{
-  width: 50%;
-  float: left;
-}
-
-#testimonials {
-  padding: 3%
-}
-
-#testimonials nav{
-  border: 2px solid yellow;
-  width: 100%;
-}
-
-#testimonials .circle-image{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-}
-
-/* If push comes to shove
 nav ul{
-  display: flex ;
-  justify-content: space-around;
-} */
-
-footer {
-
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-.button{
-  background-color: orange;
-  color: white;
-  font-weight: bold;
-  padding: 2% 5%;
+.nav-item-four{
+  flex-grow: 12;
+}
+
+.nav-item-double{
+  flex-grow: 2;
+}
+
+.nav-item-single{
+  flex: 1;
+}
+
+.nav-item-double > a{
   text-decoration: none;
+  color: #000;
 }
 
-.button + span {
-  background-color: yellow;
-  padding: 2%;
+#hero{
+  background: url("../assets/hero-image.jpg") top right no-repeat;
 }
 
+#hero > section {
+  padding: 7% 40% 3% 5%;
+}
 
-/******************************************
-/* MEDIA QUERIES
-/*******************************************/
+#about{
+  background: url("../assets/about-us-pie.jpg") top left no-repeat, url("../assets/about-us-oats.jpg") bottom right no-repeat;
+}
 
-@media screen and (max-width: 767px){
-  #about-us > aside {
-    display: none;
-  }
- 
+#about > section {
+  padding: 4% 5% 3% 30%;
+}
+
+h3.section-header{
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0;
+  margin-bottom: 4%;
+}
+
+#about h2{
+  text-align: left;
+}
+
+.menu{
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.menu li{
+  margin-right: 2%;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding-bottom: 10%;
+}
+
+.menu a:hover{
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+.dots .menu{
+  width: 15%;
   
 }
 
-@media screen and (max-width: 615px){
-  #menu .image-display img{
-    width: 30%;
-    height: auto;
-    margin: 1%
+.dots .menu a{
+  font-size: 0.5rem;
+  color: orange;
+}
+
+.gallery > img{
+  width: 24%;
+  padding: 1% 0% 0 2.5%;
+}
+
+.phone > *{
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 2% 0;
+}
+
+.phone > span:first-child{
+  font-size: 2rem;
+  color: orange;
+}
+
+ .phone > #number {
+  font-size: 2rem;
+  color: orange;
+}
+
+.hours > section{
+  float: left;
+  width: 40%;
+  margin: 0 5% 5%;
+  text-align: center;
+}
+
+.hours > section > p+p{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#book > div{
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+.client-info{
+  text-align: center;
+}
+
+.client-info {
+  text-align: center;
+}
+
+.circle-image{
+  border-radius: 50%;
+  width:135px;
+  margin: 0 auto;
+}
+
+.testify{
+  padding: 0 10%;
+}
+
+/* COMPONENTS */
+.button{
+  text-decoration: none;
+  background-color: orange;
+
+}
+
+.button span{
+  background-color:yellow
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:780px){
+  .nav-item{
+    flex: 3;
   }
 }
 
-@media screen and (max-width: 415px){
-  #menu .image-display img{
-    width: 40%;
-    margin: 4%
+@media screen and (max-width:480px){
+  .is-hidden-mobile{
+    display: none;
   }
+
 }
