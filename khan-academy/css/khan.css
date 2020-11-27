@@ -34,11 +34,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 4rem;
 }
 
-a {
+h2{
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+p{
+    font-size: 1.1rem;
+}
+
+.button {
     text-decoration: none;
     background-color: blue;
     color: white;
@@ -49,121 +58,75 @@ a {
     border: 1px solid white;
 }
 
-a:hover{
+.button:hover{
     border: 2px solid blue;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-    margin-bottom: 6rem;
+header, main{
+    margin-bottom: 6%;
     border-bottom: 1px solid rgba(128, 126, 126, 0.5);
-
 }
 
-header nav ul li a, header nav ul li img, header nav ul li input{
-    float: left;
-    margin: 0 5%;
-    padding: 0;
-    width: fit-content;
+header ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    /* JUST HAD TO... went from 14 rules + MQs to this  */
 }
 
-header li a{
-    background-color: transparent;
-    color: rgb(22, 36, 163);
-    /* width: 10%; */
-}
-
-header nav ul li input{
-    padding-top: 1rem;
-}
-
-main {
-    margin-bottom: 5rem;
-}
-
-main > section {
-    float: left;
-    width: 30%;
-}
-
-.image{
-    margin-left: 20%;
-}
-
-.image img{
-    max-width: 100%;
-}
-
-.text{
-    width: 40%;
-}
-
-.text p, .text h1 {
-    margin-bottom: 3rem;
-}
-
-#next h2{
+.nav-item a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
     text-align: center;
 }
 
-footer {
-    margin-top: 3rem;
+main > section{
+    float:left;
+    width: 50%;
+    padding: 0 5% 0 5%;
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+.image-container{
+    padding: 0 0 0 3%;
+}
 
-/******************************************
-/* MEDIA QUERIES
-/*******************************************/
- @media screen and (max-width: 1600px) {
-    header nav ul li a, header nav ul li img, header nav ul li input{
-        margin: 0 4%;
-    }
- }
-
- @media screen and (max-width: 1200px) {
-    header nav ul li a, header nav ul li img, header nav ul li input{
-        margin: 0 3%;
-    }
- }
-
-
- @media screen and (max-width: 950px) {
-    header nav ul li a, header nav ul li img, header nav ul li input{
-        margin: 0 1%;
-    }
-
-    main > section {
-    width: 50%;
-    }
-    .image{
-        margin-left: 0;
-    }
-} 
-
-@media screen and (max-width: 750px) {
-    header nav ul li a, header nav ul li img, header nav ul li input{
-        margin: 0;
-    }
-
-
-@media screen and (max-width: 420px) {
-    header nav ul li a, header nav ul li img, header nav ul li input{
-        margin: 0 5%;
-    }
-
-    header nav ul li input, header nav ul li:last-child, .donation{
-        display: none;
-        margin: 0 5%;
-    }
-
-    main > section, .text {
+.image-container > img{
     width: 100%;
-    padding: 1rem;
+}
 
+.text-container{
+}
+
+.text-container > *{
+    padding-top: 6% ;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 740px){
+    .is-hidden-tablet{
+        display: none;
+    }
+
+    .image-container, .text-container{
+        width: 100vw;
+    }
+
+    .text-container, .main{
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .is-hidden-mobile{
+        display:none;
+    }
+
+    .button-container{
+        text-align: center;
     }
 }
