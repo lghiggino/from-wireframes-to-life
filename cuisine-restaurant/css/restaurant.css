@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6{
 
 h2{
   font-size: 1rem;
-  color: orange;
+  color: rgb(223, 114, 24);
   font-weight: 400;
   text-align: center;
 }
@@ -88,6 +88,22 @@ nav ul{
   padding: 7% 40% 3% 5%;
 }
 
+h1.title, #hero form{
+  margin-bottom: 7%;
+}
+
+#hero form > *{
+  margin:0;
+  padding: 2% 4%;
+  /* color: white */
+}
+
+#hero form > .button{
+  border: none;
+  position: relative;
+  left: -6px;
+}
+
 #about{
   background: url("../assets/about-us-pie.jpg") top left no-repeat, url("../assets/about-us-oats.jpg") bottom right no-repeat;
 }
@@ -126,8 +142,8 @@ h3.section-header{
 }
 
 .menu a:hover{
-  color: orange;
-  border-bottom: 2px solid orange;
+  color:  rgb(223, 114, 24);
+  border-bottom: 2px solid  rgb(223, 114, 24);
 }
 
 .dots .menu{
@@ -137,7 +153,7 @@ h3.section-header{
 
 .dots .menu a{
   font-size: 0.5rem;
-  color: orange;
+  color:  rgb(223, 114, 24);
 }
 
 .gallery > img{
@@ -154,12 +170,12 @@ h3.section-header{
 
 .phone > span:first-child{
   font-size: 2rem;
-  color: orange;
+  color:  rgb(223, 114, 24);
 }
 
  .phone > #number {
   font-size: 2rem;
-  color: orange;
+  color:  rgb(223, 114, 24);
 }
 
 .hours > section{
@@ -202,8 +218,8 @@ h3.section-header{
 /* COMPONENTS */
 .button{
   text-decoration: none;
-  background-color: orange;
-
+  background-color:  rgb(223, 114, 24);
+  color:white;
 }
 
 .button span{
@@ -216,6 +232,12 @@ h3.section-header{
 @media screen and (max-width:780px){
   .nav-item{
     flex: 3;
+  }
+}
+
+@media screen and (max-width:640px){
+  #hero form > .button{
+    position: static;
   }
 }
 
