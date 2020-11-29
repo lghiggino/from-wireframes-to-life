@@ -66,23 +66,33 @@ p{
 /* LAYOUT
 /*******************************************/
 header, main{
-    margin-bottom: 6%;
+    margin-bottom: 5%; 
     border-bottom: 1px solid rgba(128, 126, 126, 0.5);
 }
 
-header ul{
+/* header ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    /* JUST HAD TO... went from 14 rules + MQs to this  */
-}
+} Leon, this is just cruel! LOL   */
 
-.nav-item a{
+header nav > ul {
+    padding-top: 0.5%;
+    float: left;
+    width: 100%;
+  }
+  
+  header nav ul li{
+    display: inline;
+    padding-left: 7%;
+  }
+  
+  header nav ul li a{
     text-decoration: none;
     color: blue;
     font-weight: bold;
     text-align: center;
-}
+  }
 
 main > section{
     float:left;
@@ -106,8 +116,20 @@ main > section{
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1100px){
+    header nav ul li{
+        padding-left: 5%;
+      }
+}
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 920px){
+    header nav ul li{
+        padding-left: 3%;
+      }
+}
+
+@media screen and (max-width: 770px){
+
     .is-hidden-tablet{
         display: none;
     }
@@ -121,7 +143,7 @@ main > section{
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 560px){
     .is-hidden-mobile{
         display:none;
     }

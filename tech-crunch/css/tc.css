@@ -45,6 +45,7 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 span {
@@ -90,6 +91,8 @@ main{
 }
 
 main > section > img{
+  width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -99,21 +102,29 @@ aside{
 }
 
 .bottom{
-  position: relative;
-  left: 15%;
+  margin-left: 15%;
   width: 85%;
   clear: both;
   padding-top: 2rem;
 }
 
-.bottom > article, .bottom > section{
-  width: 28%;
+.bottom > section{
+  width: 54%;
+  margin-bottom: 15%;
+}
+
+.bottom > section > *{
+  width: 33%;
 }
 
 .bottom .cleared{
   margin-top: 1rem;
 }
 
+.mini-image{
+  width: 100%;
+  margin: auto;
+}
 
 /*******************************************/
 /* ADDITIONAL STYLES
@@ -130,8 +141,19 @@ a:hover{
 /* MEDIA QUERIES */
 /*******************************************/
 
+@media screen and (max-width: 1000px){
+  .bottom{
+    margin-left: 2%;
+  }
+
+  .bottom > section{
+    width: 100%;
+    margin-bottom: 15%;
+  }
+}
+
 @media screen and (max-width: 920px){
-  header, main, aside{
+header, main, aside{
     width: 100%;
     margin: 0;
     padding: 1.5rem;

@@ -62,6 +62,7 @@ main > section {
     width: 100%;
 }
 
+
 .half-width{
     width:50%;
     float: left;
@@ -99,7 +100,8 @@ header nav ul li a{
 }
 
 #main-story div, .quarter-box > div{
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    /* padding: 1rem; */
 }
 
 .title{
@@ -190,6 +192,10 @@ footer {
         width: 100%;
     }
 
+    .is-half-width-tablet{
+        width: 50%;
+    }
+
     .asidebox > *{
         width: 50%;
         float: left;
@@ -214,6 +220,8 @@ footer {
         display: none;
     }
 
+    
+
 
     .asidebox{
         background-origin: red;
@@ -231,6 +239,9 @@ footer {
         width: 80%;
     }
 
+    .is-full-width-mobile{
+        width: 100%;
+    }
    
 }
 
