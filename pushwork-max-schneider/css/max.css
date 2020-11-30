@@ -234,3 +234,30 @@ footer {
   }
 
 }
+
+@media screen and (max-width: 480px){
+  .linear-bg{
+    background: #f5f9fc;
+  }
+  
+  #hero > section{
+    width: 100%;
+  }
+
+  #hero > #text-content form input{
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 1%;
+  }
+
+  #hero > #text-content form button{
+    width: 100%;
+    position: static;
+    margin-bottom: 8%;
+  }
+
+  #collect{
+    background: url("../assets/collect-data-vertical.jpg") no-repeat top;
+    background-size: 100%;
+  }
+}
