@@ -65,7 +65,7 @@ function renderSites(sitesArray){
     let html = ""
     sitesArray.forEach (site => {
         html += ` 
-        <section class="card">
+        <section class="card" id=${site.id}>
             <a href=${site.link}>
             <img src=${site.img} alt=${site.span}>
             <span>${site.span}</span>
