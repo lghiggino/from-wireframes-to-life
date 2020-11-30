@@ -48,7 +48,7 @@ p, span, a{
 
 section > section{
   /* border: 1px solid red; */
-  margin: 2% 5%;
+  margin: 0 5%;
 }
 
 button{
@@ -95,7 +95,8 @@ nav ul{
 }
 
 #hero{
-  background: url("../assets/hero-image.jpg") top right no-repeat;
+  background: url("../assets/restaurant-hero.jpg") top right no-repeat, linear-gradient(180deg, #dedad1, white);
+  background-size: 100%;
 }
 
 #hero > section {
@@ -265,9 +266,14 @@ h3.section-header{
   }
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:500px){
   .is-hidden-mobile{
     display: none;
+  }
+
+  #hero{
+    background: url("../assets/restaurant-hero-vertical.jpg") no-repeat, linear-gradient(180deg, #dedad1, white);
+    background-size: 100%;
   }
 
 }
