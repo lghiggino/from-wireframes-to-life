@@ -1,0 +1,236 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f5f9fc;
+}
+
+section > section{
+  padding: 2% 4%;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+h1,h2,h3,h4,h5,h6, span, p, a, button {
+  font-size: 1.5rem;
+}
+
+span{
+  display: inline-block;
+}
+
+button{
+  border: none;
+  background: #000;
+  color: #fff;
+  height: 40px;
+  font-weight: bold;
+}
+
+.linear-bg{
+  /* background: linear-gradient(90deg, rgba(202, 201, 200, 0.7),  white); */
+  background: linear-gradient(90deg, rgba(197,197,204,0.5438376034007353) 0%, rgba(197,197,204,0.1292717770702031) 16%, rgba(255,255,255,1) 100%);
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+  padding: 1% 5%;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+header nav > *{
+  float: left;
+  width: 33%;
+}
+
+header nav > .is-visible-only-mobile > span{
+  font-size: 2rem;
+}
+
+header nav #image-container{
+  width: 20%;
+}
+
+header nav #links-container{
+  width: 70%;
+  font-size: 1.5rem;
+}
+
+header nav #links-container > li{
+  display: inline;
+  padding-left: 5%;
+}
+
+header nav #button{
+  width: 10%;
+}
+
+/* HERO */
+#hero > section{
+  float:left;
+  width: 50%;
+  overflow: hidden;
+}
+
+#hero > #text-content{
+  line-height: 3rem;
+}
+
+#hero > #text-content > span{
+  color: gray;
+  font-size: 1.2rem;
+  margin: 0 0 3% 0;
+}
+#hero > #text-content > h1{
+  font-size:4rem;
+  line-height: 5rem;
+  font-weight: 500;
+  margin-bottom: 8%;
+}
+#hero > #text-content > p{
+  color: gray;
+}
+
+#hero > #text-content form input{
+  height: 40px;
+  border: none;
+  padding: 0 0 0 2%;
+  margin-bottom: 8%;
+  width: 60%
+}
+
+#hero > #text-content form button{
+  padding: 0 7%;
+  position: relative;
+  left: -10px;
+  top: 1px;
+}
+
+/* FEATURES */
+#features > section.card{
+  float:left;
+  width: 25%;
+  padding: 2% 3%;
+}
+
+#features > .card > div > span{
+  font-size: 3rem;
+  color: rgb(80, 80, 80);
+  margin: 0 0 15% 0;
+}
+
+#features > .card > h2{
+  font-weight: bold;
+  margin: 0 0 15% 0;
+}
+
+/* COLLECT INFORMATION */
+#features > .card > p, #collect p{
+  font-size: 1.4rem;
+  color: rgb(99, 99, 99);
+  margin: 0 0 15% 0;
+}
+
+#features > .card > a{
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 15% 0;
+}
+
+#collect{
+  background: url("../assets/collect-data.jpg") no-repeat top right, white;
+  background-size: 60%;
+}
+
+#collect > section{
+  width: 60%;
+}
+
+#collect h3{
+  padding-top: 15%;
+  font-size:4rem;
+  line-height: 5rem;
+  font-weight: bold;
+  margin-bottom: 8%;
+} 
+
+/* #collect p{
+  font-size: 1.4rem;
+  color: rgb(99, 99, 99);
+  margin: 0 0 15% 0;
+} */
+
+
+
+
+
+
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.is-visible-only-mobile{
+  display: none;
+}
+
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media screen and (max-width: 750px){
+  .is-hidden-mobile{
+    display: none;
+  }
+
+  .is-visible-only-mobile{
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 625px){
+  #features > section.card{
+    float:left;
+    width: 50%;
+    padding: 2% 3%;
+  }
+
+  #features > section.card > *, #features > section.card > div span{
+    margin-bottom: 5%;
+  }
+
+}
