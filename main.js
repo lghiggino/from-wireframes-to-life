@@ -36,6 +36,13 @@ let sites = [
     para: "Done using floats and cleared containers",
     stack:"HTML and CSS",
     },
+    {id: "pikin",
+    link: "./pushwork-sergey-pikin/index.html",
+    img: "",
+    span: "Corporate landing page",
+    para: "Huge landing page with sections, cards, and other components",
+    stack: "HTML and CSS",
+    },
     {id: "khan-academy",
     link: "./khan-academy/khan.html",
     img: "./assets-base/khan.jpg",  
@@ -57,8 +64,9 @@ let sites = [
     para: "Redo of the BBC website using only floats",
     stack: "HTML and CSS",
     },
-    
 ]
+
+
 
 function renderSites(sitesArray){
     const display = document.getElementById("main-display");
