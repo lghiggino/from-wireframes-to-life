@@ -32,7 +32,7 @@ body {
 }
 
 section > section, footer > section{
-  padding: 2% 5%;
+  padding: 2% 4%;
 }
 
 a{
@@ -66,6 +66,7 @@ section.half-width-floated{
 /*******************************************/
 header{
   background: rgba(10,20,55,1);
+  min-height: 40px;
 }
 
 header > nav{ 
@@ -76,19 +77,24 @@ header > nav{
   float:left;
 }
 
-header > nav  div{
+header > nav > div{
   width: 10%;
-  border: 1px solid red;
+  text-align: center;
+}
+
+header > nav > div > button{
+  min-height: 40px;
+  width: 100%;
 }
 
 header > nav > ul {
   width: 80%;
-  border: 1px solid green;
+  line-height: 40px;
 }
 
 header > nav > ul > li{
   display: inline;
-  padding-left: 7%;
+  padding-left: 10%;
 }
 
 header > nav > ul > li > a{
@@ -102,15 +108,26 @@ header > nav > div> i{
 
 #hero{
   background: rgb(10,20,55);
-  background: linear-gradient(180deg, rgba(10,20,55,1) 0%, rgba(125,138,149,1) 47%, rgba(255,255,255,1) 100%); 
+  background: linear-gradient(180deg, rgba(10,20,55,1) 0%, rgba(125,138,149,1) 47%, rgba(250,250,250,1) 100%); 
   color: white;
 }
 
 #hero > section.text-container h1{
   font-size: 3rem;
   text-transform: capitalize;
-  margin: 0 0 3% 0;
+  margin: 23% 0 3% 0;
   max-width: 70%;
+}
+
+#hero > section.text-container a{
+  display: inline-block;
+  padding-left: 5%;
+}
+
+#hero > section.image-container img{
+  width: 90%;
+  border: 20px solid whitesmoke;
+  border-radius: 20px;
 }
 
 section.text-container h2{
@@ -137,7 +154,7 @@ section.text-container p + p{
 }
 
 .image-container img{
-  width: 80%;
+  width: 100%;
   height: auto;
 }
 
@@ -151,6 +168,7 @@ section.text-container p + p{
   background-color: black;
   color: white;
   border: none;
+  border-radius: 5px;
 }
 
 .button-inverted{
@@ -160,4 +178,57 @@ section.text-container p + p{
 
 span .fab{
   font-size: 3rem;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width:1036px){
+  header > nav > ul > li{
+    padding-left: 8%;
+  }
+}
+
+@media screen and (max-width:798px){
+  header > nav > ul > li{
+    padding-left: 6%;
+  }
+
+  #hero > section.image-container img{
+    width: 100%;
+    margin: 10% 0 0 0;
+  }
+
+}
+
+@media screen and (max-width:648px){
+  .is-hidden-mobile{
+    display: none;
+  }
+
+  section.half-width-floated{
+    width: 100%;
+    float: none;
+  }
+
+  header > nav > div{
+    width: 20%;
+  }
+
+  header > nav > ul{
+    width: 60%
+  }
+
+  #hero > section.text-container h1{
+    margin: 10% 0 10% 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  #hero > section.image-container img{
+    margin: 0 0 0 0;
+  }
+
+  #clients .floated-right{
+    width: 12%;
+  }
 }
