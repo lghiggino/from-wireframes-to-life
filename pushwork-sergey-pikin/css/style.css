@@ -177,6 +177,22 @@ section.text-container p + p{
   margin: 0 0 5% 0;
 }
 
+#how h2, #how p{
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 0 0 2% 0;
+}
+
+#how p{
+  font-size: 1.3rem;
+  padding: 1% 10%;
+}
+
+#how-button{
+  text-align: center;
+}
+
 
 /******************************************
 /* ADDITIONAL STYLES
