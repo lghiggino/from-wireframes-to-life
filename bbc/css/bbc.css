@@ -152,27 +152,27 @@ footer {
 }
 
 #main-story{
-    background: url("../assets/index.jpeg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/bbc/assets/index.jpeg") no-repeat center;
     background-size: cover;
 }
 
 #canada-border{
-    background: url("../assets/canada-border.jpeg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/bbc/assets/canada-border.jpeg") no-repeat center;
     background-size: cover;
 }
 
 #productivity{
-    background: url("../assets/productivity.jpg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/bbc/assets/productivity.jpg") no-repeat center;
     background-size: cover;
 }
 
 #vaccine{
-    background: url("../assets/vaccine.jpeg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/bbc/assets/vaccine.jpeg") no-repeat center;
     background-size: cover;
 }
 
 #folk{
-    background: url("../assets/folk.jpeg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/bbc/assets/folk.jpeg") no-repeat center;
     background-size: cover;
 }
 

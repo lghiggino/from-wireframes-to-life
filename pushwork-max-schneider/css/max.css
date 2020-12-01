@@ -168,7 +168,7 @@ header nav #button{
 }
 
 #collect{
-  background: url("../assets/collect-data.jpg") no-repeat top right, white;
+  background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/pushwork-max-schneider/assets/collect-data.jpg") no-repeat top right, white;
   background-size: 60%;
 }
 
@@ -257,7 +257,7 @@ footer {
   }
 
   #collect{
-    background: url("../assets/collect-data-vertical.jpg") no-repeat top;
+    background: url("https://raw.githubusercontent.com/lghiggino/from-wireframes-to-life/master/pushwork-max-schneider/assets/collect-data-vertical.jpg") no-repeat top;
     background-size: 100%;
   }
 }
