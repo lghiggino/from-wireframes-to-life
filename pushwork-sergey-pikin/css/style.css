@@ -127,6 +127,7 @@ header > nav > div> i{
 #hero > section.image-container img{
   width: 90%;
   border: 20px solid whitesmoke;
+  margin: 2% 0 0 0;
   border-radius: 20px;
 }
 
@@ -156,6 +157,24 @@ section.text-container p + p{
 .image-container img{
   width: 100%;
   height: auto;
+}
+
+.card-container .card img{
+  width: 100%;
+  height: auto;
+  margin: 0 0 5% 0;
+}
+
+.card-container .card h3{
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 5% 0;
+}
+
+.card-container .card p{
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0 0 5% 0;
 }
 
 
@@ -225,7 +244,7 @@ span .fab{
   }
   
   #hero > section.image-container img{
-    margin: 0 0 0 0;
+    margin: 0;
   }
 
   #clients .floated-right{
