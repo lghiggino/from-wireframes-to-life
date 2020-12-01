@@ -23,7 +23,7 @@
 html{
   font-size: 62.5%;
   font-family: sans-serif;
-  background :whitesmoke;
+  background :white;
   color: #000;
 }
 
@@ -31,7 +31,7 @@ body {
 
 }
 
-section > section{
+section > section, footer > section{
   padding: 2% 5%;
 }
 
@@ -49,6 +49,18 @@ h1,h2,h3,h4,h5,h6, span, p, a, button {
 span{
   display: inline-block;
 }
+
+section.half-width-floated{
+  float: left;
+  width: 50%;
+}
+
+#clients .floated-right{
+  float: right;
+  width: 7%;
+  margin-right: 2%;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -88,10 +100,6 @@ header > nav > div> i{
   color: white;
 }
 
-footer {
-
-}
-
 #hero{
   background: rgb(10,20,55);
   background: linear-gradient(180deg, rgba(10,20,55,1) 0%, rgba(125,138,149,1) 47%, rgba(255,255,255,1) 100%); 
@@ -100,31 +108,39 @@ footer {
 
 #hero > section.text-container h1{
   font-size: 3rem;
+  text-transform: capitalize;
+  margin: 0 0 3% 0;
+  max-width: 70%;
 }
 
 section.text-container h2{
   font-size: 2rem;
   text-transform: capitalize;
+  margin: 0 0 3% 0;
+  max-width: 70%;
 }
 
 section.text-container h4{
   font-size: 1rem;
   text-transform: uppercase;
+  margin: 0 0 3% 0;
 }
 
 section.text-container p{
   font-size: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
+  margin: 0 0 4% 0;
 }
 
-section.half-width-floated{
-  float: left;
-  width: 50%;
+section.text-container p + p{
+  margin: 0 0 8% 0;
 }
 
-#clients .floated-right{
-  float: right;
+.image-container img{
+  width: 80%;
+  height: auto;
 }
+
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -140,4 +156,8 @@ section.half-width-floated{
 .button-inverted{
   background-color: white;
   color: black;
+}
+
+span .fab{
+  font-size: 3rem;
 }
