@@ -193,6 +193,40 @@ section.text-container p + p{
   text-align: center;
 }
 
+#features{
+  background: linear-gradient(white, rgba(10,20,55,1));
+  
+}
+
+#features-cards{
+  background: rgba(10,20,55,1);
+  margin: 0 0 5% 0;
+}
+
+#multicard-container{
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: space-around;
+  align-content: space-around; */
+  align-items: center;
+}
+
+.horizontal-card{
+  width: 45%;
+  margin: 2%;
+  background: white;
+  color:  rgba(10,20,55,1);
+}
+
+.horizontal-card span, .horizontal-card p{
+  margin: 5% 0 5% 5%;
+}
+
+.horizontal-card h4{
+  font-weight: bold;
+  margin: 5% 0 5% 5%;
+}
+
 
 /******************************************
 /* ADDITIONAL STYLES
