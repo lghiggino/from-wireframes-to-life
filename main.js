@@ -38,7 +38,7 @@ let sites = [
     },
     {id: "pikin",
     link: "./pushwork-sergey-pikin/index.html",
-    img: "",
+    img: "./assets-base/pikin.jpg",
     span: "Corporate landing page",
     para: "Huge landing page with sections, cards, and other components",
     stack: "HTML and CSS",
