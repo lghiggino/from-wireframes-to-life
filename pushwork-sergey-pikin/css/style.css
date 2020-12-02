@@ -216,8 +216,6 @@ section.text-container p + p{
 #multicard-container{
   display: flex;
   flex-flow: row wrap;
-  /* justify-content: space-around;
-  align-content: space-around; */
   align-items: center;
 }
 
@@ -335,6 +333,11 @@ span .fab, aside .far{
 }
 
 @media screen and (max-width:385px){
+  #features .text-container h2{
+    margin-bottom: 20%;
+    max-width: 80%;
+  }
+
   #hero .text-container a > p{
     color: black;
   }
