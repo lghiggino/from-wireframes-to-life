@@ -62,14 +62,28 @@ span{
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
+header nav > * {
+  border: 1px solid red;
 }
 
-footer {
-
+#main > section{
+  float: left;
+  width: 50%;
 }
+
+#main .image-container img{
+  border-radius: 50%;
+  width: 80%;
+  height: auto;
+}
+
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+button.button{
+  background-color: #9e7a93;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
