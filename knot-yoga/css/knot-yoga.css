@@ -17,12 +17,16 @@
 	clear: both;
 }
 
+.float-left{
+  float: left;
+}
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
 html{
   font-size: 62.5%;
-  font-family: ;
+  font-family: sans-serif;
 }
 
 body {
@@ -46,12 +50,17 @@ section > section{
   padding: 2% 4%;
 }
 
+nav > div{
+  padding: 0 4%;
+} 
+
 a{
   text-decoration: none;
 }
 
 h1,h2,h3,h4,h5,h6, span, p, a, button {
-  font-size: ;
+  font-size: 2rem;
+  color: #86626c;
 }
 
 span{
@@ -64,6 +73,25 @@ span{
 /*******************************************/
 header nav > * {
   border: 1px solid red;
+  background-color: white;
+  min-height: 40px;
+  /* padding-top: 5px; */
+}
+
+header nav div{
+  width: 15%;
+}
+
+header nav div img{
+  
+}
+
+header nav ul{
+  width: 70%
+}
+
+header nav ul li{
+  display: inline-block;
 }
 
 #main > section{
