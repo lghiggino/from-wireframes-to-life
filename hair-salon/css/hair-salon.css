@@ -84,6 +84,7 @@ header nav > ul {
   padding-top: 0.5%;
   float: left;
   width: 90%;
+  min-height: 45px;
 }
 
 header nav ul li{

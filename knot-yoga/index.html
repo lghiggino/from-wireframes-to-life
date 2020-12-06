@@ -8,22 +8,25 @@
 		<title>Knot Yoga</title>
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/reset.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/knot-yoga.css">
 	<body>
+
 		<!-- header nav -->
 		<header>
 			<nav>
-				<div class="float-left">
+				<div class="float-left header-image">
 					<img src="./assets/logo.png" alt="Logo" class="float-left">
 					<h1 class="float-left">Knot Yoga</h1>
 				</div >
 				<ul class="float-left">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Our Services</a></li>
-					<li><a href="#">Appointments</a></li>
+					<li><a href="#main">Home</a></li>
+					<li><a href="#services">Our Services</a></li>
+					<li><a href="#appointments">Appointments</a></li>
 					<li><a href="#">Blog</a></li>
 				</ul>
-				<div class="float-left">
+				<div class="float-left header-button">
 					<button class="button">login</button>
 				</div>
 				
@@ -31,15 +34,32 @@
 		</header>
 
 		<!-- main section -->
-		<section id="main" class="clear clearfix">
+		<section id="main" class="section clear clearfix">
 			<section class="text-container">
 				<h2>a negative mind will never give you positive life</h2>
 				<h3>join our <span>yoga</span>journey</h3>
 				<button class="button">book now</button>
 			</section>
 			<section class="image-container">
-				<img src="./assets/woman-yoga-green-bg.png" alt="youg woman practicing yoga in a green park">
+				<img src="./assets/woman-yoga-green-bg.png" alt="youg woman practicing yoga in a green park" data-attribute="photo by master1305 at www.freepik.com">
 			</section>
+		</section>
+
+		<!-- services -->
+		<section id="services" class="section clear clearfix">
+			<section class="image-container">
+				<img src="./assets/woman-yoga-green-bg.png" alt="youg woman practicing yoga in a green park" data-attribute="photo by nensuria at www.freepik.com">
+			</section>
+			<section class="text-container">
+				<h2>a negative mind will never give you positive life</h2>
+				<h3>join our <span>yoga</span>journey</h3>
+				<button class="button">book now</button>
+			</section>
+		</section>
+
+		<!-- appointments -->
+		<section id="appointments" class="section clear clearfix">
+
 		</section>
 
 		<script type="text/javascript" src="js/main.js"></script>

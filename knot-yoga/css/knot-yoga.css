@@ -50,17 +50,20 @@ section > section{
   padding: 2% 4%;
 }
 
-nav > div{
-  padding: 0 4%;
-} 
-
-a{
-  text-decoration: none;
-}
-
 h1,h2,h3,h4,h5,h6, span, p, a, button {
   font-size: 2rem;
   color: #86626c;
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Kurale', serif;
 }
 
 span{
@@ -72,39 +75,86 @@ span{
 /* LAYOUT
 /*******************************************/
 header nav > * {
-  border: 1px solid red;
   background-color: white;
   min-height: 40px;
-  /* padding-top: 5px; */
+  line-height: 40px;
 }
 
-header nav div{
-  width: 15%;
+nav > div{
+  padding: 0 2%;
+} 
+
+.header-image{
+  width: 25%;
+  padding-top: 0.5%;
 }
 
-header nav div img{
-  
+.header-image img{
+  padding: 0 0 0 2%;
+  height: 45px;
+  width: auto;
+}
+
+.header-image h1{
+  padding: 0.5% 0 0 4%;
 }
 
 header nav ul{
-  width: 70%
+  width: 60%;
+  padding-top: 0.5%;
+  min-height: 53px;
 }
 
 header nav ul li{
   display: inline-block;
+  margin: 0 0 0 6%;
+  text-align: center;
 }
 
-#main > section{
+.header-button{
+  width: 15%;
+}
+
+.header-button button{
+  margin: 7% 0 0 0;
+  padding: 5px 20px;
+}
+
+section.section > section{
   float: left;
   width: 50%;
 }
 
-#main .image-container img{
+section.section > .image-container > img{
   border-radius: 50%;
   width: 80%;
   height: auto;
+  margin: 5% 0 0 0;
 }
 
+section.section > .text-container > h2{
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20% 0 0 5%;
+  line-height: 150%;
+  font-family: 'Kurale', serif;
+}
+
+section.section > .text-container > h3{
+  margin: 5% 0 0 5%;
+}
+
+section.section > .text-container > h3 > span{
+  font-family: 'Kurale', serif;
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0 2% 0 0;
+}
+
+section.section > .text-container > button.button{
+  margin: 5% 0 0 5%;
+  padding: 5px 20px;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -114,4 +164,10 @@ button.button{
   color: white;
   font-weight: bold;
   border-radius: 10px;
+  border: none;
 }
+
+
+
+/* young woman in a passerby <a href='https://www.freepik.com/photos/background'>Background photo created by javi_indy - www.freepik.com</a> */
+/* mother daughter yoga <a href='https://www.freepik.com/photos/background'>Background photo created by senivpetro - www.freepik.com</a> */
