@@ -110,6 +110,9 @@ header nav ul li{
   margin: 0 0 0 6%;
   text-align: center;
 }
+header nav ul li a{
+  font-weight: normal;
+} 
 
 .header-button{
   width: 15%;
@@ -129,6 +132,12 @@ section.section > .image-container > img{
   border-radius: 50%;
   width: 80%;
   height: auto;
+  margin: 8% 0 0 0;
+}
+
+section.section > .map-container > iframe{
+  width: 100%;
+  height: 450px;
   margin: 5% 0 0 0;
 }
 
@@ -149,6 +158,25 @@ section.section > .text-container > h3 > span{
   font-weight: bold;
   font-size: 3rem;
   margin: 0 2% 0 0;
+}
+
+section.section > .text-container > h4{
+  margin: 5% 0 0 5%;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Kurale', serif;
+}
+
+section.section > .text-container > p{
+  margin: 5% 0 0 5%;
+  text-indent: 2rem;
+  text-align: justify;
+  line-height: 125%;
+}
+
+section.section > .text-container > p.times{
+  margin: 2% 0 0 5%;
+  text-indent: 2rem;
 }
 
 section.section > .text-container > button.button{
