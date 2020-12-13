@@ -1,0 +1,149 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.float-left{
+  float: left;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+section > section{
+  padding: 2% 4%;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6, span, p, a, button {
+  font-size: 2rem;
+}
+
+span{
+  display: inline-block;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  padding: 2% 4%;
+  margin: 2% 0 0 0;
+}
+
+header > h1{
+  margin-bottom: 4%;
+}
+
+section > nav> ul{
+  margin: 2% 0 0 0;
+  text-align: center;
+}
+
+section > nav> ul >li, #second-ul > li{
+  display: inline;
+  margin-left: 1%;
+}
+
+section > nav> ul >li:first-child, #second-ul > li:first-child{
+  margin-left: 4%;
+}
+
+textarea{
+  max-width: 90%;
+  margin: 0 5%;
+}
+
+footer {
+  padding: 2% 4%;
+  margin: 12% 0 0 0;
+}
+
+/******************************************
+/* ADDITIONAL STYLES 
+/*******************************************/
+.button{
+  font-size: 2rem;
+}
+
+section > nav> #second-ul{
+  text-align: left;
+}
+
+/******************************************
+/* ADDITIONAL STYLES - TRANSFORMATIONAL RULES
+/*******************************************/
+.bold{
+  font-weight: bold;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.lowercase{
+  text-transform: lowercase;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.align-justify{
+  text-align: justify;
+}
+
+.text-indent{
+  text-indent: 4rem;
+}
+
+.line-height{
+  line-height: 162.25%;
+}
+

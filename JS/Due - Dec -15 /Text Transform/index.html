@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+		<meta name="description" content="Your description goes here">
+		<meta name="keywords" content="Enter your text, transform ans style it into something else">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Text Editor</title>
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+		<header>
+			<h1>Text Editor.</h1>
+			<section>
+				<nav>
+					<ul class="clearfix">
+						<!-- <li id="button-font-family">DROPDOWN FONT</li>
+						<li id="button-font-size">DROPDOWN FONT SIZE</li> -->
+						<li class="button float-left bold" id="button-bold">bold</li>
+						<li class="button float-left italic"id="button-italic">italic</li>
+						<li class="button float-left underline"id="button-underline">underline</li>
+						<li class="button float-left lowercase" id="button-lowercase">lowercase</li>
+						<li class="button float-left uppercase" id="button-uppercase">upper</li>
+						<li class="button float-left capitalize" id="button-capitalize">capitalize</li>
+					</ul>
+					<ul class="clearfix" id="second-ul">
+						<li class="button" id="button-align-left"><img src="./assets/align-left.png" alt=""></li>
+						<li class="button" id="button-align-center"><img src="./assets/align-center.png" alt=""></li>
+						<li class="button" id="button-align-right"><img src="./assets/align-right.png" alt=""></li>
+						<li class="button" id="button-align-justify"><img src="./assets/aling-justify.png" alt=""></li>
+						<li class="button" id="button-text-indent"><img src="./assets/text-indent.png" alt=""></li>
+						<li class="button" id="button-line-height"><img src="./assets/line-height.png" alt=""></li>
+					</ul>
+				</nav>
+			</section>
+		</header>
+		
+		<section class="clear clearfix">
+			<section>
+				<textarea name="user-text" id="user-text" cols="150" rows="10" placeholder="enter your text here"></textarea>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<p id="rendered-text">Click on a button and your text will be appear here</p>
+			</section>
+		</section>
+
+		<footer>
+			<p>	Developed by me</p>
+		</footer>
+
+		
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
