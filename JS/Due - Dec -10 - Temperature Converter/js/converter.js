@@ -75,7 +75,7 @@ function renderGraph(temperature, scale){
             document.querySelector("#positive-celsius-fill").style.height = `0px`;
         }
     } if (scale === "farenheit"){
-        temperature = temperature/2;
+        temperature = ((temperature -32) /1.8);
         if(temperature > 32){
             console.log("farenheit is positive");
             //mudar a altura da div, pintar de vermelho,  ou azul de acordo, apagar a outra
