@@ -20,30 +20,53 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-html{
-  font-size: 62.5%;
-  font-family: ;
-}
-
-body {
-  
-}
-
-section > section{
-  padding: 2% 4%;
-}
-
-a{
-  text-decoration: none;
-
-}
-
-h1,h2,h3,h4,h5,h6, span, p, a, button {
-  font-size: ;
-}
-
-span{
-  display: inline-block;
+
+/* Base colors
+Mirage
+#141828
+
+Pastel Green
+#66eaa4
+
+French Gray
+#bbbcc1
+
+Waterloo
+#7c7f8c
+*/
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  /* !!!!!FIREFOX COLOR PICKER!!!!! */
+  background-color: #070a1b;
+  color: white;
+}
+
+
+
+section > section{
+  padding: 2% 4%;
+}
+
+
+
+a{
+  text-decoration: none;
+}
+
+
+
+h1,h2,h3,h4,h5,h6, span, p, a, button {
+  font-size: ;
+}
+
+
+
+span{
+  display: inline-block;
 }
 
 
@@ -61,3 +84,10 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.is-success{
+  background-color: #66eaa4;
+  color: #141828;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
