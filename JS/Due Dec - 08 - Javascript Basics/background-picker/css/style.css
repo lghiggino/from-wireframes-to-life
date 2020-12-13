@@ -1,0 +1,83 @@
+/******************************************
+/* HOT GARBAGE - PLEASE DON'T MIMIC THIS CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+h1, h2, h3{
+  text-align: center;
+}
+img{
+  display: block;
+  height: 300px;
+  margin: 0 auto;
+}
+ul{
+  width: 100px;
+  height: auto;
+  border: 3px solid black;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+li{
+  width: 94px;
+  height: 65px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#purple{
+  background: rgba(241,63,247,1);
+}
+#green{
+  background: rgba(0,253,81,1);
+}
+#blue{
+  background: rgba(0,254,255);
+}
+
+#white{
+  background: rgba(255,255,255,1);
+}
+
+#crazy{
+  background: linear-gradient(45deg, red, blue, green, yellow, purple);
+}
+
+#really-crazy{
+  background: black;
+}
+
+.li-text-content{
+  color:white;
+  text-align: center;
+  line-height: 65px;
+}
+
+.hugeTitle{
+  font-size: 3.5rem;
+}
+
+.hidden-when-not-preposterous{
+  display: none;
+}
+
+.active-when-preposterous{
+  display: static;
+}
+
+.spinningChair{
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
