@@ -2,9 +2,21 @@
 const button = document.getElementById("check")
 button.addEventListener("click", checkHoroscope)
 
-//place to see theresult
+//place to see the result
 const placeToSee = document.getElementById("placeToSee")
 const animalImage = document.getElementById("animal-image")
+const textContainerSection = document.getElementById("text-container")
+const recentYears = document.getElementById("recentYears");
+const order = document.getElementById("order");
+const personality0 = document.getElementById("personality0");
+const personality1 = document.getElementById("personality1");
+const personality2 = document.getElementById("personality2");
+const personality3 = document.getElementById("personality3");
+const luckyNumbers = document.getElementById("luckyNumbers");
+const luckyColors = document.getElementById("luckyColors");
+const luckyFlowers = document.getElementById("luckyFlowers");
+const luckyDays = document.getElementById("luckyDays");
+const luckyMonths = document.getElementById("luckyMonths");
 
 function checkHoroscope(){
   //check the user input date
@@ -77,12 +89,25 @@ function checkHoroscope(){
       break; 
   }
 
-  //compare its year to see chinese
-
 }
 
 function renderSignInfo(sign){
   console.log(sign)
+  //image
+  animalImage.classList.remove("hidden")
   animalImage.src = sign.img
+  //text
+  textContainerSection.classList.remove("hidden")
+  recentYears.innerText = sign.recentYears;
+  order.innerText = sign.order;
+  personality0.innerText = sign.personality0;
+  personality1.innerText = sign.personality1;
+  personality2.innerText = sign.personality2;
+  personality3.innerText = sign.personality3;
+  luckyNumbers.innerText = `Lucky Numbers: ${sign.luckyNumbers}`;
+  luckyColors.innerText =  `Lucky Colors: ${sign.luckyColors}`;
+  luckyFlowers.innerText = `Lucky Flowers: ${sign.luckyFlowers}`;
+  luckyDays.innerText =  `Lucky Days: ${sign.luckyDays}`;
+  luckyMonths.innerText = `Lucky Months: ${sign.luckyMonths}`;
 }
 

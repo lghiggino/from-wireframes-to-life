@@ -121,7 +121,7 @@ const goat = {
 }
 
 const monkey = {
-    recentYears: "Recent years of the Monkey: 2018, 2016, 2004, 1992, 1980, 1968, 1956.",
+    recentYears: "Recent years of the Monkey: 2016, 2004, 1992, 1980, 1968, 1956.",
     order: "The Monkey is the ninth of 12 animals in the recurring 12-year Chinese zodiac cycle. The 12 zodiac animals are, in order: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. A Monkey year occurs every 12 years",
     personality0: "People born in a year of the Monkey have magnetic personalities and are witty and intelligent. Personality traits like mischievousness, curiosity, and cleverness make them very naughty.",
     personality1: "Monkeys are masters of practical jokes, because they like playing most of the time. Although they don't have bad intentions, their pranks sometimes hurt other people's feelings.",
