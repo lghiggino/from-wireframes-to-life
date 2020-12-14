@@ -2,30 +2,46 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
-    	<meta name="description" content="This app lets you know today is class, the weekend, or a boring day">
-    	<meta name="keywords" content="class, weekend, boring">
-
+    	<meta name="description" content="This app lets you know your chinese horoscope sign and a few 'facts' about it">
+    	<meta name="keywords" content="chinese horoscope">
 		<title>Your chinese horoscope</title>
-
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
+
 	<body>
+		<header class="">
+			<nav>
+				<h1>Your chinese horoscope</h1>
+				<form>
+					<label for="day"> Your birthdate </label>
+					<input id="day" type="date">
+					<button id="check" type="button" name="button">check</button>
+				</form>
+			</nav>
+		</header>
+		
+		<section id="render">
+			<section class="img-container float-left">
+				<img src="./img/all-animals.jpg" alt="alt image banana">
+			</section>
+			<section class="text-container float-left clear clearfix">
+				<p>other banana</p>
+				<h2 id="placeToSee"></h2>
+			</section>
+		</section>
+		
 
-		<h1>Your chinese horoscope</h1>
-
-		<form>
-			<label for="day"> Choose your birthdate </label>
-			<input id="day" type="date">
-		</form>
-
-		<button id="check" type="button" name="button">check</button>
-
-		<h2 id="placeToSee"></h2>
+		
+		
 		<script type="text/javascript" src="js/exceptions.js"></script>
 		<script type="text/javascript" src="js/signinfo.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		
 	</body>
 </html>
+
+
+<!-- <a href='https://www.freepik.com/vectors/calendar'>Calendar vector created by tartila - www.freepik.com</a> -->
+<!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by brgfx - www.freepik.com</a> -->
