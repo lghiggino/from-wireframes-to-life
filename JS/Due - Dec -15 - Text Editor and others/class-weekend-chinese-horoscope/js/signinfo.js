@@ -12,6 +12,7 @@ const rat = {
     luckyFlowers: "lilly and african violet",
     luckyDays:"4th and 13th",
     luckyMonths:"2nd, 25th and 9th",
+    img:"./img/rat.jpg"
 }
 
 const ox = {
@@ -26,6 +27,7 @@ const ox = {
     luckyFlowers: "tulip and peach blossoms",
     luckyDays:"13th and 27th",
     luckyMonths:"7th and 9th",
+    img:"./img/ox.jpg"
 }
 
 const tiger = {
@@ -40,6 +42,7 @@ const tiger = {
     luckyFlowers: "yellow lilly and cineraria",
     luckyDays:"16th and 27th",
     luckyMonths:"3rd, 7th and 10th",
+    img:"./img/tiger.jpg"
 }
 
 const rabbit = {
@@ -54,6 +57,7 @@ const rabbit = {
     luckyFlowers: "plantain lilly and jasmine",
     luckyDays:"26th, 27th and 29th",
     luckyMonths:"1st, 4th, 8th and 11th",
+    img:"./img/rabbit.jpg"
 }
 
 const dragon = {
@@ -68,6 +72,7 @@ const dragon = {
     luckyFlowers: "bleeding-heart globy bower and dragong flowers",
     luckyDays:"1st and 16th",
     luckyMonths:"3rd, 4th and 7th",
+    img:"./img/dragon.jpg"
 }
 
 const snake = {
@@ -82,6 +87,7 @@ const snake = {
     luckyFlowers: "orchid and cactuss",
     luckyDays:"1st and 23rd",
     luckyMonths:"1st, 8th and 11th",
+    img:"./img/snake.jpg"
 }
 
 const horse = {
@@ -96,6 +102,7 @@ const horse = {
     luckyFlowers: "calla lilly and jasmine",
     luckyDays:"5th and 20th",
     luckyMonths:"4th, 9th and 12th",
+    img:"./img/horse.jpg"
 }
 
 const goat = {
@@ -110,6 +117,7 @@ const goat = {
     luckyFlowers: "carnations and primroses",
     luckyDays:"7th and 30th",
     luckyMonths:"",
+    img:"./img/goat.jpg"
 }
 
 const monkey = {
@@ -124,6 +132,7 @@ const monkey = {
     luckyFlowers: "chrysanthemum and crape-myrtle",
     luckyDays:"14th and 28th",
     luckyMonths:"8th and 12th",
+    img:"./img/monkey.jpg"
 }
 
 const rooster = {
@@ -138,6 +147,7 @@ const rooster = {
     luckyFlowers: "gladiola, cockscomb",
     luckyDays:"4th and 26th",
     luckyMonths:"2nd, 5th, and 11th",
+    img:"./img/rooster.jpg"
 }
 
 const dog = {
@@ -152,6 +162,7 @@ const dog = {
     luckyFlowers: "rose, cymbidium orchids",
     luckyDays:"7th and 28th",
     luckyMonths:" 6th, 10th, and 12th",
+    img:"./img/dog.jpg"
 }
 
 const pig = {
@@ -166,4 +177,5 @@ const pig = {
     luckyFlowers: "hydrangea and daisy",
     luckyDays:"17th and 24th",
     luckyMonths:"2nd, 7th, 10th, and 11th",
+    img:"./img/pig.jpg"
 }

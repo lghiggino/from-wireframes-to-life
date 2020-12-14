@@ -4,6 +4,7 @@ button.addEventListener("click", checkHoroscope)
 
 //place to see theresult
 const placeToSee = document.getElementById("placeToSee")
+const animalImage = document.getElementById("animal-image")
 
 function checkHoroscope(){
   //check the user input date
@@ -71,8 +72,8 @@ function checkHoroscope(){
       renderSignInfo(horse)
       break;
     case (chineseYear === 11):
-      placeToSee.innerText = "Sheep"
-      renderSignInfo(sheep)
+      placeToSee.innerText = "Goat"
+      renderSignInfo(goat)
       break; 
   }
 
@@ -82,5 +83,6 @@ function checkHoroscope(){
 
 function renderSignInfo(sign){
   console.log(sign)
+  animalImage.src = sign.img
 }
 
