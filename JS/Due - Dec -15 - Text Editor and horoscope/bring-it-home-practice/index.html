@@ -8,11 +8,69 @@
 		<title>Title in the tab</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<!-- <link rel="stylesheet" href="css/normalize.css"> -->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+
+		<form action="">
+			<label for="question1" id="q1">Qual seu modal preferido:</label>
+				<input type="checkbox" name="question1" class="check-q1" value="bicicleta" id="q1-bicicleta"> bicicleta</input>
+				<input type="checkbox" name="question1" class="check-q1" value="moto" id="q1-moto">moto</input>
+				<input type="checkbox" name="question1" class="check-q1" value="carro" id="q1-carro">carro</input>
+			<label for="question2" id="q2">Qual modal você utilizou hoje?</label>
+				<input type="radio" name="question2" class="radio-q2" value="bicicleta">bicicleta</input>
+				<input type="radio" name="question2" class="radio-q2" value="moto">moto</input>
+				<input type="radio" name="question2" class="radio-q2" value="carro">carro</input>
+				<input type="radio" name="question2" class="radio-q2" value="outro">outro</input>
+			<label for color>color:
+				<input type="color" id="color">
+			</label>
+			<label for="datetime">datetime:
+				<input type="datetime" id="datetime">
+			</label>
+			<label for="month" >month:
+				<input type="month" id="month">
+			</label>
+			<label for="week" >week:
+				<input type="week" id="week">
+			</label>
+			<label for="time" >time:
+				<input type="time" id="time">
+			</label>
+			<label for="number" >number:
+				<input type="number" id="number">
+			</label>
+			<label for="range">range:
+				<input type="range"  id="range">
+			</label>
+			<label for="search" >search:
+				<input type="search" id="search">
+			</label>
+			<label for="url" >url:
+				<input type="url" id="url">
+			</label>
+			<label for="tel">tel:
+				<input type="tel" id="tel">
+			</label>email:
+			<label for="email">
+				<input type="email" id="email">
+			</label>password:
+			<label for="password">
+				<input type="password" id="password">
+			</label>
+			<select name="day" id="select-days">
+				<option class="select-d" value="monday"> monday </option>
+				<option class="select-d" value="tuesday"> tuesday </option>
+				<option class="select-d" value="wednesday"> wednesday </option>
+				<option class="select-d" value="thursday"> thursday</option>
+				<option class="select-d" value="friday"> friday</option>
+			</select>
+			<button id="submit">submit and capture</button>
+		</form>
 		
+		
+
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

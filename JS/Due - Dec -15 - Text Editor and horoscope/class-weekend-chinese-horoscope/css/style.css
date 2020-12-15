@@ -99,13 +99,12 @@ p{
 /* MQs */
 
 @media screen and (max-width:440px){
-  header{
+
+  /* header{
     background: linear-gradient(45deg, #d64f3c, #773125);
     color: white;
-    min-height: 800px;
-    line-height: 800px;
   }
-}
+} */
 
 
 /* 
