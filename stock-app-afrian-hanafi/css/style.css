@@ -17,6 +17,10 @@
 	clear: both;
 }
 
+.float{
+  float:left;
+}
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -40,7 +44,6 @@ html{
 }
 
 body {
-  /* !!!!!FIREFOX COLOR PICKER!!!!! */
   background-color: #070a1b;
   color: white;
 }
@@ -73,8 +76,67 @@ span{
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
+header{
+  min-height: 40px;
+}
 
+header > nav > * {
+  padding: 24px 4% 0 4%;
+}
+
+header nav > div{
+  width: 30%;
+}
+
+header nav > div#logo-container{
+  width: 20%;
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  display: inline;
+  width: 50%;
+}
+
+header nav ul li{
+  display: inline;
+  padding-left: 16px;
+  font-size: 1.2rem;
+}
+
+header nav ul li select{
+  appearance: none;
+  background-image: url("./assets/down-caret.png");
+  border: none;
+  background-color: #070a1b;
+  color: white; 
+}
+
+.text-container, .image-container{
+  width: 50%;
+  margin: 0;
+}
+
+.text-container h1{
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 20% 0 0 0;
+  max-width: 80%;
+}
+
+.text-container h1 span{
+  color: #66eaa4;
+}
+
+.text-container p{
+  font-size: 1.2rem;
+  margin: 10% 0 0 0;
+  line-height: 150%;
+}
+
+.text-container button{
+  margin: 10% 0 0 0;
 }
 
 footer {
@@ -88,6 +150,12 @@ footer {
   background-color: #66eaa4;
   color: #141828;
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   font-weight: bold;
+  padding: 4px 16px;
+  margin: 0;
+}
+
+.btn-size-huge{
+  padding: 8px 32px;
 }
