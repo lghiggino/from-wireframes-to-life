@@ -78,6 +78,7 @@ span{
 /*******************************************/
 header{
   min-height: 40px;
+  z-index: 1;
 }
 
 header > nav > * {
@@ -116,6 +117,7 @@ header nav ul li select{
 .text-container, .image-container{
   width: 50%;
   margin: 0;
+  z-index: 1;
 }
 
 .text-container h1{
@@ -139,6 +141,10 @@ header nav ul li select{
   margin: 10% 0 0 0;
 }
 
+.image-container > img{
+  margin: 20% 0 0 0;
+  z-index: 1;
+}
 footer {
 
 }
@@ -158,4 +164,113 @@ footer {
 
 .btn-size-huge{
   padding: 8px 32px;
+}
+
+.is-hidden-desktop{
+  display: none;
+}
+
+.fa-bars{
+  font-size: 2rem;
+}
+
+
+/* LINES ANIMATIONS */
+
+ .lines{
+  position: absolute;
+  top: 0;
+  left: -200;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 100vw;
+  z-index: -2;
+} 
+.line{
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: none;
+  overflow: hidden;
+  rotate: 25deg;
+  z-index: -1;
+}
+.line::after{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  
+}
+.line:nth-child(1){
+  margin-left: -25%;
+  
+}
+.line::after{
+  animation-delay: 1s;
+  
+} 
+.line:nth-child(3){
+  margin-left: 25%;
+  
+}
+.line:nth-child(3)::after{
+  animation-delay: 1.5s;
+}
+
+.line:nth-child(5){
+  margin-left: 25%;
+  
+}
+.line:nth-child(5)::after{
+  animation-delay: 1.5s;
+}
+
+  
+@keyframes drop{
+  from{top: 110%;}
+  to{ top: -40%;}
+  }
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:798px){
+  .text-container, .image-container{
+    margin: 6% 0 0 0;
+  }
+}
+
+@media screen and (max-width:420px){
+  .text-container, .image-container{
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  .image-container img{
+    margin: 0;
+  }
+
+  .is-hidden-mobile{
+    display: none;
+  }
+
+  .is-hidden-desktop{
+    display: block;
+    text-align: center;
+  }
+
+  .btn-size-regular{
+
+  }
 }

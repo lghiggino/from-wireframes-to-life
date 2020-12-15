@@ -4,12 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Your description goes here">
 		<meta name="keywords" content="This template was created by Adrian Hanafi, and can be found at dribble.com. Here is my attempt to recreate it as pixel perfext as possible">
+		<meta name="viewport" content="width=device-width, initial-scale = ">
 		<title>Stock App Template</title>
 
-			<!-- external CSS link -->
-			<link rel="stylesheet" href="css/reset.css">
-			<script src="https://kit.fontawesome.com/33c90e5f6c.js" crossorigin="anonymous"></script>
-			<link rel="stylesheet" href="css/style.css">
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<script src="https://kit.fontawesome.com/33c90e5f6c.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<header class="clear clearfix">
@@ -18,21 +19,22 @@
 					<img src="" alt="Tradewell.">
 				</div>
 				<ul class= "float">
-					<li>Spend</li>
-					<li>Save</li>
-					<li>Invest</li>
-					<li>Planning</li>
-					<li><select name="res" id="select-res">
+					<li class="is-hidden-mobile">Spend</li>
+					<li class="is-hidden-mobile">Save</li>
+					<li class="is-hidden-mobile">Invest</li>
+					<li class="is-hidden-mobile">Planning</li>
+					<li class="is-hidden-mobile"><select name="res" id="select-res">
 						<option class="select-d" value="resources"> Resources </option>
 						<option class="select-d" value="tuesday"> tuesday </option>
 						<option class="select-d" value="wednesday"> wednesday </option>
 						<option class="select-d" value="thursday"> thursday</option>
 						<option class="select-d" value="friday"> friday</option>
 					</select></li>
+					<li class="is-hidden-desktop"><i class="fas fa-bars"></i></li>
 				</ul>
 				<div class= "float">
 					<ul>
-						<li>Login</li>
+						<li class="is-hidden-mobile">Login</li>
 						<li>
 							<button class="is-success btn-size-regular">Get Started</button>
 						</li>
@@ -41,7 +43,7 @@
 			</nav>
 		</header>
 
-		<section>
+		<section id="main" class="lines">
 			<section class="text-container float clear clearfix">
 				<h1>Designed to <span>earn</span> you more</h1>
 				<p>Helps you optimize and provide possibilities for your future banking, investing and planning needs.</p>
@@ -51,6 +53,12 @@
 			<section class="image-container float">
 				<img src="./assets/phone.png" alt="">
 			</section>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
 		</section>
 
 		<footer>
