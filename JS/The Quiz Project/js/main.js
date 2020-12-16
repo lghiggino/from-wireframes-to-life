@@ -16,7 +16,7 @@ function question1checker(){
         question1Result.innerText = "This is the correct answer"
         question2.classList.remove("hidden")
     } else {
-        question1Result.innerText = `
+        question1Result.innerHTML = `
         check this MDN article : ${question1MdnLink}`
         
     }
