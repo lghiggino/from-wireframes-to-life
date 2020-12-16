@@ -1,7 +1,7 @@
 //question1 consts
 const question1Submit = document.querySelector("#question1-submit");
 const question1Result = document.querySelector("#question1-result");
-const question1MdnLink = `<a href="http://www.mdn.org" target="blank">query selector</a>`
+const question1MdnLink = `<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="blank">query selector</a>`
 question1Submit.addEventListener("click", question1checker)
 
 //question2 consts...
