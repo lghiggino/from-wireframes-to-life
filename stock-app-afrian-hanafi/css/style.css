@@ -51,7 +51,7 @@ body {
 
 
 section > section{
-  padding: 2% 4%;
+  padding: 8% 10%;
 }
 
 
@@ -189,13 +189,13 @@ footer {
 } 
 .line{
   position: absolute;
-  width: 1px;
+  width: 2px;
   height: 100%;
   top: 0;
-  left: 50%;
+  left: 10%;
   background: none;
   overflow: hidden;
-  rotate: 25deg;
+  rotate: 65deg;
   z-index: -1;
 }
 .line::after{
@@ -214,26 +214,27 @@ footer {
 }
 .line:nth-child(1){
   margin-left: -25%;
-  
 }
 .line::after{
-  animation-delay: 1s;
-  
+  animation-delay: 1.75s;
 } 
 .line:nth-child(3){
-  margin-left: 25%;
-  
+  margin-left: 20%;
 }
 .line:nth-child(3)::after{
-  animation-delay: 1.5s;
+  animation-delay: 1.45s;
 }
-
 .line:nth-child(5){
-  margin-left: 25%;
-  
+  margin-left: 40%;
 }
 .line:nth-child(5)::after{
-  animation-delay: 1.5s;
+  animation-delay: 1.05s;
+}
+.line:nth-child(7){
+  margin-left: 60%;
+}
+.line:nth-child(7)::after{
+  animation-delay: 1.35s;
 }
 
   
@@ -247,8 +248,14 @@ footer {
 
 @media screen and (max-width:798px){
   .text-container, .image-container{
-    margin: 6% 0 0 0;
+    margin: 8% 0 0 0;
+    padding: 4% 0 0 10%;
   }
+
+  .line{
+    rotate: 35deg;
+  }
+ 
 }
 
 @media screen and (max-width:420px){
@@ -271,6 +278,10 @@ footer {
   }
 
   .btn-size-regular{
+    padding: 4px 4px 4px 4px;
+  }
 
+  .line{
+    rotate: 25deg;
   }
 }
