@@ -74,9 +74,9 @@ span{
 /******************************************
 /* LAYOUT
 /*******************************************/
-header nav > * , footer{
-  background-color: white;
+header, footer{
   min-height: 50px;
+  background-color: white;
   line-height: 50px;
 }
 
@@ -120,7 +120,7 @@ header nav ul li a{
 }
 
 .header-button button{
-  margin: 7% 0 0 0;
+  margin: 10% 0 0 0;
   padding: 5px 20px;
 }
 
