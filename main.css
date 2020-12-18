@@ -35,19 +35,21 @@ main{
     max-width: 325px;
     flex: 1;
     margin-bottom: 2rem;
-    border-radius: 0 0 5% 5%;
+    border-radius: 8px;
     box-shadow: 2px 2px 5px rgb(63, 63, 63);
 }
 
 .card a {
     text-decoration: none;
-    color: red;
+    color: royalblue;
+    text-align: center;
 }
 
 .card img {
     width: 325px;
     height: auto;
     margin-bottom: 1rem;
+    border-radius: 8px 8px 0 0;
 }
 
 .card span, .card p{
