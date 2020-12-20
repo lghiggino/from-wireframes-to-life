@@ -39,7 +39,6 @@ const reviews = [
 // select items
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
-const job = document.getElementById("job");
 const info = document.getElementById("info");
 
 const prevBtn = document.querySelector(".prev-btn");
@@ -54,7 +53,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const item = reviews[currentItem];
   img.src = item.img;
   author.textContent = item.name;
-  job.textContent = item.job;
   info.textContent = item.text;
 });
 
@@ -63,7 +61,6 @@ function showPerson(person) {
   const item = reviews[person];
   img.src = item.img;
   author.textContent = item.name;
-  job.textContent = item.job;
   info.textContent = item.text;
 }
 // show next person
