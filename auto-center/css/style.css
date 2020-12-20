@@ -23,18 +23,19 @@
 
 html{
   font-size: 62.5%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
   background-color: #457B9D;
   color: #1D3557;
+  line-height: 225%;
 }
 
 section#all{
   max-width: 1200px;
   margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 section > section, footer > section{
@@ -74,7 +75,7 @@ span{
 } */
 
 #hero{
-  min-height: 80vh;
+  min-height: 30vh;
   background-image: url("../assets/mechanic-man-repairing-car-layered.jpg");
   background-size: cover;
   
@@ -83,6 +84,7 @@ span{
 #hero > .text-container > h1{
   text-align: center;
   font-size: 6rem;
+  line-height: 125%;
   color: #1d3557;
   text-transform: uppercase;
   font-weight: bold;
@@ -94,11 +96,10 @@ span{
   flex-flow: row wrap;
   justify-content: space-around;
   text-align: center;
-  
 }
 
 #hero > .list-container > ul > li{
-  background: whitesmoke;
+  background: white;
   padding: 2% 4%;
   width: 200px;
   height: 200px;
@@ -115,27 +116,103 @@ span{
   font-weight: bold;
 }
 
+.text-container{
+  text-align: center;
+  line-height: 250%;
+}
+
+.text-container h2, #contato h2{
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 2% 0 2% 0;
+}
+
+.text-container p{
+  margin: 5% 0 0 0;
+}
+
+.text-container .cta{
+  padding: 1em 2em;
+  border-radius: 2em;
+  color: white;
+  background-color: #E63946;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.image-container{
+  margin: 2% 0 2% 0;
+}
+
+.image-container > ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; 
+  text-align: center;
+}
+
+.image-container > ul > li{
+  flex: 1;
+}
+
+.image-container > ul > li > h3, .image-container > ul > li > p{
+  padding: 1% 2%;
+}
+
+.image-container > ul > li > h3{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.image-container .servicos-img{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+
+#contato{
+  background: #1D3557;
+  color: white;
+}
+
+#contato .text-container, #contato .form-container{
+  float: left;
+  width: 50%;
+}
+
+#contato input[type="text"], #contato textarea{
+  width: 100%;
+  margin: 0 0 1.75% 0;
+}
+
+#contato textarea{}
+
 
 /******************************************
 /* ADDITIONAL STYLES -- IFRAME MAP
 /*******************************************/
 #contato iframe{
   width: 100%;
-  height: auto;
-  border: 1px solid red;
+  height: 300px;
+  border: 1px solid #E63946;
 }
 
 /******************************************
 /* ADDITIONAL STYLES -- NAVBAR
 /*******************************************/
 nav {
-  background: var(--clr-white);
+  background: white;
   box-shadow: var(--light-shadow);
 }
 .nav-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem;
 }
 .nav-toggle {
@@ -223,7 +300,7 @@ nav {
 /* ADDITIONAL STYLES -- DEPOIMENTOS
 /*******************************************/
 .review {
-  background: var(--clr-white);
+  background: white;
   padding: 1.5rem 2rem;
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
@@ -264,7 +341,7 @@ nav {
   border-radius: 50%;
   transform: translateY(25%);
   background: var(--clr-primary-5);
-  color: var(--clr-white);
+  color: white;
 }
 .img-container::before {
   content: "";
@@ -308,3 +385,8 @@ nav {
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
+@media screen and (max-width: 600px){
+  #contato .text-container, #contato .form-container{
+    width: 100%;
+  }
+}
