@@ -102,20 +102,26 @@ span{
   flex-flow: row wrap;
   justify-content: space-around;
   text-align: center;
+  
 }
 
 #hero > .list-container > ul > li{
-  background: white;
   padding: 2% 4%;
-  width: 200px;
+  width: 30%;
   height: 200px;
-  margin: 0 0 5% 0;
   border-radius: 2rem;
+  transition: background-color 0.8s ease;
+  background-color: #1d3557;
+  color: #f1faee;
+}
+
+#hero > .list-container > ul > li:hover{
+  background-color: #a8dadc;
 }
 
 #hero > .list-container > ul > li > .fas, #hero > .list-container > ul > li > .fab{
   font-size: 4rem;
-  margin: 10% 0 30% 0;
+  margin: 10% 0 20% 0;
 }
 
 #hero > .list-container > ul > li > h3{
