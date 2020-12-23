@@ -74,21 +74,25 @@ span{
   flex-flow: wrap;
 } */
 
+/****************************************
+parallax effects
+****************************************/
 #hero{
-  min-height: 30vh;
-  background-image: url("../assets/mechanic-man-repairing-car-layered.jpg");
+  min-height: 90vh;
+  background-image: url("../assets/mechanic-man-repairing-car.jpg");
   background-size: cover;
-  
+  background-attachment: fixed;
 }
 
 #hero > .text-container > h1{
   text-align: center;
   font-size: 6rem;
   line-height: 125%;
-  color: #1d3557;
+  color: #FFF;
+  text-shadow: 2px 2px #1D3557;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 5% 0 0 0;
+  margin: 20% 0 0 0;
 }
 
 #hero > .text-container > h2{
@@ -226,6 +230,10 @@ footer h4{
 nav {
   background: white;
   box-shadow: var(--light-shadow);
+  position:fixed;
+  top:0;
+  width: 100%;
+  max-width: 1200px;
 }
 .nav-header {
   display: flex;
@@ -409,7 +417,19 @@ nav {
   }
 }
 
-@media screen and (max-width: 405px){
+@media screen and (max-width: 435px){
+  #hero > .list-container > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    text-align: center;
+  }
+  #hero > .list-container > ul > li{  
+    width: 40%;
+    height: 150px;
+  }
+
   footer > .split-footer{
     width: 50%;
     margin: 2% 0 0 0;
