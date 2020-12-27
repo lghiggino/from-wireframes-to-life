@@ -56,7 +56,7 @@ parallax effects
 
 .bgimg-2 {
   background-image: url("../assets/img_parallax8.jpeg");
-  min-height: 30%;
+  min-height: 40%;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -195,8 +195,13 @@ a.button{
 /*******************************************/
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 900px) {
+@media screen and (max-width: 765px) {
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
     background-attachment: scroll;
   }
+}
+
+@media screen and (max-width: 670px) {
+  .column-2, .column-3{
+    width: 100%;
 }
