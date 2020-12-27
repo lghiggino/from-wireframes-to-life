@@ -195,7 +195,7 @@ a.button{
 /*******************************************/
 
 /* Turn off parallax scrolling for tablets and phones */
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 330px) {
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
     background-attachment: scroll;
   }
