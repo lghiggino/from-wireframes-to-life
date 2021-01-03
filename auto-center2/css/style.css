@@ -61,14 +61,14 @@ header{
   background-color: var(--color_5);
 }
 
-header nav ul{
+header nav ul, footer nav ul{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
 
-header nav ul li{
+header nav ul li, footer nav ul li{
   margin: 0 1rem 0 1rem;
   padding: 1rem 2rem;
 }
@@ -125,6 +125,7 @@ header nav ul li{
 
 .card-container .card{
   margin: 0 1rem 2rem 1rem;
+  min-width: 250px;
 }
 
 .card-container .card img{
@@ -207,23 +208,53 @@ header nav ul li{
   background: gray;
 }
 
-
-
-
-
-
-
-
-
-
-
 .parallax{
   background: url("../assets/tools.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height:40vh;
+  height:20vh;
 }
 
+#contato{
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 5rem;
+}
+
+.split{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.left iframe, .right .form-container{
+  min-width: 300px;
+  max-width: 100%;
+}
+
+.right .form-container{
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: left;
+  
+}
+
+.form-container label{
+  color: var(--color_2);
+}
+
+.form-container label,
+.form-container input,
+.form-container textarea{
+  margin-bottom: 1rem;
+}
+
+.form-container #button{
+  background:var(--color_5);
+  color: var(--color_2);
+  border: none;
+  padding: 0.5rem;
+}
 
 section > section{
   padding: 2% 4%;
@@ -273,6 +304,23 @@ p.subtitle{
   text-align-last: center;
 }
 
+
+
+footer{
+  background: var(--color_1)
+}
+
+
+
+
+
+/******************************************
+ADDITIONAL CLASSES
+******************************************/
+.mb-3{
+  margin-bottom: 3rem;
+}
+
 .hidden{
   display: none;
 }
@@ -280,3 +328,10 @@ p.subtitle{
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
+@media screen and (max-width: 645px){
+  .split{
+    display: flex;
+    flex-direction: column;
+
+  }
+}
