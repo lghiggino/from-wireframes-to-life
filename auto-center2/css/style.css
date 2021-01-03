@@ -21,58 +21,261 @@
 /* BASE STYLES
 /*******************************************/
 
+:root{
+  --color_1: #e63946;
+  --color_2: #f1faee;
+  --color_3: #a8dadc;
+  --color_4: #457b9d;
+  --color_5: #1d3557;
+  --font_0: normal normal normal 68px/1.4em dinneuzeitgroteskltw01-_812426,sans-serif;
+  --font_1: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_2: normal normal normal 34px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_3: normal normal normal 30px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_4: normal normal normal 30px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_5: normal normal normal 25px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_6: normal normal normal 19px/1.4em futura-lt-w01-light,sans-serif;
+  --font_7: normal normal normal 20px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_8: normal normal normal 17px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_9: normal normal normal 14px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --font_10: normal normal normal 12px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+  --wix-ads-height: 0px;
+  --wix-ads-top-height: 0px;
+  --site-width: 980px;
+  --above-all-z-index: 100000;
+  --minViewportSize: 320;
+  --maxViewportSize: 1920;
+}
+
 html{
   font-size: 62.5%;
   font-family: sans-serif;
 }
 
 body {
-  
-  background-color: 
-  color: white;
+  background-color: var(--color_4);
+
 }
 
+header{
+  width: 100%;
+  background-color: var(--color_5);
+}
+
+header nav ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul li{
+  margin: 0 1rem 0 1rem;
+  padding: 1rem 2rem;
+}
+
+.hero{
+  background: url("../assets/fusca.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height:90vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.hero .logo-container{
+  max-width: 200px;
+  height: auto;
+}
+
+.hero .logo-container img{
+  max-width: 100%;
+  height: auto;
+}
+.hero .social-icons-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.hero .social-icons-container li{
+  margin: 1rem;
+}
+
+.hero .social-icons-container li a{
+  font: var(--font_3);
+}
+
+.dark-bg{
+  background: var(--color_5);
+}
+
+.full-width{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.card-container .card{
+  margin: 0 1rem 2rem 1rem;
+}
+
+.card-container .card img{
+  max-width: 100px;
+  margin: 0 0 3rem 0;
+}
+
+#trabalho{
+  background: var(--color_2);
+  padding-bottom: 3rem;
+}
+
+#trabalho h2{
+  color: var(--color_5)
+}
+
+#trabalho p.subtitle{
+  color: var(--color_5)
+}
+
+.galeria{
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 4rem;
+}
+
+.galeria .single-project-card{
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  position: relative
+}
+
+.galeria .single-project-card h4{
+  margin: 2rem 0;
+}
+
+.galeria .single-project-card p{
+  margin: 1rem 0 2rem;
+}
+
+.galeria .single-project-card .full{
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%
+}
+ 
+.galeria .single-project-card .full i{
+  font-size: 2rem;
+  color: var(--color_2)
+}
+
+
+.galeria .single-project-card#c1{
+  background:pink;
+}
+
+.galeria .single-project-card#c2{
+  background: gray;
+}
+
+.galeria .single-project-card#c3{
+  background: orange;
+}
+
+.galeria .single-project-card#c4{
+  background: gray;
+}
+
+.galeria .single-project-card#c5{
+  background:pink;
+}
+
+.galeria .single-project-card#c6{
+  background: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+.parallax{
+  background: url("../assets/tools.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height:40vh;
+}
 
 
 section > section{
   padding: 2% 4%;
 }
 
-
-
 a{
+  font: var(--font_1);
   text-decoration: none;
+  color: var(--color_2);
 }
 
-
-
-h1,h2,h3,h4,h5,h6, span, p, a, button {
-  font-size: ;
+header nav ul li a.button{
+  background: var(--color_1);
+  padding: 0.6rem 2rem;
+  border-radius: 1rem;
 }
 
-
-
-span{
-  display: inline-block;
+h1{
+  font: var(--font_2);
+  color: var(--color_2);
+  text-align-last: center;
 }
 
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
+h2{
+  font: var(--font_3);
+  color: var(--color_2);
+  text-align-last: center;
 }
 
-footer {
-
+h3{
+  font: var(--font_8);
+  color: var(--color_2);
+  text-align-last: center;
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+h4{
+  font: var(--font_8);
+  color: var(--color_2);
+}
 
+p{
+  font: var(--font_9);
+  color: var(--color_2);
+}
 
+p.subtitle{
+  text-align-last: center;
+}
+
+.hidden{
+  display: none;
+}
 
 /******************************************
 /* MEDIA QUERIES
