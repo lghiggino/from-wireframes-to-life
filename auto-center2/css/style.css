@@ -38,12 +38,6 @@
   --font_8: normal normal normal 17px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
   --font_9: normal normal normal 14px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
   --font_10: normal normal normal 12px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
-  --wix-ads-height: 0px;
-  --wix-ads-top-height: 0px;
-  --site-width: 980px;
-  --above-all-z-index: 100000;
-  --minViewportSize: 320;
-  --maxViewportSize: 1920;
 }
 
 html{
@@ -77,7 +71,7 @@ header nav ul li, footer nav ul li{
   background: url("../assets/fusca.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height:90vh;
+  height:100vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -115,6 +109,16 @@ header nav ul li, footer nav ul li{
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.half-width-box{
+  width: 50%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.half-width-box p{
+  line-height: 1.75;
 }
 
 .card-container{
@@ -304,10 +308,24 @@ p.subtitle{
   text-align-last: center;
 }
 
-
-
 footer{
-  background: var(--color_1)
+  background: var(--color_1);
+  display: flex;
+  flex-flow: column wrap;
+}
+
+footer .footer-cards{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 2rem 0;
+  
+}
+
+footer .footer-cards li{
+  color: var(--color_5);
+  font: var(--font_9)
 }
 
 
@@ -325,13 +343,42 @@ ADDITIONAL CLASSES
   display: none;
 }
 
+i:hover, i:active{
+ scale: 1.075;
+ color: var(--color_3)
+}
+
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-@media screen and (max-width: 645px){
+@media screen and (max-width: 769px){
+  .half-width-box{
+    width: 80%;
+  }
+
   .split{
     display: flex;
     flex-direction: column;
+  }
+  .left iframe{
+    width: 100%;
+  }
 
+
+}
+
+@media screen and (max-width: 550px){
+  footer .footer-cards{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  footer .footer-cards .split-footer{
+    margin-bottom: 1rem;
   }
 }
+
+/* HOW TO MAKE A BURGER MENU WITH CSS FLEX?  */
