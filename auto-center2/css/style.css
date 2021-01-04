@@ -328,10 +328,6 @@ footer .footer-cards li{
   font: var(--font_9)
 }
 
-
-
-
-
 /******************************************
 ADDITIONAL CLASSES
 ******************************************/
@@ -352,6 +348,10 @@ i:hover, i:active{
 /* MEDIA QUERIES
 /*******************************************/
 @media screen and (max-width: 769px){
+  .is-hidden-tablet{
+    display: none;
+  }
+
   .half-width-box{
     width: 80%;
   }
@@ -363,11 +363,13 @@ i:hover, i:active{
   .left iframe{
     width: 100%;
   }
-
-
 }
 
 @media screen and (max-width: 550px){
+  .is-hidden-mobile{
+    display: none;
+  }
+
   footer .footer-cards{
     display: flex;
     flex-flow: column wrap;
