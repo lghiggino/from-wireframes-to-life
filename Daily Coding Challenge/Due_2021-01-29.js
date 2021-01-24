@@ -143,3 +143,19 @@ function duplicateCount(text){
 }
 
 
+//Find the smallest integer in the array
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args)
+  }
+}
+
+//Jaden Casing Strings
+//to figure out the this....
+String.prototype.toJadenCase = function (str) {
+  function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
+    return this.split(' ').map(capitalizeFirstLetter).join(' ');
+};
