@@ -39,7 +39,7 @@ button.addEventListener("click", () => {
     .then(res => res.json())
     .then(data => {
         container.innerHTML = ""
-        console.log(data)
+        //console.log(data)
 
         data.forEach(element => {
             //console.log(element.url, element.media_type, element.copyright, element.explanation)
@@ -60,7 +60,7 @@ button.addEventListener("click", () => {
             }
         })  
         const panels = Array.from(document.querySelectorAll(".panel"))
-        console.log(panels)
+        //console.log(panels)
         panels[panels.length-1].classList.add("active")
 
         panels.forEach(panel => {
@@ -83,7 +83,7 @@ button.addEventListener("click", () => {
 
 
 const panels = Array.from(document.querySelectorAll(".panel"))
-console.log(panels)
+//console.log(panels)
         panels[panels.length-1].classList.add("active")
 
         panels.forEach(panel => {
