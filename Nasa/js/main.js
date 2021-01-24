@@ -1,6 +1,3 @@
-
-
-
 //The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
 //https://api.nasa.gov/planetary/earth/imagery?lon=100.75&lat=1.5&date=2014-02-01&api_key=6euoRW5ywUTdFgn4d9mV98FpuE6g24PdhTwL5WuU
 
@@ -45,7 +42,7 @@ button.addEventListener("click", () => {
         console.log(data)
 
         data.forEach(element => {
-            console.log(element.url, element.media_type, element.copyright, element.explanation)
+            //console.log(element.url, element.media_type, element.copyright, element.explanation)
             if(element.media_type === "image"){
                 console.log(element.url);
                 const div = document.createElement("div");
@@ -84,4 +81,21 @@ button.addEventListener("click", () => {
     })
 })
 
+
+const panels = Array.from(document.querySelectorAll(".panel"))
+console.log(panels)
+        panels[panels.length-1].classList.add("active")
+
+        panels.forEach(panel => {
+            panel.addEventListener("click", () =>{
+                removeActiveClasses()
+                panel.classList.toggle("active")
+            })
+        })
+
+        function removeActiveClasses(){
+            panels.forEach(panel => {
+                panel.classList.remove("active")
+            })
+        }
 
