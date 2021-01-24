@@ -76,7 +76,7 @@ function likes(names) {
 }
 
 //best solution
-function likes(names) {
+function likesSwitch(names) {
   names = names || [];
   switch(names.length){
     case 0: return 'no one likes this'; break;
@@ -86,4 +86,60 @@ function likes(names) {
     default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
   }
 }
+
+//the one that is different
+function likesRegEx (names) {
+  var templates = [
+    'no one likes this',
+    '{name} likes this',
+    '{name} and {name} like this',
+    '{name}, {name} and {name} like this',
+    '{name}, {name} and {n} others like this'
+  ];
+  var idx = Math.min(names.length, 4);
+  
+  return templates[idx].replace(/{name}|{n}/g, function (val) {
+    return val === '{name}' ? names.shift() : names.length;
+  });
+}
+
+//Counting Duplicates
+
+//my solution
+function duplicateCount(text){
+  let lowerArray = text.toLowerCase().split("")
+  
+  const reducedLetters = lowerArray.reduce(function(obj, item){
+  if (!obj[item]) {
+        obj[item] = 0
+    } 
+      obj[item]++;
+      return obj;
+  }, {})
+  let sum = 0
+  for (value in reducedLetters){
+    console.log(reducedLetters[value])
+    if (reducedLetters[value] > 1){
+      sum++
+    }
+  }
+  return sum
+}
+
+//best solution
+function duplicateCount(text){
+  var lower = text.toLowerCase();
+  var count = 0;
+  var used = [];
+  
+  lower.split('').forEach(function(letter) {
+    if (!used.includes(letter) && (lower.split(letter).length - 1) > 1) {
+      count++;
+      used.push(letter);
+    }
+  });
+  
+  return count;
+}
+
 

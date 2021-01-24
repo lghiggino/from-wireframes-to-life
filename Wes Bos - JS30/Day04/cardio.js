@@ -92,3 +92,57 @@ const inventors = [
   }, {})
 
   console.log(transportation)
+
+  const text ="aabbcde"
+
+  let lowerArray = text.toLowerCase().split("")
+  //console.log(lowerArray)
+  
+  const reducedLetters = lowerArray.reduce(function(obj, item){
+  if (!obj[item]) {
+        obj[item] = 0
+    } 
+      obj[item]++;
+      return obj;
+  }, {})
+
+console.log(reducedLetters)
+
+let sum = 0
+for (value in reducedLetters){
+  console.log(reducedLetters[value])
+  if (reducedLetters[value] > 1){
+    sum++
+  }
+}
+
+console.log(sum)
+  
+
+//Counting Duplicates
+//https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/train/javascript
+
+const text ="aabbcde"
+
+  let lowerArray = text.toLowerCase().split("")
+  //console.log(lowerArray)
+  
+  const reducedLetters = lowerArray.reduce(function(obj, item){
+  if (!obj[item]) {
+        obj[item] = 0
+    } 
+      obj[item]++;
+      return obj;
+  }, {})
+
+console.log(reducedLetters)
+
+let sum = 0
+for (value in reducedLetters){
+  console.log(reducedLetters[value])
+  if (reducedLetters[value] > 1){
+    sum++
+  }
+}
+
+console.log(sum)
