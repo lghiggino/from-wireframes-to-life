@@ -29,8 +29,6 @@ button.addEventListener("click", () => {
     let finalMonth = fullMonth.toString();
     let finalDay = finalDate.getDate().toString();
 
-
-
     
     //FETCHING
     let APIAdress = `https://api.nasa.gov/planetary/apod?start_date=${finalYear}-${finalMonth}-${finalDay}&end_date=${startYear}-${startMonth}-${startDay}&api_key=6euoRW5ywUTdFgn4d9mV98FpuE6g24PdhTwL5WuU`
