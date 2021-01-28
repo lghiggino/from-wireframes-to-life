@@ -64,7 +64,13 @@ function ConstructorCircle(radius){
     Object.defineProperty(this, defaultLocation, {
        get: function(){
            return defaultLocation;
-       } 
+       },
+       set: function(value){
+           if (!value.x || !value.y){
+            throw new Error("invalid location")
+           }
+           defaultoLocation = value;
+       }
     })
 
     this.draw = function(){
@@ -111,7 +117,9 @@ if ("radius" in circleC){
     console.log("circleC radius is:", circleC.radius)
 }
 
-
+/*********
+STOPWATCH
+*********/
 
 function Stopwatch(){
     let startTime, endTime, running, duration = 0;
@@ -134,11 +142,12 @@ function Stopwatch(){
         const seconds = (endTime.getTime() - startTime.getTime()) /1000
 
         duration +=seconds;
+        console.log(duration)
     };
 
     this.reset = function(){
-        startTime = 0;
-        endTime = 0;
+        startTime = null;
+        endTime = null;
         running = false;
         duration = 0;
     };
@@ -149,3 +158,4 @@ function Stopwatch(){
 }
 
 let casius = new Stopwatch
+console.log("casius.start(), casius.stop(), casius.reset(), and casius.duration")
