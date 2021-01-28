@@ -150,6 +150,8 @@ class SmallestIntegerFinder {
   }
 }
 
+
+//25/jan/2021
 //Jaden Casing Strings
 //to figure out the this....
 String.prototype.toJadenCase = function (str) {
@@ -159,3 +161,12 @@ String.prototype.toJadenCase = function (str) {
   
     return this.split(' ').map(capitalizeFirstLetter).join(' ');
 };
+
+//26/jan/2021
+//Detect Pangram - https://www.codewars.com/kata/545cedaa9943f7fe7b000048/train/javascript - returns true or false
+function isPangram(string){
+  string = string.toLowerCase();
+  return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x){
+    return string.indexOf(x) !== -1;
+  });
+}
