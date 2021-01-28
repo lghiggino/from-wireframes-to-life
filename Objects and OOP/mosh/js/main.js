@@ -47,18 +47,36 @@ circleF.draw()
 //CONSTRUCTOR FUNCTION
 function ConstructorCircle(radius){
     this.radius = radius;
-    this.defaultLocation = {x : 1}
-    this.computeOptimumLocation = function() {
+    //abstracting defaultLocation
+    let defaultLocation = {x : 3, y : 3}
+    let computeOptimumLocation = function() {
         //do something
+        console.log(defaultLocation);
+        //yo dawg, I heard you liked abstraction so I put an abstraction inside your abstraction    
+        let x = 2
+        let y = 2
+        let doSomething = function(){
+            console.log(x,y)
+
+        }
     }
+    //getters and setters
+    Object.defineProperty(this, defaultLocation, {
+       get: function(){
+           return defaultLocation;
+       } 
+    })
+
     this.draw = function(){
-        this.computeOptimumLocation()
+        //this calls the private method and that function will call the private 
+        computeOptimumLocation()
         console.log("draw other circle")
     }
 }
 
-const circleC = new ConstructorCircle(1)
-circleC.draw()
+const circleC = new ConstructorCircle(1);
+circleC.draw();
+
 
 //prototypes
 //doesnt work on factories
@@ -93,3 +111,41 @@ if ("radius" in circleC){
     console.log("circleC radius is:", circleC.radius)
 }
 
+
+
+function Stopwatch(){
+    let startTime, endTime, running, duration = 0;
+
+    this.start = function(){
+        if (running) throw new Error("stopwatch is already running")
+        
+        running = true;
+
+        startTime = new Date()
+    };
+
+    this.stop = function(){
+        if(!running) throw new Error("stopwatch is not yet started")
+        
+        running = false;
+        
+        endTime = new Date()
+
+        const seconds = (endTime.getTime() - startTime.getTime()) /1000
+
+        duration +=seconds;
+    };
+
+    this.reset = function(){
+        startTime = 0;
+        endTime = 0;
+        running = false;
+        duration = 0;
+    };
+
+    Object.defineProperty(this, "duration", {
+        get: function() {return duration;}
+    });
+}
+
+let casius = new Stopwatch
