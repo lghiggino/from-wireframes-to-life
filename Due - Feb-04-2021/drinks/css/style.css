@@ -36,14 +36,14 @@ body {
   background-color: rgba(0,0,0,0.55)
 }
 
-.overlay p{
+.overlay p, .overlay ul{
   display: none;
   max-width: 80%;
   margin: 2rem auto;
   text-align: justify;
 }
 
-.overlay:hover p{
+.overlay:hover p, .overlay:hover ul{
   display: inline;
   color: #fff;
 }
@@ -85,7 +85,7 @@ button{
   border:none;
   padding: 0.5rem;
   cursor:pointer;
-  width:49.5%;
+  width:32.5%;
 }
 
 form{

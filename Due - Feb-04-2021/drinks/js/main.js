@@ -10,41 +10,54 @@ submit.addEventListener("click", (e) => {
     fetch(APIAdress)
         .then(res => res.json())
         .then(data => {
-            let allDrinks = data.drinks
+            let allDrinks = data.drinks;
+            if (!allDrinks){
+                throw new Error("there is no such drink in our database")
+            }
             imageContainer.innerHTML = ""
             allDrinks.forEach(drink => {
-                //console.log(drink)
-                const {strDrinkThumb, strInstructions} = drink
-                const singleDrink = document.createElement("div")
-                singleDrink.classList.add("single-image")
+                const {strDrinkThumb, strInstructions} = drink;
+                const singleDrink = document.createElement("div");
+                singleDrink.classList.add("single-image");
                 singleDrink.style.background = `url(${strDrinkThumb})`;
                 singleDrink.style.backgroundSize = "contain";
+
                 singleDrink.innerHTML = `
                 <div class="overlay">
-                    <p class="intructions">
+                    <ul>
+                        <li>${drink.strIngredient1}</li>
+                        <li>${drink.strIngredient2}</li>
+                        <li>${drink.strIngredient3}</li>
+                        <li>${drink.strIngredient4}</li>
+                        <li>${drink.strIngredient5}</li>
+                        <li>${drink.strIngredient6}</li>
+                    </ul>
+
+                    <p class="instructions">
                         ${strInstructions}
                     </p>
                 `
-                imageContainer.appendChild(singleDrink)
+                imageContainer.appendChild(singleDrink);
 
                 const leftBtn = document.getElementById("left");
-                const rightBtn = document.getElementById("right")
-                const images = document.querySelectorAll("#imgs .single-image")
-                let idx = 0
-                let running = true
+                const rightBtn = document.getElementById("right");
+                const stopBtn = document.getElementById("stop");
+                const images = document.querySelectorAll("#imgs .single-image");
+                let idx = 0;
+                let running = true;
 
-                let interval = setInterval(run, 2000)
+                let interval = setInterval(run, 2000);
 
                 function run(){
-                    idx++
-                    changeImage()
+                    idx++;
+                    changeImage();
                 }
 
                 function changeImage(){
                     if(idx > images.length-1){
                         idx = 0;
                     }else if(idx < 0){
-                        idx = images.length-1
+                        idx = images.length-1;
                     }
 
                     imageContainer.style.transform = `translateX(${-idx*500}px)`
@@ -56,31 +69,41 @@ submit.addEventListener("click", (e) => {
                 }
 
                 rightBtn.addEventListener("click", () => {
-                    idx++
-                    changeImage()
-                    resetInterval()
+                    if(running){
+                        idx++;
+                        changeImage();
+                        resetInterval();
+                    }else {
+                        idx++;
+                        changeImage();
+                    }
                 })
 
                 leftBtn.addEventListener("click", () => {
-                    idx--
-                    changeImage()
-                    resetInterval()
+                    if(running){
+                        idx--;
+                        changeImage();
+                        resetInterval();
+                    }else {
+                        idx--;
+                        changeImage();
+                    }
+                    
                 })
 
-                images.forEach(image => {
-                    image.addEventListener("click", () => {
-                        console.log(idx);
-                        if (running) {
-                            clearInterval(interval);
-                            running = false;
-                            //transformar os textos em visible, e o overlay escuro no click event
-                        } else {
-                            resetInterval();
-                            running = true;
-                        }
+                stopBtn.addEventListener("click", () => {
+                    if(running){
+                        clearInterval(interval);
+                        running = false;
+                        stopBtn.innerText = "Restart";
+                    }else{
+                        running = true;
+                        resetInterval()
+                        stopBtn.innerText = "Stop";
+                    }
                     
-                    })
                 })
+
             })
         })
         .catch(err => console.log(err))
