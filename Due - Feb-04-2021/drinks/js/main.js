@@ -16,7 +16,8 @@ submit.addEventListener("click", (e) => {
             }
             imageContainer.innerHTML = ""
             allDrinks.forEach(drink => {
-                const {strDrinkThumb, strInstructions} = drink;
+                console.log(drink)
+                const {strDrink, strDrinkThumb, strInstructions} = drink;
                 const singleDrink = document.createElement("div");
                 singleDrink.classList.add("single-image");
                 singleDrink.style.background = `url(${strDrinkThumb})`;
@@ -24,6 +25,9 @@ submit.addEventListener("click", (e) => {
 
                 singleDrink.innerHTML = `
                 <div class="overlay">
+                    <h2>
+                        ${strDrink}
+                    </h2>
                     <ul>
                         <li>${drink.strIngredient1}</li>
                         <li>${drink.strIngredient2}</li>

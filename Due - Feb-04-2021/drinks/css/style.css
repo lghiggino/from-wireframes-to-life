@@ -36,14 +36,18 @@ body {
   background-color: rgba(0,0,0,0.55)
 }
 
-.overlay p, .overlay ul{
+.overlay h2, .overlay p, .overlay ul{
   display: none;
   max-width: 80%;
   margin: 2rem auto;
   text-align: justify;
 }
 
-.overlay:hover p, .overlay:hover ul{
+.overlay h2{
+  font-size: 1.25rem;
+}
+
+.overlay:hover h2,.overlay:hover p, .overlay:hover ul{
   display: inline;
   color: #fff;
 }
