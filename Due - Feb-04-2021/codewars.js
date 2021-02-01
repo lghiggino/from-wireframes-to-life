@@ -87,7 +87,7 @@ function findOutlier(integers){
       odd.push(number)
     }
   })
-  return even.length > 1 ? odd[0] : even[0]
+  return odd.length === 1 ? odd[0] : even[0]
 }
 
 //best solution
@@ -97,3 +97,63 @@ function findOutlier(int){
   return even.length==1? even[0] : odd[0];
 }
 //aha! Parabens pra mim!
+
+//Jan-31-2021
+//Moving Zeros To The End - Couldnt do it
+
+//best solution
+var moveZeros = function (arr) {
+  var filtedList = arr.filter(function (num){return num !== 0;});
+  var zeroList = arr.filter(function (num){return num === 0;});
+  return filtedList.concat(zeroList);
+}
+
+//Jan-31-2021
+//Even or Odd
+function even_or_odd(number) {
+  return number % 2 === 0 ? "Even" : "Odd"
+ }
+
+ //Jan-31-2021
+ //disenvowell trolls
+ function disemvowel(str) {
+  let filterArray = ["a", "e", "i", "o", "u","A", "E", "I", "O", "U"]
+  let answer = []
+  str.split("").filter(letter => {
+    if (!filterArray.includes(letter)){
+      answer.push(letter)
+    }
+  })
+  console.log(answer.join(""))
+}s
+
+//best solution
+function disemvowelBest(str) {
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  
+  return str.split('').filter(function(el) {
+    return vowels.indexOf(el.toLowerCase()) == -1;
+  }).join('');
+}
+
+function disenvowelRe(str){
+  let vowels = ["a", "e", "i", "o", "u"]
+  return str.split("").filter(el => {
+    return vowels.indexOf(el.toLowerCase()) == -1;
+  }).join("")
+}
+
+//Jan-31-2021
+//You're a square!
+var isSquare = function(num){
+  if (num < 0){
+    return false
+  }else {
+    if (Math.sqrt(num) - Math.floor(Math.sqrt(num)) === 0){
+      return true
+    }else return false
+  }
+}
+
+//best practices
+const isSquare = n => Number.isInteger(Math.sqrt(n)); //couldnt remember the type test, but wanted to do that - method was on my anki
