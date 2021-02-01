@@ -1,4 +1,5 @@
 const main = document.querySelector("#main")
+const input = document.querySelector("input")
 const searchButton = document.querySelector("button")
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 searchButton.addEventListener("click", () => {
-    const input = document.querySelector("input")
     const urlSearch = 'https://api.currentsapi.services/v1/search?' + `keywords=${input.value}&language=en&` + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
     fetch(urlSearch)
     .then(res => res.json())
@@ -24,8 +24,13 @@ searchButton.addEventListener("click", () => {
     .catch(err => console.log(err))
 })
 
+input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        searchButton.click();
+    }
+})
 
-//separeta functions dont refresh on search, but it works with arrow functions on the eventListener
+//separate functions dont refresh on search, but it works with arrow functions on the eventListener
 // function fetchBase(){
 //     const urlBase = 'https://api.currentsapi.services/v1/latest-news?' + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
 //     fetch(urlBase)
@@ -55,7 +60,7 @@ function renderData(data){
     data.news.forEach(element => {
         main.innerHTML += `
         <article class="thumb">
-            <a href="${element.url}" class="image" target="blank"><img src="${element.image}" alt="" />
+            <a href="${element.url}" class="image" target="blank"><img src="${element.image}" alt="${element.title}"/>
             <div class="overlay">
                 <h2>${element.title}</h2>
                 <h4>by ${element.author} </h4>
