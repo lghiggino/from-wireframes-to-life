@@ -1,11 +1,8 @@
-// const Http = new XMLHttpRequest();
-const urlBase = 'https://api.currentsapi.services/v1/latest-news?' + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
-const urlSearch = 'https://api.currentsapi.services/v1/search?' + 'keywords=weather&language=en&' + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
 const main = document.querySelector("#main")
+const searchButton = document.querySelector("button")
 
-document.addEventListener("DOMContentLoaded", fetchBase())
-
-function fetchBase(){
+document.addEventListener("DOMContentLoaded", () => {
+    const urlBase = 'https://api.currentsapi.services/v1/latest-news?' + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
     fetch(urlBase)
         .then(res => res.json())
         .then(data =>  {
@@ -13,29 +10,64 @@ function fetchBase(){
             renderData(data)
         })
         .catch(err => console.log(err))
-}
+})
+
+searchButton.addEventListener("click", () => {
+    const input = document.querySelector("input")
+    const urlSearch = 'https://api.currentsapi.services/v1/search?' + `keywords=${input.value}&language=en&` + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
+    fetch(urlSearch)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        renderData(data)
+    })
+    .catch(err => console.log(err))
+})
+
+
+//separeta functions dont refresh on search, but it works with arrow functions on the eventListener
+// function fetchBase(){
+//     const urlBase = 'https://api.currentsapi.services/v1/latest-news?' + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
+//     fetch(urlBase)
+//         .then(res => res.json())
+//         .then(data =>  {
+//             //console.log(data)
+//             renderData(data)
+//         })
+//         .catch(err => console.log(err))
+// }
+
+// function fetchClientRequest(){
+//     const input = document.querySelector("input")
+//     const urlSearch = 'https://api.currentsapi.services/v1/search?' + `keywords=${input.value}&language=en&` + 'apiKey=HFTqO4_tupRBRGcghvzlQ4Vig_5GDFryi6cdgEYJpZ4-H0NZ';
+//     fetch(urlSearch)
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//         renderData(data)
+//     })
+//     .catch(err => console.log(err))
+// }
 
 function renderData(data){
-    console.log(data.news)
+    //console.log(data.news)
     main.innerHTML = ""
     data.news.forEach(element => {
         main.innerHTML += `
         <article class="thumb">
-            <a href="${element.url}" class="image" target="blank"><img src="${element.image}" alt="" /></a>
+            <a href="${element.url}" class="image" target="blank"><img src="${element.image}" alt="" />
             <div class="overlay">
                 <h2>${element.title}</h2>
                 <h4>by ${element.author} </h4>
                 <p>${element.description}</p>
             </div>
+            </a>
         </article>
         `
     })
 }
 
-// fetch(url2)
-//     .then(res => res.json())
-//     .then(data =>  console.log(data))
-//     .catch(err => console.log(err))
+
 
 
 
@@ -56,7 +88,8 @@ function renderData(data){
  */
 
  //OLD METHOD
- // Http.open("GET", url);
+// const Http = new XMLHttpRequest();
+// Http.open("GET", url);
 // Http.send("json");
 
 // Http.onreadystatechange = (e) => {
