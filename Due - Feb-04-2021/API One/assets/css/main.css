@@ -1550,7 +1550,7 @@ input, select, textarea {
 							background-color: #242629;
 						}
 
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 1920px) {
 
 		body {
 			padding: 4em 0 0 0;
@@ -1582,8 +1582,26 @@ input, select, textarea {
 				font-size: 0.9em;
 				padding: 0 1.15em;
 			}
-
 	}
+
+	@media screen and (max-width: 1058px) {
+		#header li.hidden-mobile{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 582px) {
+		#header h1{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 582px) {
+		#header h1{
+			display: none;
+		}
+	}
+
 
 /* Main */
 
@@ -1644,7 +1662,27 @@ input, select, textarea {
 				width: 100%;
 			}
 
-			#main .thumb > h2 {
+			#main .thumb .overlay{
+				background-color: rgba(0,0,0,0.4);
+				position: absolute;
+				bottom: 4.875em;
+				width: 80%;
+				height: 40%;
+				border-radius: 5px
+			}
+
+			#main .thumb  h2 {
+				pointer-events: none;
+				bottom: 4.875em;
+				font-size: 1em;
+				font-weight: bold;
+				left: 2.1875em;
+				margin: 0;
+				position: absolute;
+				z-index: 1;
+			}
+
+			#main .thumb  h4 {
 				pointer-events: none;
 				bottom: 1.875em;
 				font-size: 0.8em;
@@ -1654,7 +1692,7 @@ input, select, textarea {
 				z-index: 1;
 			}
 
-			#main .thumb > p {
+			#main .thumb  p {
 				display: none;
 			}
 
