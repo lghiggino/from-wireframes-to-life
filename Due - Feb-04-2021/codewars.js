@@ -125,7 +125,7 @@ function even_or_odd(number) {
     }
   })
   console.log(answer.join(""))
-}s
+}
 
 //best solution
 function disemvowelBest(str) {
@@ -156,4 +156,122 @@ var isSquare = function(num){
 }
 
 //best practices
-const isSquare = n => Number.isInteger(Math.sqrt(n)); //couldnt remember the type test, but wanted to do that - method was on my anki
+const isSquareBest = n => Number.isInteger(Math.sqrt(n)); //couldnt remember the type test, but wanted to do that - method was on my anki
+
+//Feb-01-2021
+//Shortest Word
+function findShort(string){
+  let smallest = string.split(" ")[0]
+  string.split(" ").forEach(word => {
+    if (word.length < smallest.length){
+      smallest = word
+    }
+  })
+  return smallest.length
+}
+
+//best practice
+function findShort(s){
+  return Math.min(...s.split(" ").map (s => s.length));
+}
+
+
+//Feb-01-2021
+//Descending Order
+function descendingOrder(num){
+  return Number(num.toString().split("").sort( (a,b) => {return a < b}).join(""))
+}
+
+//Feb-01-2021
+//Exes and Ohs
+function XO(str) {
+  let x = 0
+  let o = 0
+  str.toLowerCase().split("").forEach(letter => {
+    if(letter === "x"){x++}
+    else if (letter === "o"){o++}
+  })
+  if (x === o) {return true}
+  else return false
+}
+
+//best practice without regex
+const XOBest = str => {
+  str = str.toLowerCase().split('');
+  return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+}
+
+
+//Feb-01-2021
+//Complementary DNA
+function DNAStrand(dna){
+  let dnaMap = {"A":"T", "C":"G", "T":"A", "G":"C"}
+  let complimentary  = ""
+  dna.split("").forEach(letter => {
+    complimentary += dnaMap[letter]
+  })
+  return complimentary
+}
+
+//best practice 
+var pairs = {'A':'T','T':'A','C':'G','G':'C'};
+
+function DNAStrand(dna){
+  return dna.split('').map(function(v){ return pairs[v] }).join('');
+}
+
+//Feb-01-2021
+/*Problem from http://rosalind.info/problems/dna/
+
+A string is simply an ordered collection of symbols selected from some alphabet and formed into a word; the length of a string is the number of symbols that it contains.
+An example of a length 21 DNA string (whose alphabet contains the symbols 'A', 'C', 'G', and 'T') is "ATGCTTCAGAAAGGTCTTACG."
+Given: A DNA string s
+of length at most 1000 nt.
+Return: Four integers (separated by spaces) counting the respective number of times that the symbols 'A', 'C', 'G', and 'T' occur in s
+.
+Sample Dataset
+AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
+
+Sample Output - will change to return an object with the letter and the count - wes bos array cardio style
+20 12 17 21
+*/
+function dnaBasesCount(string){
+  let reducedBases = string.split("").reduce((obj, item) => {
+    if(!obj[item]){
+      obj[item] =0
+    }
+      obj[item]++
+      return obj
+  }, {})
+  console.log(reducedBases)
+}
+
+dnaBasesCount("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+
+
+//Feb-01-2021
+//Take a Ten Minute Walk
+function isValidWalk(walk) {
+  if (walk.length !== 10){
+    return false
+  }else{
+    let reduced = walk.reduce((obj, item) => {
+    if (!obj[item]){
+      obj[item] = 0
+      }
+        obj[item]++
+        return obj
+    }, {})
+    if (reduced.n === reduced.s  && reduced.e === reduced.w){
+      return true
+    } else return false
+  }
+}
+
+//best practice - but it loops the array 4 times (only if it has 10 elements)
+function isValidWalk(walk) {
+  function count(val) {
+    return walk.filter(function(a){return a==val;}).length;
+  }
+  return walk.length==10 && count('n')==count('s') && count('w')==count('e');
+}
