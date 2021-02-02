@@ -58,6 +58,10 @@ function renderData(data){
     //console.log(data.news)
     main.innerHTML = ""
     data.news.forEach(element => {
+        if (element.image === "None"){
+            let random = Math.floor(Math.random()*9)
+            element.image = `../images/fulls/0${random}.jpg`
+        }
         main.innerHTML += `
         <article class="thumb">
             <a href="${element.url}" class="image" target="blank"><img src="${element.image}" alt="${element.title}"/>
