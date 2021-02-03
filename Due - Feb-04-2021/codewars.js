@@ -1,4 +1,4 @@
-//Jan-30-2021
+//Jan-30-2021 - 1
 //Count of positives / sum of negatives
 
 function countPositivesSumNegatives(input) {
@@ -19,7 +19,7 @@ function countPositivesSumNegatives(input) {
     return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
 }
 
-//Jan-30-2021
+//Jan-30-2021 - 2
 //Get the Middle Character
 function getMiddle(string){
   if (string.length === 1){
@@ -40,13 +40,13 @@ function getMiddle(s)
   return s.slice((s.length-1)/2, s.length/2+1);
 }
 
-//Jan-31-2021
+//Jan-31-2021 -3
 //The highest profit wins!
 function minMax(arr){
   return [Math.min(...arr), Math.max(...arr)]; 
 }
 
-//Jan-31-2021
+//Jan-31-2021 - 4
 //Stop gninnipS My sdroW!
 function spinWords(string){
   let answerArray = [];
@@ -76,7 +76,7 @@ function spinWordsRe(string){
 
 
 //Jan-31-2021
-//Find The Parity Outlier
+//Find The Parity Outlier - 5
 function findOutlier(integers){
   let odd = []
   let even = []
@@ -109,13 +109,13 @@ var moveZeros = function (arr) {
 }
 
 //Jan-31-2021
-//Even or Odd
+//Even or Odd - 6
 function even_or_odd(number) {
   return number % 2 === 0 ? "Even" : "Odd"
  }
 
  //Jan-31-2021
- //disenvowell trolls
+ //disenvowell trolls - 7
  function disemvowel(str) {
   let filterArray = ["a", "e", "i", "o", "u","A", "E", "I", "O", "U"]
   let answer = []
@@ -143,7 +143,7 @@ function disenvowelRe(str){
   }).join("")
 }
 
-//Jan-31-2021
+//Jan-31-2021 - 8
 //You're a square!
 var isSquare = function(num){
   if (num < 0){
@@ -158,7 +158,7 @@ var isSquare = function(num){
 //best practices
 const isSquareBest = n => Number.isInteger(Math.sqrt(n)); //couldnt remember the type test, but wanted to do that - method was on my anki
 
-//Feb-01-2021
+//Feb-01-2021 - 9
 //Shortest Word
 function findShort(string){
   let smallest = string.split(" ")[0]
@@ -176,13 +176,13 @@ function findShort(s){
 }
 
 
-//Feb-01-2021
+//Feb-01-2021 - 10
 //Descending Order
 function descendingOrder(num){
   return Number(num.toString().split("").sort( (a,b) => {return a < b}).join(""))
 }
 
-//Feb-01-2021
+//Feb-01-2021 - 11
 //Exes and Ohs
 function XO(str) {
   let x = 0
@@ -202,7 +202,7 @@ const XOBest = str => {
 }
 
 
-//Feb-01-2021
+//Feb-01-2021 -12
 //Complementary DNA
 function DNAStrand(dna){
   let dnaMap = {"A":"T", "C":"G", "T":"A", "G":"C"}
@@ -220,7 +220,7 @@ function DNAStrand(dna){
   return dna.split('').map(function(v){ return pairs[v] }).join('');
 }
 
-//Feb-01-2021
+//Feb-01-2021 -13
 /*Problem from http://rosalind.info/problems/dna/
 
 A string is simply an ordered collection of symbols selected from some alphabet and formed into a word; the length of a string is the number of symbols that it contains.
@@ -249,7 +249,7 @@ function dnaBasesCount(string){
 dnaBasesCount("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
 
 
-//Feb-01-2021
+//Feb-01-2021 - 14
 //Take a Ten Minute Walk
 function isValidWalk(walk) {
   if (walk.length !== 10){
@@ -276,7 +276,7 @@ function isValidWalk(walk) {
   return walk.length==10 && count('n')==count('s') && count('w')==count('e');
 }
 
-//Feb-02-2021
+//Feb-02-2021 - 15
 //Replace With Alphabet Position
 function alphabetPosition(text){
 
@@ -309,7 +309,7 @@ function alphabetPositionBest(text) {
     .join(' ');
 }
 
-//Feb-02-2021
+//Feb-02-2021 - 16
 //Your order, please
 function order(words){
   if (!words){return ""}
@@ -337,7 +337,7 @@ function orderBest(words){
 }    
 
 
-//Feb-02-2021
+//Feb-02-2021 - 17
 //Beginner Series #3 Sum of Numbers
 function getSum( a,b ){
   if (a === b){return a}
@@ -356,3 +356,48 @@ const GetSumBest = (a, b) => {
       max = Math.max(a, b);
   return (max - min + 1) * (min + max) / 2;
 }
+
+//Feb-03-2021 - 18
+//Square Every Digit
+function squareDigits(num){
+  return Number(num.toString().split("").map(el => el**2).join(""))
+}
+
+//Feb-03-2021 - 19
+//Sum of two lowest positive integers
+function sumTwoSmallestNumbers(numbers) {  
+  numbers = numbers.sort( (a,b) => a-b)
+  return numbers[0] + numbers[1]
+}
+
+//Feb-03-2021 - 20
+//Multiplicative Persistence... What's special about 277777788888899?
+function per(n) {
+  let res = []
+  while(n.toString().length > 1) {
+    n = n.toString().split('').reduce(
+      (p,c) => p * c
+    )
+    res.push(n)
+  }
+  return res
+}
+
+//Feb-03-2021 - 21
+//Persistent Bugger.
+function persistence(n) {
+  let res = 0
+  while(n.toString().length >1){
+     n = n.toString().split("").reduce(
+       (p,c) => p * c
+     )
+    res++
+  }
+ return res
+}
+
+//Feb-03-2021 - 22
+//
+
+//Feb-03-2021 - 23
+//
