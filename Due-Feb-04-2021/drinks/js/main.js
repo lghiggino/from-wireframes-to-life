@@ -21,6 +21,7 @@ submit.addEventListener("click", (e) => {
                 const singleDrink = document.createElement("div");
                 singleDrink.classList.add("single-image");
                 singleDrink.style.background = `url(${strDrinkThumb})`;
+                //fazer isso no CSS
                 singleDrink.style.backgroundSize = "contain";
 
                 singleDrink.innerHTML = `
