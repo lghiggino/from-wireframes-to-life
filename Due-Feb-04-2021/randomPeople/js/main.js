@@ -1,4 +1,5 @@
-const url = `https://randomuser.me/api/?exc=nat&origin=*`;
+const url = `https://randomuser.me/api/`;
+//?exc=nat&origin=*
 
 function makeUserCard(data) {
   /* destructured variables
