@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+  	<meta name="description" content="Convert temperatures">
+  	<meta name="keywords" content="one, two, three">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Temperature converter - F to C, and C to F</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<script src="https://kit.fontawesome.com/33c90e5f6c.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section class="floated clear clearfix">
+			<h1> farenheit to celsius</h1>
+			<section>
+				<section class="inputs">
+					<form action="" class="temperatures" id="farenheitForm">
+						<label for="farenheit">Fahrenheit:</label>
+						<input type="text" id="farenheit" name="farenheit" placeholder="type a number here">
+						<button id="convertFtoC" class="convertButton">Convert <i class="fas fa-sync"></i></button>
+					</form> 	
+				</section>
+			</section>
+			
+			<section id="displays">
+				<section >
+					<p> Result: <span id="convert-to-celsius-result"></span><sup>O</sup>C</p>
+					<div class="outer-container">
+						<div id="positive-celsius-fill"></div>
+						<div class="zero-line"></div>
+						<div id="negative-celsius-fill"></div>
+					</div>
+				</section>
+			</section>
+		</section>
+
+		<section class="floated">
+				<h1>celsius to fahrenheit</h1>
+				<section>
+					<section class="inputs">
+						<form action="" class="temperatures" id="celsiusForm">
+							<label for="farenheit">Celsius:</label>
+							<input type="text" id="celsius" name="celsius" placeholder="type a number here">
+							<button id="convertCtoF" class="convertButton">Convert <i class="fas fa-sync"></i></button>
+						</form> 	
+					</section>
+				</section>
+				
+				<section id="displays">
+					<section >
+						<p> Result: <span id="convert-to-farenheit-result"></span><sup>O</sup>F</p>
+						<div class="outer-container">
+							<div id="positive-farenheit-fill"></div>
+							<div class="zero-line"></div>
+							<div id="negative-farenheit-fill"></div>
+						</div>
+					</section>
+				</section>
+			</section>
+		</section>
+		
+
+		<script type="text/javascript" src="js/converter.js"></script>
+	</body>
+</html>
