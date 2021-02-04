@@ -2,65 +2,51 @@ const main = document.querySelector("main")
 
 let drinksAPI = 'https://api.punkapi.com/v2/beers?'
 
-fetch(drinksAPI)
-    .then(res => res.json())
-    .then(data => {
-      renderData(data)
-    })
-    .catch(err => {
-        console.log(`error ${err}`)
-    });
+async function getDrinkData(){
+  let drinksAPI = 'https://api.punkapi.com/v2/beers?'
+  const response = await fetch(drinksAPI)
+  const data = await response.json()
+  //console.log(data)
+  renderAllDrinks(data)
+} 
 
-function renderData(data){
-  main.innerHTML = "";
-  data.forEach(brew => {
-    //console.log(brew)
-    console.log(brew.food_pairing[0], brew.food_pairing[1], brew.food_pairing[2])
-    fetchFoods(brew.food_pairing[0], brew.food_pairing[1], brew.food_pairing[2])
-    main.innerHTML += `
-    <section class="single-brew" id="b${brew.id}">
-      <img src="${brew.image_url}" alt="${brew.tagline}">
-      <h2 class="name">${brew.name}</h2>
-      <p class="description">${brew.description}.</p>
-      <p class="abv">${brew.abv}% ABV</p>
-      <ul class="pairings">
-        <li><h4>Food Pairings:</h4></li>
-        <li class="dish"><a href="">${brew.food_pairing[0]}</a></li>
-        <li class="dish"><a href="">${brew.food_pairing[1]}</a></li>
-        <li class="dish"><a href="">${brew.food_pairing[2]}</a></li>
-      </ul>
-    </section>
-    `
+function renderAllDrinks(data){
+    //console.log(data)
+    data.forEach(drink => {
+      // console.log(drink)
+      const {abv, 
+             id,
+             description, 
+             image_url, 
+             food_pairing,
+             tagline,
+             name,} = drink
+      // console.log(food_pairing[0])
+      fetchFoodPairing(food_pairing[0])
+    
+  
+        main.insertAdjacentHTML("afterbegin", `
+        <section class="single-brew" id="b${id}">
+          <img src="${image_url}" alt="${tagline}">
+          <h2 class="name">${name}</h2>
+          <p class="description">${description}.</p>
+          <p class="abv">${abv}% ABV</p>
+          <ul class="pairings">
+            <li><h4>Food Pairings:</h4></li>
+            <li class="dish"><a href="${fetchFoodPairing(food_pairing[0])}" target="blank">${food_pairing[0]}</a></li>
+          </ul>
+      </section>
+        `)
   })
 }
 
-function fetchFoods(food1, food2, food3){
-  fetch(`https://api.edamam.com/search?q=${food1}&app_id=ef2a1231&app_key=b5a595d2db9574be00b6f9d446c03184`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.hits[0].recipe)
-    })
-    .catch(err => console.log(err))
-  fetch(`https://api.edamam.com/search?q=${food2}&app_id=ef2a1231&app_key=b5a595d2db9574be00b6f9d446c03184`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.hits[0].recipe)
-    })
-    .catch(err => console.log(err))
-  fetch(`https://api.edamam.com/search?q=${food3}&app_id=ef2a1231&app_key=b5a595d2db9574be00b6f9d446c03184`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.hits[0].recipe)
-    })
-    .catch(err => console.log(err))
+async function fetchFoodPairing(foodName){
+  let foodAPI = `https://api.edamam.com/search?q="${foodName}"&app_id=ef2a1231&app_key=b5a595d2db9574be00b6f9d446c03184`
+  const response = await fetch(foodAPI)
+  const data = await response.json()
+  console.log(data.hits[0].recipe.shareAs)
+  let foodLink = data.hits[0].recipe.shareAs
+  return foodLink
 }
 
-
-
-//EDAMAN BASIC FETCH
-// fetch(`https://api.edamam.com/search?q=chicken&app_id=ef2a1231&app_key=b5a595d2db9574be00b6f9d446c03184`)
-//   .then(res => res.json())
-//   .then(data => {
-//     console.log(data.hits)
-//   })
-//   .catch(err => console.log(err))
+getDrinkData()
