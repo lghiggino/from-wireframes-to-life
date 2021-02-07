@@ -575,7 +575,67 @@ function removeSmallest(numbers) {
 //Remove the minimum best
 const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
 //Feb-06-2021 - 35
-//
+//Two to One
+function longest(s1, s2) {
+  let fullStr = s1+s2
+  let outputArr = []
+  fullStr = fullStr.split("").forEach(el => {
+     if(outputArr.indexOf(el) == -1){
+        outputArr.push(el)
+     }
+  })
+ 
+  outputArr.sort((a,b)=>{
+    if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+  })
+  return outputArr.join("")
+}
+
+//best
+function longestBest(s1, s2) {
+  return Array.from(new Set(s1 + s2)).sort().join('');
+}
 
 //Feb-06-2021 - 36
+//Find the unique number
+function findUnique(numbers) {
+  for (el of numbers) {
+    if (numbers.lastIndexOf(el) === numbers.indexOf(el)){
+      return el
+    }
+  }
+}
+
+//Feb-07-2021 - 37
 //
+
+//Feb-07-2021 - 38
+//
+
+//Feb-07-2021 - 39
+//
+
+//Feb-07-2021 - 40
+//
+
+//Feb-07-2021 - 41
+//
+
+//Feb-07-2021 - 42
+//
+
+//Feb-07-2021 - 43
+//
+
+//Feb-07-2021 - 44
+//
+
+//Feb-07-2021 - 45
+//
+
