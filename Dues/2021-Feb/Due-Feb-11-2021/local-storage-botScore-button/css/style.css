@@ -1,0 +1,64 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+form{
+  max-width: 80%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+form > label, form > input, form > button{
+  margin: 0 2rem;
+}
+
+form > input, form > button{
+  height: 2rem;
+}
+
+#book-shelf{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-card{
+  border: 1px solid rgba(0,0,0,0.8);
+  box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  width: 200px;
+  height: 100px;
+  margin: 1rem;
+}
+
+.book-title{
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.delete{
+  display:block;
+  margin: 1rem auto;
+}
