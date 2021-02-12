@@ -65,6 +65,51 @@
 //     // }, THIS SYNTAX ALSO WORKS
 // };
 
+function enemyMaker(name, health, agility, strength, intelligence){
+    return{
+        name, 
+        health, 
+        agility, 
+        strength, 
+        intelligence,
+        xp : 0,
+        level : 0,
+        getsHarmed : function(damage){
+            health -= damage
+            console.log(`${name} was harmed and suffered ${damage} damage points. ${name} health is ${health}`)
+        },
+        attacks: function(enemy){
+            console.log(`${name} attacks ${enemy.name} cuausing ${strength/2} damage`)
+            enemy.health -= strenght / 2;
+            if (enemy.health === 0){
+                killed(enemy)
+            }
+        },
+        killed: function(enemy){
+            console.log(`${enemy} was killed. ${name} gains 10 experience points`)
+            xp += 10
+            if (xp >= 20){
+                levelUp()
+            }
+        },
+        levelUp: function(){
+            level +=1
+            console.log(`${name} leveld up to ${level}`)
+        },
+        equips: function(property, object, increment){
+            property += increment
+            console.log(`${name} equips a(n) ${property} ${object}. They have additional ${property} of ${increment}`)
+        },
+        removesEquipament: function(property, object, decrement){
+            property -= decrement
+            console.log(`${name} removes a(n) ${property} ${object}. They have decreassed ${property} by ${decrement}`)
+        },
+        describe: function(){
+            console.log(`${name} has ${health} health points and ${strength} as strength`)
+        },
+    }
+}
+
 
 class Character{
     constructor(name, health, agility, strength, intelligence){
@@ -73,7 +118,8 @@ class Character{
         this.agility = agility;
         this.strength = strength;
         this.intelligence = intelligence;
-        this.xp = 0;
+        let xp = 0;
+        let level = 1
     };
     //methods
     getsHarmed(damage){
@@ -83,7 +129,23 @@ class Character{
     attacks(enemy){
         console.log(`${this.name} attacks ${enemy.name} causing ${this.strength / 2} damage`)
         enemy.health -= this.strength / 2;
+        if (enemy.health === 0){
+            this.killed(enemy)
+        }
+        console.log("from function attacks", xp, level)
     };
+    killed(enemy){
+        console.log(`${enemy} was killed. ${this.name} gains 10 experience points`)
+        xp += 10
+        if (this.xp > 20){
+            this.levelUp()
+        }
+    }
+    levelUp(){
+        this.level +=1
+        console.log(`${this.name} leveld up to ${this.level}`)
+        
+    }
     equips(property, object, increment){
         this[property] += increment
         console.log(`${this.name} equips a(n) ${property} ${object}. They have additional ${property} of ${increment}`)
@@ -98,9 +160,11 @@ class Character{
     };
 }
 
-let aurora = new Character("Aurora", 150, 8, 7, 7)
-let glacius = new Character("Glacius", 225, 6, 10, 7)
+let aurora = new Character("Aurora", 150, 18, 17, 17)
+let glacius = new Character("Glacius", 225, 16, 20, 17)
+let goblin = enemyMaker("FizzBuzz the Goblin", 82, 17, 13, 13)
 aurora.describe()
+goblin.describe()
 
 
 class BankAccount{
