@@ -20,19 +20,13 @@ submitBtn.addEventListener("click", (e) => {
     }
 })
 
-function fetchOpenLibrary(choice){
-    console.log(choice)
-    let apiAdress = `https://openlibrary.org/isbn/${choice}.json`
-    fetch(apiAdress)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            createBookInfoCard(data)
-        })
-        .catch(err => {throw new Error(err)})
+async function fetchOpenLibrary(choice) {
+    const res = await fetch(`https://openlibrary.org/isbn/${choice}.json`);
+    const data = await res.json();
+    createBookInfoCard(data, choice)
 }
 
-function createBookInfoCard(data){
+function createBookInfoCard(data, choice){
     const title = data.title;
     let bookInfoCard = `
         <article class="book-card" id="book-id-${choice}">
@@ -44,7 +38,7 @@ function createBookInfoCard(data){
 }
 
 function appendToLocalStorage(bookInfoCard){
-    if (!localStorage.getitem("bookLibrary")){
+    if (!localStorage.getItem("bookLibrary")){
     localStorage.setItem("bookLibrary", bookInfoCard)
     renderShelf()
     }else {
@@ -53,8 +47,6 @@ function appendToLocalStorage(bookInfoCard){
         renderShelf()
     }
 }
-
-
 
 
 function renderShelf(){
@@ -68,3 +60,14 @@ function renderShelf(){
 //9783161484100
 
 //console.log(localStorage)
+
+// function fetchOpenLibrary(choice){
+//     let apiAdress = `https://openlibrary.org/isbn/${choice}.json`
+//     fetch(apiAdress)
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log(data)
+//             createBookInfoCard(data)
+//         })
+//         .catch(err => console.log(err))
+// }
