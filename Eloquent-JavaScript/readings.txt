@@ -1,0 +1,15 @@
+array to objet
+json.stringify(array)
+json.parse
+array.includes...
+string.padStart | padEnd
+callback vs higher order
+How to create constructor functions
+function factory syntax
+class syntax
+desconstructed arrays
+array.some vs array.find
+getters, setters and static
+key in object
+for key in object
+json objects
