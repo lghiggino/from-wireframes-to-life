@@ -165,3 +165,7 @@ let spaceship = {
   for (key in spaceship.crew){
       console.log(key)
   }
+
+  console.log(Object.keys(spaceship.crew))
+  console.log(Object.values(spaceship.crew))
+  console.log(Object.entries(spaceship.crew))
