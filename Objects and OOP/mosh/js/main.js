@@ -161,3 +161,7 @@ let spaceship = {
       }
     }
   }; 
+
+  for (key in spaceship.crew){
+      console.log(key)
+  }
