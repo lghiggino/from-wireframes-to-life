@@ -1,0 +1,117 @@
+/******************************************
+/* CSS
+/*******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+body{
+  color: #333;
+  font-family: "Mulish", sans-serif;
+  outline: 2px solid green;
+}
+
+main{
+  max-width: 90%;
+  margin: 0 auto;
+  outline: 1px solid red;
+}
+
+header nav ul{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 1rem 0.5rem 0;
+}
+
+header nav ul li{
+  display: inline-block
+}
+
+nav button{
+  height: 30px;
+}
+
+nav li{
+  height: 30px;
+  line-height: 30px;
+}
+
+h1{
+  margin: 1rem 0 0 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#all-cards{
+  margin: 1rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card{
+  min-width: 120px;
+  min-height: 200px;
+  flex: 1;
+  margin: 0.5rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card .text-content{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.card h2{
+  margin: 1rem 0.5rem 0;
+}
+
+.card span{
+  margin: 1rem 0.5rem 0;
+}
+
+.card .image-content{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card img{}
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media screen and (max-width: 900px){
+  .is-hidden-desktop{
+    display: inline;
+  }
+
+  #all-cards{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 682px){
+  #all-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 442px){
+  #all-cards{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
