@@ -169,3 +169,80 @@ let spaceship = {
   console.log(Object.keys(spaceship.crew))
   console.log(Object.values(spaceship.crew))
   console.log(Object.entries(spaceship.crew))
+
+
+
+  function Stopwatch(){
+    let startTime, endTime, running, duration = 0
+
+    this.start = function(){
+      if (running){
+        throw new Error("The stopwatch is already running");
+      }else{
+        running = true;
+        startTime = new Date();
+      }
+    }
+  
+    this.stop = function(){
+      if (!running){
+        throw new Error("The stopwatch is already stopped");
+      }else{
+        running = false;
+        endTime = new Date();
+        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+        duration += seconds;
+      }
+    }
+
+    this.reset = function(){
+      startTime, endTime, running, duration = 0
+    }
+
+    Object.defineProperty(this, "duration", {
+      get : function(){
+        return duration;
+      }
+    })
+  }
+
+  class Stopwatch2{
+    //HOW TO MAKE ABSTRACTION HERE!??!?!
+    constructor(){
+      this.startTime = 0;
+      this.endTime = 0; 
+      this.running = 0;
+      this.duration = 0;
+    }
+
+    start = function(){
+      if (this.running){
+        throw new Error("The stopwatch is already running");
+      }else{
+        this.running = true;
+        this.startTime = new Date();
+      }
+    }
+
+    stop = function(){
+      if (!this.running){
+        throw new Error("The stopwatch is already stopped");
+      }else{
+        this.running = false;
+        this.endTime = new Date();
+        const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000;
+        this.duration += seconds;
+      }
+    }
+
+    reset = function(){
+      this.startTime, this.endTime, this.running, this.duration = 0
+    }
+
+    get durr(){
+      return this.duration;
+    }
+  }
+
+
+  let sw2 = new Stopwatch2()
