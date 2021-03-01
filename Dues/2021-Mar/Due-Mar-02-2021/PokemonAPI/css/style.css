@@ -21,7 +21,6 @@ body{
 main{
   max-width: 90%;
   margin: 0 auto;
-  outline: 1px solid red;
 }
 
 header nav ul{
@@ -44,6 +43,21 @@ nav li{
   line-height: 30px;
 }
 
+nav li .fas{
+  margin: 1rem 0 0 0.5rem;
+}
+
+
+.is-hidden-desktop{
+  display: none;
+}
+
+nav li h1{
+  margin: 0.5rem 0 0 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 h1{
   margin: 1rem 0 0 0.5rem;
   font-weight: bold;
@@ -58,20 +72,23 @@ h1{
 
 .card{
   min-width: 120px;
-  min-height: 200px;
+  min-height: 150px;
   flex: 1;
   margin: 0.5rem 0.5rem;
   border-radius: 8px;
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  overflow: hidden;
+  background-color: yellow;
+  background-image: url("../assets/dlf.pt-pokemon-ball-png-4253969.png");
+  background: url(../assets/dlf.pt-pokemon-ball-png-4253969.png) no-repeat, contain, yellow;
 }
+
 
 .card .text-content{
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 
 .card h2{
@@ -80,37 +97,47 @@ h1{
 
 .card span{
   margin: 1rem 0.5rem 0;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  text-align: center;
 }
 
 .card .image-content{
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.card img{}
+.card img{
+  height: 120px;
+}
 
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-@media screen and (max-width: 900px){
-  .is-hidden-desktop{
-    display: inline;
-  }
-
+@media screen and (max-width: 1010px){
   #all-cards{
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 682px){
+@media screen and (max-width: 765px){
   #all-cards{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 442px){
+@media screen and (max-width: 515px){
+  .is-hidden-desktop{
+    display: inline;
+  }
+
+  .is-hidden-mobile{
+    display:none
+  }
   #all-cards{
     grid-template-columns: repeat(1, 1fr);
   }

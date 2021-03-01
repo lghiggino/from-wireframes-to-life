@@ -15,4 +15,4 @@ async function makeFetch(){
     pokemonData = data
 }
 
-
+card = {}
