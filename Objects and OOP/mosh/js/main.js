@@ -11,27 +11,39 @@
 // console.log(employee.getWage())
 
 function Employee(name, age, baseSal){
-    this.name = name;
-    this.age = age;
-    this.baseSal = baseSal;
-    //bonus is an abstracted variable - unable to be edited from outside
-    //calculate should be an abstracted method
+  this.name = name;
+  this.age = age;
+  this.baseSal = baseSal;
+  //bonus is an abstracted variable - unable to be edited from outside
+  //calculate is an abstracted method
 
-    let bonus = 1000
-    
-    let calculateFinalSalary = function(){
-        let finalSalary = this.baseSal + bonus
-        console.log(`Final salary is ${finalSalary}`)
-    }
+  let bonus = 1000
+  let base = this.baseSal
   
-    this.renderEmployee = function(){
-      console.log(`${this.name} is ${this.age}`)
-      calculateFinalSalary()
-    }
+  let calculateFinalSalary = function(){
+      let finalSalary = base + bonus
+      console.log(`Final salary is ${finalSalary}`)
   }
 
-  let john = new Employee('john', 32, 1200)
-  john.renderEmployee()
+  this.renderEmployee = function(){
+    console.log(`${this.name} is ${this.age}`)
+    calculateFinalSalary()
+  }
+
+  Object.defineProperty(this, "messWithBonus", {
+    get : function(){
+      return bonus;
+    },
+    set : function(value){
+      bonus = value
+    }
+  })
+}
+
+let johnDoe = new Employee('john', 32, 1500)
+console.table(johnDoe)
+
+  
 
 
 // /*abstraction - complex logic inside, few buttons on the outside. Hide properties and methods from the outside, making a simpler interface. Show only the essentials
