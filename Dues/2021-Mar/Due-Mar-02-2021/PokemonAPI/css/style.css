@@ -80,11 +80,18 @@ h1{
   flex-direction: row;
   justify-content: space-evenly;
   overflow: hidden;
-  background-color: yellow;
-  background-image: url("../assets/dlf.pt-pokemon-ball-png-4253969.png");
-  background: url(../assets/dlf.pt-pokemon-ball-png-4253969.png) no-repeat, contain, yellow;
+  background: linear-gradient(to bottom, yellow, rgb(250, 234, 15) ) ;
+  position: relative;
+  z-index: 1;
 }
 
+.bg-image{
+  opacity: 0.2;
+  position: absolute;
+  top:1rem;
+  right:1rem;
+  z-index: -1;
+}
 
 .card .text-content{
   display: flex;
