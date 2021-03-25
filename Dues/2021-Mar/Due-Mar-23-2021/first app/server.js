@@ -61,9 +61,12 @@ const server = http.createServer( (req, res) => {
         res.end();
     }
     else if(req.url == "/coinFlip"){
-        randomization = Math.ceil(Math.random() * 2)
-        randomization === 1 ? res.write("heads") : res.write("tails")
-        // res.write(randomization.toString());
+        function flip(){
+            randomization = Math.round(Math.random());
+            return randomization ? "heads" : "tails";
+        }
+        res.statusCode = 200
+        res.write(flip())
         res.end();
     }
     else{
@@ -74,4 +77,4 @@ const server = http.createServer( (req, res) => {
 
 server.listen(3000)
 
-console.log("listening on port 3000...")
+console.log("server running at http://localhost:3000/ ")
