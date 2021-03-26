@@ -9,25 +9,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
-    <h1 class="title">Current Rappers</h1>
-    <ul class="rappers">
-    <% for(let i=0; i < info.length; i++) {%>
-        <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
-            <span class='delete'>delete</span>
-        </li>
-    <% } %>
-    </ul>
-    <h2>Add A Rapper:</h2>
 
-    <form action="/addRapper" method="POST">
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-12-mobile is-6-tablet is-4-desktop"></div>
+                  <div class="column is-12">
+                    <h1 class="title">Current Rappers</h1>
+                        <ul class="rappers">
+                        <% for(let i=0; i < info.length; i++) {%>
+                            <li class="rapper">
+                                <span><%= info[i].stageName %></span>
+                                <span><%= info[i].birthName %></span>
+                                <span class='delete'>delete</span>
+                            </li>
+                        <% } %>
+                        </ul>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section">
+        <div class="container">
+            <p class="mt-4"> To add a new rapper go to the:<a href="/formPage"> form page</a></p>
+        </div>
+    </section>
+   
+    <!-- <h2>Add A Rapper:</h2>
+        <form action="/addRapper" method="POST">
         <input type="text" placeholder="Stage Name" name="stageName">
         <input type="text" placeholder="Birth Name" name="birthName">
         <input type="submit">
-    </form>
-    <p>is this a red paragraph?</p>
-    
+    </form> -->
 
     <script src="main.js"></script>
 </body>

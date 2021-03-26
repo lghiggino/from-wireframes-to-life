@@ -29,6 +29,10 @@ app.get("/", (request, response) => {
     .catch(error => console.log(error))
 })
 
+app.get("/formPage", (request, response) => {
+    response.render("formPage.ejs")
+})
+
 app.post("/addRapper" , (request, response) => {
     db.collection("rappers").insertOne(request.body)
     .then(result => {
