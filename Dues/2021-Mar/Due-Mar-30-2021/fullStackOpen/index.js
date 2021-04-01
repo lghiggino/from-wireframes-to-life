@@ -19,6 +19,8 @@ const requestLogger = (request, response, next) => {
 
 app.use(morgan('tiny'))
 
+app.set("view engine", "ejs")
+
 //routing
 app.get("/", (request, response) => {
     response.send("<h1>Hello from Home /</h1>")
@@ -34,8 +36,8 @@ app.get("/api/persons/:id", (request, response) => {
     if (answer){
         response.json(answer)
     }else{
-        response.json("404 - file not found")
         response.status(404)
+        response.json("404 - file not found")
     }
     response.end()
     app.use(morgan())
@@ -44,11 +46,7 @@ app.get("/api/persons/:id", (request, response) => {
 app.get("/info", (request, response) => {
     const length = persons.length
     const date = new Date
-    response.send(`
-        <h1> Phonebook info </h1>
-        <p> Phonebook has info for ${length} people </p>
-        <p> ${date}</p>
-    `)
+    response.render("info.ejs", {length, date})
     response.end()
 })
 
@@ -66,15 +64,17 @@ app.post("/api/persons/:name/:number", (request, response) => {
     }
     let name = request.params.name
     let number = request.params.number
+    //in error
     if(!name || !number){
         return response.status(404).json({error : "content missing"})
     }else if(persons.some(el => el.name === name)){
         return response.status(404).json({error : "name already exists"})
+    //in success
+    }else{
+        const newPerson = {id:generateId(), name:name, number:number}
+        persons.push(newPerson)
+        response.json(persons)
     }
-    // console.log(name, number)
-    const newPerson = {id:generateId(), name:name, number:number}
-    persons.push(newPerson)
-    response.json(persons)
 })
 
 const unknownEndpoint = (request, response) => {
