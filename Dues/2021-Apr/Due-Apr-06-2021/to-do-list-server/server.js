@@ -1,7 +1,8 @@
 const express = require ("express");
 const app = express();
-const MongoClient = require("mongodb").MongoClient
-require("dotenv").config()
+const MongoClient = require("mongodb").MongoClient;
+const cors = require("cors");
+require("dotenv").config();
 const PORT = 2121;
 
 let db,
@@ -15,6 +16,9 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         db = client.db(dbName)
     })
     .catch(error => console.log(error))
+
+
+app.use(cors())
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
