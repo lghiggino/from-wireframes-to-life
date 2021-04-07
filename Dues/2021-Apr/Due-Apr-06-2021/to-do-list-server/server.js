@@ -47,9 +47,22 @@ app.get("/api", async (request, response) => {
 })
 
 app.post("/createTodo", async (request, response) => {
+    console.log(request.body.todoItem)
     try{
         const insert = await db.collection("todos").insertOne({todo: request.body.todoItem, completed: false})
         console.log("added todo to DB", request.body.todoItem)
+        response.redirect("/")
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
+app.post("/createTodoReact", async (request, response) => {
+    console.log(request.body.rainbowUnicornCupcake)
+    try{
+        const insert = await db.collection("todos").insertOne({todo: request.body.rainbowUnicornCupcake, completed: false})
+        console.log("added todo to DB", request.body.rainbowUnicornCupcake)
         response.redirect("/")
     }
     catch(err){
@@ -61,6 +74,17 @@ app.delete("/deleteTodo", async (request, response) => {
     try{
         const hitDelOne = await db.collection("todos").deleteOne({todo: request.body.rainbowUnicorn})
         console.log("deleted todo", request.body.rainbowUnicorn)
+        response.json("deleted it")
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
+app.delete("/deleteTodoReact", async (request, response) => {
+    try{
+        const hitDelOne = await db.collection("todos").deleteOne({todo: request.body.rainbowUnicornOatmeal})
+        console.log("deleted todo", request.body.rainbowUnicornOatmeal)
         response.json("deleted it")
     }
     catch(err){
