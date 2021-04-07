@@ -12,7 +12,6 @@ const DeleteButton = (props) => {
   )
 }
 
-
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -53,7 +52,6 @@ function App() {
       window.location.reload()
     }
 
-
     async function deleteOneTodo(e){
       const todoText = e.target.parentNode.childNodes[0].textContent
       console.log("todoText:", todoText)
@@ -74,7 +72,6 @@ function App() {
       }
     }
 
-    // this beats the purpose of react, but its working in tandem with the server
     async function markOneComplete(e){
       e.target.classList.toggle("simple-todo")
       const todoText = e.target.childNodes[0].textContent
@@ -89,7 +86,7 @@ function App() {
           })
           const data = await response.json()
           console.log(data)
-          window.location.reload()
+          //window.location.reload() - by avoiding the reload the app feels react like
       }
       catch (err){
           console.log(err)

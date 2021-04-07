@@ -108,9 +108,11 @@ app.put("/markComplete", async(request, response) => {
 
 app.put("/markCompleteReact", async(request, response) => {
     try{
+        const document = await db.collection("todos").findOne({todo: request.body.rainbowUnicornCoffee})
+        console.log("line 112:", document.completed)
         const hitCompleteOne = await db.collection("todos").updateOne({todo: request.body.rainbowUnicornCoffee},{
             $set: {
-                completed: true
+                completed: !document.completed
             }
         })
         console.log("marked complete", request.body.rainbowUnicornCoffee)
