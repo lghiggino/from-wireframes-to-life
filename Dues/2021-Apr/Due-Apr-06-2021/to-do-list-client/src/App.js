@@ -69,10 +69,32 @@ function App() {
         const data = await response.json()
         console.log(data)
         window.location.reload()
-    }catch (err){
-      console.log(err)
+      }catch (err){
+        console.log(err)
+      }
     }
-  }
+
+    // this beats the purpose of react, but its working in tandem with the server
+    async function markOneComplete(e){
+      e.target.classList.toggle("simple-todo")
+      const todoText = e.target.childNodes[0].textContent
+      // console.log(todoText)
+      try{
+          const response = await fetch("http://localhost:2121/markCompleteReact", {
+              method: "put",
+              headers: {"Content-type": "application/json"},
+              body: JSON.stringify({
+                  "rainbowUnicornCoffee" : todoText
+              })
+          })
+          const data = await response.json()
+          console.log(data)
+          window.location.reload()
+      }
+      catch (err){
+          console.log(err)
+      }
+    }
 
   return (
     <div className="App">
@@ -82,10 +104,15 @@ function App() {
         <div>
           <ul>
             {data.map((element,idx) => {
-              return (
-                // <li key={idx} id={`li-${idx}`}>{element.todo} <button id={`del-${idx}`}>del</button></li>
-                <li key={idx} id={`li-${idx}`}>{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
-              )
+              if (element.completed){
+                return(
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                )
+              } else{
+                return (
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="simple-todo">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                )
+              }
             })}
           </ul>
         </div>

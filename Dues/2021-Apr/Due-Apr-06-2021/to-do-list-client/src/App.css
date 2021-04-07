@@ -39,3 +39,15 @@
     transform: rotate(360deg);
   }
 }
+
+li{
+  color:red;
+  text-decoration: line-through;
+}
+
+li.simple-todo{
+  color:white;
+  text-align: center;
+  font-family: inherit;
+  text-decoration: none;
+}

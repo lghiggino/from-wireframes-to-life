@@ -106,6 +106,20 @@ app.put("/markComplete", async(request, response) => {
     }
 })
 
+app.put("/markCompleteReact", async(request, response) => {
+    try{
+        const hitCompleteOne = await db.collection("todos").updateOne({todo: request.body.rainbowUnicornCoffee},{
+            $set: {
+                completed: true
+            }
+        })
+        console.log("marked complete", request.body.rainbowUnicornCoffee)
+        response.json("marked complete")
+    }catch(err){
+        console.log(err)
+    }
+})
+
 app.listen(process.env.PORT || PORT, () => {
     console.log(`server running, you better catch it on http://localhost:${PORT}`)
 })
