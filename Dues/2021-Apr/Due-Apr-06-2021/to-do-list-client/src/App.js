@@ -5,12 +5,13 @@ import './App.css';
 
 //components
 import Header from "./components/Header.js"
+import DeleteButton from "./components/DeleteButton.js"
 
-const DeleteButton = (props) => {
-  return(
-    <button id={props.id} onClick={props.handleClick}>del</button>
-  )
-}
+// const DeleteButton = (props) => {
+//   return(
+//     <button id={props.id} onClick={props.handleClick}>del</button>
+//   )
+// }
 
 function App() {
   const [data, setData] = useState(null);
@@ -103,11 +104,11 @@ function App() {
             {data.map((element,idx) => {
               if (element.completed){
                 return(
-                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="">{element.todo} <DeleteButton className="del" id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
                 )
               } else{
                 return (
-                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="simple-todo">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="simple-todo">{element.todo} <DeleteButton className="del" id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
                 )
               }
             })}
