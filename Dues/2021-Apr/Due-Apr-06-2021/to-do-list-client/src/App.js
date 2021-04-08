@@ -98,7 +98,7 @@ function App() {
     <div className="App">
       <Header logo={logo} altText={"logo"}/>
       <main className="App-main">
-        <h1> to-do-list</h1>
+        <h1> React to-do-list</h1>
         <div>
           <ul>
             {data.map((element,idx) => {
