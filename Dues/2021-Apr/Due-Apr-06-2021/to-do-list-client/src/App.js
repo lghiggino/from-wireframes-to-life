@@ -96,7 +96,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header logo={logo} altText={"logo"}/>
+      <Header logo={logo} altText={"logo"} className="Banana"/>
       <main className="App-main">
         <h1> React to-do-list</h1>
         <div>
