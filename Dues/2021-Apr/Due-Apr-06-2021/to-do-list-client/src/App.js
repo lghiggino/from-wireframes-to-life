@@ -5,6 +5,9 @@ import './App.css';
 
 //components
 import Header from "./components/Header.js"
+import Home from "./components/Home.js"
+import Login from "./components/Login.js"
+import Submit from "./components/Submit.js"
 import DeleteButton from "./components/DeleteButton.js"
 
 // const DeleteButton = (props) => {
@@ -14,9 +17,13 @@ import DeleteButton from "./components/DeleteButton.js"
 // }
 
 function App() {
+  //stateManagement for the navigation
+  const [page, setPage] = useState("home")
+  //stateManagement for API stuff
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     getData()
@@ -96,7 +103,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header logo={logo} altText={"logo"} className="Banana"/>
+      <Header logo={logo} altText={"logo"} className="Banana" setPage={setPage}/>
+      <div className="content">
+        {page === "home" ? <Home /> : page === "login" ? <Login /> : <Submit />}
+      </div>
       <main className="App-main">
         <h1> React to-do-list</h1>
         <div>

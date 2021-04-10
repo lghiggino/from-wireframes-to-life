@@ -7,7 +7,7 @@
 }
 
 .Banana{
-    background-color: khaki;
+    background-color: #191c20;
 }
 
 .App_logo {
@@ -30,5 +30,6 @@ li.simple-todo-header{
   }
 
 li.simple-todo-header:hover{
-    border-bottom: 2px solid #61dafb;
+    outline: 2px solid #61dafb;
+    outline-offset: 0.5rem;
 }
