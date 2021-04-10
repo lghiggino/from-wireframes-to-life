@@ -10,6 +10,25 @@ import Login from "./components/Login.js"
 import Submit from "./components/Submit.js"
 import DeleteButton from "./components/DeleteButton.js"
 
+const ListItem = (props) => {
+  return (
+    <li onClick={props.handleClick} key={props.key} id={props.id} className={props.className}>{props.todo} <DeleteButton id={`del-${props.key}`} handleClick={props.deleteAction}/></li>
+  )
+}
+
+const List = (props) => {
+  return (
+    <ul>
+      {props.data.map((singleElement, idx) => 
+      //ternary controls the CSS classes
+        singleElement.completed ? 
+          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={`item-${singleElement._id}`} className=""></ListItem> :
+          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={`item-${singleElement._id}`} className="simple-todo"></ListItem>
+      )}
+    </ul>
+  )
+}
+
 function App() {
   //stateManagement for the navigation
   const [page, setPage] = useState("home")
@@ -55,7 +74,9 @@ function App() {
       getData()
     }
 
+    //refatorar essa função para usar o id como parâmetro, não a relação dos elementos da DOM
     async function deleteOneTodo(e){
+      console.log("olá! banana")
       const todoText = e.target.parentNode.childNodes[0].textContent
       console.log("todoText:", todoText)
       console.log("same li id:", e.target.parentNode.id)
@@ -67,7 +88,7 @@ function App() {
                 "rainbowUnicornOatmeal" : todoText
             })
         })
-        const data = await response.json()
+        //const data = await response.json()
         getData()
       }catch (err){
         console.log(err)
@@ -86,7 +107,7 @@ function App() {
                   "rainbowUnicornCoffee" : todoText
               })
           })
-          const data = await response.json()
+          //const data = await response.json()
           getData()
       }
       catch (err){
@@ -112,15 +133,16 @@ function App() {
             {data.map((element,idx) => {
               if (element.completed){
                 return(
-                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="">{element.todo} <DeleteButton className="del" id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
                 )
               } else{
                 return (
-                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="simple-todo">{element.todo} <DeleteButton className="del" id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
+                  <li onClick={markOneComplete} key={idx} id={`li-${idx}`} className="simple-todo">{element.todo} <DeleteButton id={`del-${idx}`} handleClick={deleteOneTodo}></DeleteButton></li>
                 )
               }
             })}
           </ul>
+          <List data={data} handleClick={markOneComplete} deleteAction={deleteOneTodo}></List>
         </div>
         <div>
           <p>To enter new data click submit on the menu</p>
