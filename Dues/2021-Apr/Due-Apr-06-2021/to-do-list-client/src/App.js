@@ -94,11 +94,16 @@ function App() {
       }
     }
 
+    function manageLogin(e){
+      e.preventDefault()
+      console.log("Login button was clicked")
+    }
+
   return (
     <div className="App">
       <Header logo={logo} altText={"logo"} className="Banana" setPage={setPage}/>
       <div className="content">
-        {page === "list" ? <Home /> : page === "login" ? <Login /> : <Submit handleClick={postData}/>}
+        {page === "login" ? <Login handleClick={manageLogin} /> : page === "list" ? <Home /> :  <Submit handleClick={postData}/>}
       </div>
       <main className="App-main">
         <h1> React to-do-list</h1>
