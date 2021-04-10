@@ -10,12 +10,6 @@ import Login from "./components/Login.js"
 import Submit from "./components/Submit.js"
 import DeleteButton from "./components/DeleteButton.js"
 
-// const DeleteButton = (props) => {
-//   return(
-//     <button id={props.id} onClick={props.handleClick}>del</button>
-//   )
-// }
-
 function App() {
   //stateManagement for the navigation
   const [page, setPage] = useState("home")
@@ -57,7 +51,8 @@ function App() {
         })
       })
       console.log("data was posted", inputValue)
-      window.location.reload()
+      // window.location.reload() - react saves us from reloading the window by using useEffect
+      getData()
     }
 
     async function deleteOneTodo(e){
@@ -73,8 +68,7 @@ function App() {
             })
         })
         const data = await response.json()
-        console.log(data)
-        window.location.reload()
+        getData()
       }catch (err){
         console.log(err)
       }
@@ -93,8 +87,7 @@ function App() {
               })
           })
           const data = await response.json()
-          console.log(data)
-          //window.location.reload() - by avoiding the reload the app feels react like
+          getData()
       }
       catch (err){
           console.log(err)
@@ -105,7 +98,7 @@ function App() {
     <div className="App">
       <Header logo={logo} altText={"logo"} className="Banana" setPage={setPage}/>
       <div className="content">
-        {page === "home" ? <Home /> : page === "login" ? <Login /> : <Submit />}
+        {page === "list" ? <Home /> : page === "login" ? <Login /> : <Submit handleClick={postData}/>}
       </div>
       <main className="App-main">
         <h1> React to-do-list</h1>
@@ -125,10 +118,7 @@ function App() {
           </ul>
         </div>
         <div>
-          <form>
-            <input type="text" name="todoItem" placeholder="enter item to submit" />
-            <button onClick={postData}>Create Todo</button>
-          </form>
+          <p>To enter new data click submit on the menu</p>
         </div>
       </main>
     </div>

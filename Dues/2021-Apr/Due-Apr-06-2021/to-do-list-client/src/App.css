@@ -48,7 +48,7 @@ li{
   text-decoration: line-through;
 }
 
-li.simple-todo{
+li.simple-todo, label{
   color:white;
   text-align: center;
   font-family: inherit;

@@ -1,0 +1,27 @@
+.section, .form{
+    background-color: #282c34;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 1px solid greenyellow;
+}
+
+.form{
+    align-items: center;
+    min-height: 0vh;
+    outline: none;
+}
+
+.form label{
+    font-size: 1.125rem;
+    padding-bottom: 0.5rem;
+}
+
+.form input{
+    margin-bottom: 0.25rem;
+}
+
+.form button{
+    padding: 0.25rem 0.5rem;
+}

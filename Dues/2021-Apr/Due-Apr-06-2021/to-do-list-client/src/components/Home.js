@@ -1,7 +1,7 @@
 const Home = (props) => {
     return (
         <section>
-            "hello from home"
+            "hello from homelist"
         </section>
     )
 }
