@@ -92,6 +92,17 @@ app.delete("/deleteTodoReact", async (request, response) => {
     }
 })
 
+app.delete("/deleteTodoReactId", async (request, response) => {
+    try{
+        const hitDelOne = await db.collection("todos").deleteOne({_id: request.body.todoIdFromReact})
+        console.log("deleted todo", request.body.todoIdFromReact)
+        response.json("deleted it")
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 app.put("/markComplete", async(request, response) => {
     try{
         const hitCompleteOne = await db.collection("todos").updateOne({todo: request.body.rainbowUnicorn},{

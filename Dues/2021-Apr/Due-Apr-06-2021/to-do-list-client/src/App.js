@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,7 +11,7 @@ import DeleteButton from "./components/DeleteButton.js"
 
 const ListItem = (props) => {
   return (
-    <li onClick={props.handleClick} key={props.key} id={props.id} className={props.className}>{props.todo} <DeleteButton id={`del-${props.key}`} handleClick={props.deleteAction}/></li>
+    <li onClick={props.handleClick} key={props.key} id={props.id} className={props.className}>{props.todo} <DeleteButton id={`del-${props.id}`} handleClick={props.deleteAction}/></li>
   )
 }
 
@@ -22,8 +21,8 @@ const List = (props) => {
       {props.data.map((singleElement, idx) => 
       //ternary controls the CSS classes
         singleElement.completed ? 
-          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={`item-${singleElement._id}`} className=""></ListItem> :
-          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={`item-${singleElement._id}`} className="simple-todo"></ListItem>
+          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} className="" deleteAction={props.deleteAction}></ListItem> :
+          <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} className="simple-todo" deleteAction={props.deleteAction}></ListItem>
       )}
     </ul>
   )
@@ -39,22 +38,20 @@ function App() {
 
 
   useEffect(() => {
-    getData()
-    }, []);
+    getDataFetch()
+    }, [data]);
 
-    async function getData() {
-        await axios("http://localhost:2121/api")
-          .then((response) => {
-            setData(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data: ", error);
-          setError(error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+    async function getDataFetch() {
+      try{
+        const res = await fetch ("http://localhost:2121/api")
+        const data = await res.json()
+        setData(data)
+        setLoading(false)
+        setError(false)
+      }catch(err){
+        console.error(err)
       }
+    }
 
       if (loading) return "Loading data...";
       if (error) return "Error fetching data!";
@@ -70,13 +67,12 @@ function App() {
         })
       })
       console.log("data was posted", inputValue)
-      // window.location.reload() - react saves us from reloading the window by using useEffect
-      getData()
+      // window.location.reload() - react saves us from reloading the window by using useEffect handling the data re-render
     }
 
     //refatorar essa função para usar o id como parâmetro, não a relação dos elementos da DOM
     async function deleteOneTodo(e){
-      console.log("olá! banana")
+      console.log(e.target)
       const todoText = e.target.parentNode.childNodes[0].textContent
       console.log("todoText:", todoText)
       console.log("same li id:", e.target.parentNode.id)
@@ -88,17 +84,31 @@ function App() {
                 "rainbowUnicornOatmeal" : todoText
             })
         })
-        //const data = await response.json()
-        getData()
       }catch (err){
-        console.log(err)
+        console.error(err)
       }
     }
+
+    async function deleteOneTodoTwo(e){
+      const todoId = e.target.id.slice(4)
+      console.log(typeof todoId)
+      try{
+        const response = await fetch("http://localhost:2121/deleteTodoReactId", {
+            method: "delete",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify({
+                "todoIdFromReact" : `ObjectId("${todoId}")`,
+            })
+        })
+      }catch(err){
+        console.error(err)
+      }
+    }
+
 
     async function markOneComplete(e){
       e.target.classList.toggle("simple-todo")
       const todoText = e.target.childNodes[0].textContent
-      // console.log(todoText)
       try{
           const response = await fetch("http://localhost:2121/markCompleteReact", {
               method: "put",
@@ -107,11 +117,9 @@ function App() {
                   "rainbowUnicornCoffee" : todoText
               })
           })
-          //const data = await response.json()
-          getData()
       }
       catch (err){
-          console.log(err)
+          console.error(err)
       }
     }
 
@@ -142,7 +150,7 @@ function App() {
               }
             })}
           </ul>
-          <List data={data} handleClick={markOneComplete} deleteAction={deleteOneTodo}></List>
+          <List data={data} handleClick={markOneComplete} deleteAction={deleteOneTodoTwo}></List>
         </div>
         <div>
           <p>To enter new data click submit on the menu</p>
