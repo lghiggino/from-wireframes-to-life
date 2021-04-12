@@ -18,7 +18,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .catch(error => console.log(error))
 
 
-app.use(cors())
+app.use(cors("http://localhost:3000/"))
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -85,17 +85,6 @@ app.delete("/deleteTodoReact", async (request, response) => {
     try{
         const hitDelOne = await db.collection("todos").deleteOne({todo: request.body.rainbowUnicornOatmeal})
         console.log("deleted todo", request.body.rainbowUnicornOatmeal)
-        response.json("deleted it")
-    }
-    catch(err){
-        console.log(err)
-    }
-})
-
-app.delete("/deleteTodoReactId", async (request, response) => {
-    try{
-        const hitDelOne = await db.collection("todos").deleteOne({_id: request.body.todoIdFromReact})
-        console.log("deleted todo", request.body.todoIdFromReact)
         response.json("deleted it")
     }
     catch(err){
