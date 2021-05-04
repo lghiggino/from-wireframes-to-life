@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const YourComponent = () => (
+const YourImageComponent = () => (
     <Image
       src="/images/profile.jpg" // Route of the image file
       height={144} // Desired size with correct aspect ratio
@@ -19,7 +19,7 @@ export default function FirstPost() {
                     <a>Back to home</a>
                 </Link>
             </h2>
-            <YourComponent />
+            <YourImageComponent />
 
         </>
     )
