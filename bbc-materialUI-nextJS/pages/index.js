@@ -12,12 +12,27 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h3 className={styles.title}>
           Read{' '}
           <Link href="/posts/first-post">
             <a>this page!</a>
           </Link>
-        </h1>
+        </h3>
+
+        <h3 className={styles.title}>
+          Read{' '}
+          <Link href="/posts/material">
+            <a>the materialUI Media Query page!</a>
+          </Link>
+        </h3>
+
+        <h3 className={styles.title}>
+          Read{' '}
+          <Link href="/posts/sandbox">
+            <a>the typescript sandbox!</a>
+          </Link>
+        </h3>
+
 
         <p className={styles.description}>
           Get started by editing{' '}
