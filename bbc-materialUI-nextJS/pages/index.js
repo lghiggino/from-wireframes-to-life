@@ -4,7 +4,9 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, pokeData }) {
+  console.log(pokeData)
+
   return (
     <Layout home>
       <Head>
@@ -58,10 +60,12 @@ export default function Home({ allPostsData }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+  const pokeData = await res.json()
 
   return {
     props: {
-      allPostsData
+      allPostsData, pokeData
     }
   }
 }
