@@ -37,6 +37,13 @@ export default function Home({ allPostsData, pokeData }) {
             <a>the typescript sandbox!</a>
           </Link>
         </h3>
+
+        <h3 >
+          Read{' '}
+          <Link href="/posts/materialComponents">
+            <a>the materialUI ComponentsTest!</a>
+          </Link>
+        </h3>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
