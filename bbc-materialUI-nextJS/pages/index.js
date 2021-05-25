@@ -51,8 +51,6 @@ export default function Home({ allPostsData, pokeData }) {
             <li className={utilStyles.listItem} key={id}>
               {title}
               <br />
-              {id}
-              <br />
               {date}
             </li>
           ))}
