@@ -4,7 +4,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = "NJS-MUI-BBC"
+const name = "NextJS-MUI-LNG"
 export const siteTitle = "NextJS MaterialUI This is The BBC"
 
 export default function Layout({ children, home }) {
