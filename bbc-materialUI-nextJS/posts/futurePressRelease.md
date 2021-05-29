@@ -1,6 +1,8 @@
 ---
 title: 'Future Press Release'
 date: '2021-05-19'
+id: '0004'
+category: 'Estratégia de Produto'
 ---
 
 Future press release é utilizado para estabelecer uma visão clara do produto. Ajuda a definir as metas, e gerar consenso na equipe. A maior intenção é definir como será o produto no momento do seu lançamento.
@@ -14,6 +16,8 @@ Ele contem os seguintes itens:
 4. O que é o produto na sua definição
 5. O que faz os clientes amarem seu produto - depoimentos
 6. Como outros usuários podem começar a usá-lo - canais de distribuição
+
+O Press Release do Futuro (PRF) pode ser criado para cada funcionalidade do produto. Geralmente, no inicio de uma sprint geramos uma única PRF de todo o escopo do projeto.
 
 
 

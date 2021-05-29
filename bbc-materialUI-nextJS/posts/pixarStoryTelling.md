@@ -1,6 +1,8 @@
 ---
 title: 'Pixar Story Telling'
 date: '2021-05-19'
+id: '0001'
+category: 'Estratégia de Produto'
 ---
 
 Pixar Story Telling é uma forma de gerar uma narrativa sobre o produto. Os objetivos dessa ferramenta são:

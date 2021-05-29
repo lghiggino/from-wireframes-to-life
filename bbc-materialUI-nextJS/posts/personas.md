@@ -1,6 +1,8 @@
 ---
 title: 'Personas e Proto-Personas'
 date: '2021-05-20'
+id: '0002'
+category: 'Estratégia de Produto'
 ---
 
 Personas são uma forma de representar quem é seu público alvo, suas principais dores e necessidades. Ao criar essa persona, geramos empatia nos nossos desenvolvedores, designers e time. Assim geramos consenso na equipe e pensamos melhor sob a ótica do usuário.
