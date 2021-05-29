@@ -13,7 +13,8 @@ export default function Home({ allPostsData, pokeData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>This is the BBC (maybe)</p>
+        
+        <p>TypeScript, UX, MaterialUI - by LNG</p>
         <p>(This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)</p>
         <h3 >
