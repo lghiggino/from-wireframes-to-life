@@ -20,7 +20,7 @@ export default function Home({ allPostsData, pokeData }) {
 
         <h3 >
           Read{' '}
-          <Link href="/posts/material">
+          <Link href="/materialUI/material">
             <a>the materialUI Media Query page!</a>
           </Link>
         </h3>
@@ -34,8 +34,8 @@ export default function Home({ allPostsData, pokeData }) {
 
         <h3 >
           Read{' '}
-          <Link href="/posts/materialComponents">
-            <a>the materialUI ComponentsTest!</a>
+          <Link href="/materialUI/materialComponents">
+            <a>the materialUI Masked Components Test!</a>
           </Link>
         </h3>
       </section>
