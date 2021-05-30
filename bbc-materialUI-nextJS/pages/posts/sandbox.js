@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../src/Layout";
 
 export default function Sandbox() {
     return (

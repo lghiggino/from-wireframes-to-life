@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Layout from '../../components/layout';
+import Layout from '../../src/Layout';
 
 export default function MyComponent() {
   const theme = useTheme();

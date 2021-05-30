@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useSWR from 'swr'
 import Image from "next/image"
-import Layout from '../../components/layout';
+import Layout from '../../src/Layout';
 import { Button, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGroup, TextField } from '@material-ui/core';
 
 

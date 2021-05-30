@@ -1,7 +1,7 @@
 import React from 'react'
 import MaskedInput from 'react-text-mask'
 
-import Layout from "../../components/layout"
+import Layout from '../../src/Layout';
 
 export default function materialComponents(){
     return(
