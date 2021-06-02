@@ -38,6 +38,9 @@ export default function Home({ allPostsData, pokeData }) {
             <a>the materialUI Masked Components Test!</a>
           </Link>
         </h3>
+        <h3 >
+          This is a test to check if the branch is working properly
+        </h3>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
