@@ -15,9 +15,7 @@ export default function Home({ allPostsData, pokeData }) {
       <section className={utilStyles.headingMd}>
         
         <p>TypeScript, UX, MaterialUI - by LNG</p>
-        <p>(This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)</p>
-
+        
         <h3 >
           Read{' '}
           <Link href="/materialUI/material">
@@ -39,7 +37,16 @@ export default function Home({ allPostsData, pokeData }) {
           </Link>
         </h3>
         <h3 >
-          This is a test to check if the branch is working properly
+          Read{' '}
+          <Link href="/materialUI/heroTestPage">
+            <a>This is the hero component test page!</a>
+          </Link>
+        </h3>
+        <h3 >
+          Read{' '}
+          <Link href="/materialUI/gridTest">
+            <a>This is the container hero test page!</a>
+          </Link>
         </h3>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

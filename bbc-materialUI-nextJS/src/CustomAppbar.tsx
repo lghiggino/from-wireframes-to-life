@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme : Theme) => {
 });
 
 export default function CustomAppbar() {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [anchorElTwo, setAnchorElTwo] = React.useState<null | HTMLElement>(null);
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>();
+    const [anchorElTwo, setAnchorElTwo] = React.useState<null | HTMLElement>();
 
     const classes = useStyles();
 
