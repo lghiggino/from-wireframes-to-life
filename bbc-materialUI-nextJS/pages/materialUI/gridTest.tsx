@@ -11,7 +11,7 @@ import CustomAppBar from "../../src/CustomAppbar"
 const useStyles = makeStyles({
   root: {
     marginTop: "64px",
-    backgroundImage: `url(/images/puppy.jpeg)` ,
+    backgroundImage: `url(/images/puppy.webp)` ,
     width: "100%",
     height: "1280px",
     backgroundRepeat: "no-repeat",
@@ -50,12 +50,12 @@ const gridTest = () => {
             <Typography component="div" style={{ backgroundColor: '#afa8fa', height: '10vh' }}  />
           </Container>
           <Container maxWidth="xl" disableGutters className={classes.root}>
-            <Image 
+            {/* <Image 
                 src="/images/puppy.webp" 
                 alt=""
                 width={"1980"}
                 height={"1280"}    
-            />
+            /> */}
             <Typography component="div" style={{ backgroundColor: '#afa8fa', height: '10vh' }} defaultValue="og photo created by master1305 - www.freepik.com" />
           </Container>
           
