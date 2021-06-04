@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout, { siteTitle } from '../src/Layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
+import ControlledAccordion from '../src/ControlledAccordion'
 
 export default function Home({ allPostsData, pokeData }) {
   
@@ -38,13 +39,13 @@ export default function Home({ allPostsData, pokeData }) {
         </h3>
         <h3 >
           Read{' '}
-          <Link href="/materialUI/heroTestPage">
-            <a>This is the hero component test page!</a>
+          <Link href="/materialUI/parallaxTestPage">
+            <a>This is the hero component/ parallax component test page!</a>
           </Link>
         </h3>
         <h3 >
           Read{' '}
-          <Link href="/materialUI/gridTest">
+          <Link href="/materialUI/containerTest">
             <a>This is the container hero test page!</a>
           </Link>
         </h3>
@@ -60,6 +61,9 @@ export default function Home({ allPostsData, pokeData }) {
             </li>
           ))}
         </ul>
+      </section>
+      <section>
+        <ControlledAccordion />
       </section>
 
     </Layout>
