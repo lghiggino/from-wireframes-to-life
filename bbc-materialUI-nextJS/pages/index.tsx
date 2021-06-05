@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Layout, { siteTitle } from '../src/Layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
+//components section
 import ControlledAccordion from '../src/ControlledAccordion'
+import CustomRadio from '../src/CustomRadio'
 
 export default function Home({ allPostsData, pokeData }) {
   
@@ -63,7 +65,10 @@ export default function Home({ allPostsData, pokeData }) {
         </ul>
       </section>
       <section>
+        <h2>Components Section</h2>
         <ControlledAccordion />
+        <br/>
+        <CustomRadio/>
       </section>
 
     </Layout>
