@@ -70,12 +70,11 @@ export default function CustomAppbar() {
                     </Menu>
                 </div>
 
-                <FormControl className={classes.formControl}>
+                <FormControl >
                     <NativeSelect
                         value={state.age}
                         onChange={handleChange}
                         name="age"
-                        className={classes.selectEmpty}
                         inputProps={{ 'aria-label': 'age' }}
                     >
                         <option value="">Categoria 1.5</option>
