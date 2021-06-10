@@ -1,0 +1,19 @@
+.root {
+    width: 100%;
+  };
+.heading {
+    font-Size: 15px;
+    flex-Basis: '33.33%';
+    flex-Shrink: 0;
+  };
+.secondaryHeading {
+    font-Size: 15px;
+    color: gray;
+  };
+.accordionBox {
+      outline:"1px solid red";
+      margin: "0 auto";
+  };
+.expanded {
+      margin: 0
+    };
