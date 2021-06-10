@@ -1,19 +1,28 @@
+import { Button } from '@material-ui/core';
 import React from 'react';
 import './button.css';
 
-export interface ButtonProps {
+export interface MuiButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
   /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
    * How large should the button be?
    */
   size?: 'small' | 'medium' | 'large';
+  /**
+   * Material UI button variant
+   */
+  variant?: 'contained' | 'outlined' | 'text'
+  /**
+   * Material UI color definition
+   */
+  color: 'default' | 'inherit' | 'primary' | 'secondary'
+  /**
+   * Material UI fullwidth
+   */
+  fullWidth?: boolean;
   /**
    * Button contents
    */
@@ -27,22 +36,20 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
+export const MuiButton: React.FC<MuiButtonProps> = ({
   primary = false,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <Button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
       {...props}
     >
       {label}
-    </button>
+    </Button>
   );
 };
