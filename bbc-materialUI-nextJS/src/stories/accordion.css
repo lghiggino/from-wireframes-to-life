@@ -2,9 +2,10 @@
     width: 100%;
   };
 .heading {
-    font-Size: 15px;
+    font-Size: 25px;
     flex-Basis: '33.33%';
     flex-Shrink: 0;
+    color: red;
   };
 .secondaryHeading {
     font-Size: 15px;

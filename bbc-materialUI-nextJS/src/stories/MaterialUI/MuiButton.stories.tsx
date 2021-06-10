@@ -1,18 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import {ControlledAccordions, ControlledAccordionsProps } from './Accordion';
+import { MuiButton, MuiButtonProps } from './MuiButtton';
 
 export default {
-  title: 'UI/ControlledAccordions',
-  component: ControlledAccordions,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    fontSize: { control: "range" }
-  },
+  title: 'Material UI/MuiButton',
+  component: MuiButton,
 } as Meta;
 
-const Template: Story<ControlledAccordionsProps> = (args) => <ControlledAccordions {...args} />;
+const Template: Story<MuiButtonProps> = (args) => <MuiButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
