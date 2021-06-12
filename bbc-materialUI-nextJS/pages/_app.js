@@ -7,7 +7,7 @@ import createCache from '@emotion/cache';
 
 export const cache = createCache({ key: 'css', prepend: true });
 
-import '../styles/globals.css'
+const globals = require('../styles/globals.css') 
 
 // Create a theme instance.
 const theme = createMuiTheme({
@@ -50,7 +50,7 @@ const theme = createMuiTheme({
       "main": "#2B4570",
       "light": "#4E78BC",
       "dark": "#0B121E",
-      "contrastText": "#fff"
+      "contrastText": "#f5f5f5"
     },
     "secondary": {
       "main": "#FEA485",
@@ -313,9 +313,11 @@ export default function MyApp(props) {
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet"></link>
       </Head>
       <ThemeProvider theme={theme}>
+        <ThemeProvider theme={globals}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         {/* <CssBaseline /> */}
         <Component {...pageProps} />
+        </ThemeProvider>
       </ThemeProvider>
     </CacheProvider>
   );
