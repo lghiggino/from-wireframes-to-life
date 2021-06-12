@@ -258,7 +258,7 @@ const theme = createMuiTheme({
     }
   },
   "shape": {
-    "borderRadius": 4
+    "borderRadius": 8
   },
   "transitions": {
     "easing": {
@@ -280,7 +280,7 @@ const theme = createMuiTheme({
   "zIndex": {
     "mobileStepper": 1000,
     "speedDial": 1050,
-    "appBar": 1100,
+    "appBar": 1800,
     "drawer": 1200,
     "modal": 1300,
     "snackbar": 1400,
