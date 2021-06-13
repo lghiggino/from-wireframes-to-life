@@ -1,113 +1,3 @@
-/*import React from 'react';
-//MUI Imports
-import { AppBar, Button, createStyles, makeStyles, Menu, MenuItem, MenuList, Theme, Toolbar } from '@material-ui/core'
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
-
-const useStyles = makeStyles((theme : Theme) => {
-    createStyles({
-        formControl: {
-            margin: theme.spacing(1),
-            minWidth: 120,
-        },
-        selectEmpty: {
-            marginTop: theme.spacing(2),
-        },
-    })
-});
-
-export default function CustomAppbar() {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [anchorElTwo, setAnchorElTwo] = React.useState<null | HTMLElement>(null);
-
-    const classes = useStyles();
-
-    const [state, setState] = React.useState<{ age: string | number; name: string }>({
-        age: '',
-        name: 'hai',
-    });
-
-    const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-        const name = event.target.name as keyof typeof state;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
-
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClickTwo = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorElTwo(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-        setAnchorElTwo(null);
-    };
-    return (
-        <AppBar>
-            <Toolbar>
-                Site Name Teste
-                <div>
-                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="secondary" variant="contained">
-                        Categoria 1
-                    </Button>
-                    <Menu
-                        id="simple-menu"
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                    </Menu>
-                </div>
-
-                <FormControl >
-                    <NativeSelect
-                        value={state.age}
-                        onChange={handleChange}
-                        name="age"
-                        inputProps={{ 'aria-label': 'age' }}
-                    >
-                        <option value="">Categoria 1.5</option>
-                        <option value={10}>Ten</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option>
-                    </NativeSelect>
-                    { <FormHelperText>With visually hidden label</FormHelperText>}
-                </FormControl>
-
-
-                <div>
-                    <Button aria-controls="other-menu" aria-haspopup="true" onClick={handleClick}>
-                        Categoria 2
-                    </Button>
-                    <Menu
-                        id="other-menu"
-                        anchorEl={anchorElTwo}
-                        keepMounted
-                        open={Boolean(anchorElTwo)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={handleClose}>Banana</MenuItem>
-                        <MenuItem onClick={handleClose}>Apple</MenuItem>
-                        <MenuItem onClick={handleClose}>Pineapple</MenuItem>
-                    </Menu>
-                </div>
-            </Toolbar>
-        </AppBar>
-    )
-}
-*/
-
 import React from 'react';
 import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -129,7 +19,6 @@ import { FormControl, FormHelperText, NativeSelect } from '@material-ui/core';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         grow: {
-            flexGrow: 1,
             position: "fixed",
             top: 0,
             width: "100%",
@@ -184,6 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'none',
             [theme.breakpoints.up('md')]: {
                 display: 'flex',
+                outline: "2px solid red"
             },
         },
         sectionMobile: {
@@ -290,7 +180,7 @@ export default function PrimarySearchAppBar() {
     );
 
     return (
-        <div className={classes.grow}>
+        <header className={classes.grow}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -317,7 +207,7 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div className={classes.grow} />
+                    {/* <div className={classes.grow} /> */}
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
@@ -352,7 +242,7 @@ export default function PrimarySearchAppBar() {
                         </IconButton>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <FormControl >
                             <NativeSelect
                                 value={state.age}
@@ -366,12 +256,13 @@ export default function PrimarySearchAppBar() {
                                 <option value={30}>Thirty</option>
                             </NativeSelect>
                         </FormControl>
-                    </div>
+                    </div> */}
+
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
-        </div>
+        </header>
     );
 }
 

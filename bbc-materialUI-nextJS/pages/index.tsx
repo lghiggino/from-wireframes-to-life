@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../src/Layout'
+import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 //components section
@@ -10,13 +11,12 @@ import CustomRadio from '../src/CustomRadio'
 export default function Home({ allPostsData, pokeData }) {
   
   return (
-    <Layout home>
+    <Layout2 home>
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={utilStyles.headingMd}>
-        
         <p>TypeScript, UX, MaterialUI - by LNG</p>
         
         <h3 >
@@ -70,8 +70,7 @@ export default function Home({ allPostsData, pokeData }) {
         <br/>
         <CustomRadio/>
       </section>
-
-    </Layout>
+    </Layout2>
   )
 }
 

@@ -1,9 +1,10 @@
 import Layout from '../../src/Layout'
+import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <Layout2>
       {postData.title}
       <br />
       {postData.id}
@@ -11,7 +12,7 @@ export default function Post({ postData }) {
       {postData.date}
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </Layout>
+    </Layout2>
   )
 }
 

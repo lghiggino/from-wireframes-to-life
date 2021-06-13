@@ -2,10 +2,11 @@ import React from 'react'
 import MaskedInput from 'react-text-mask'
 
 import Layout from '../../src/Layout';
+import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
 
 export default function materialComponents(){
     return(
-        <Layout>
+        <Layout2>
             <h3>This is the material components test page</h3>
 
             <section>
@@ -27,6 +28,6 @@ export default function materialComponents(){
                 />
             </section>
 
-        </Layout>
+        </Layout2>
     )
 }
