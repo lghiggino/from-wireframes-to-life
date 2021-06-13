@@ -110,8 +110,6 @@ const theme = createMuiTheme({
     "background": {
       "paper": "#fff",
       "default": "#fff",
-      "level2": "#f5f5f5",
-      "level1": "#fff"
     },
     "action": {
       "active": "rgba(0, 0, 0, 0.54)",
@@ -285,9 +283,6 @@ const theme = createMuiTheme({
     "modal": 1300,
     "snackbar": 1400,
     "tooltip": 1500
-  },
-  "nprogress": {
-    "color": "#000"
   }
 });
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from '../styles/Layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 //components
-import CustomAppbar from './CustomAppbar.tsx'
+import CustomAppbar from "../src/CustomAppbar"
 
 const name = "NextJS-MUI-LNG"
 export const siteTitle = "NextJS MaterialUI This is The BBC"
