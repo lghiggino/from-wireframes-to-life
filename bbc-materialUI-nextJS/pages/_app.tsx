@@ -8,6 +8,8 @@ import createCache from '@emotion/cache';
 export const cache = createCache({ key: 'css', prepend: true });
 
 const globals = require('../styles/globals.css') 
+const globalsMUI = require('../styles/globals.ts')
+//import globalsMUI from '../styles/globals'
 
 // Create a theme instance.
 const theme = createMuiTheme({
@@ -309,9 +311,11 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <ThemeProvider theme={globals}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        {/* <CssBaseline /> */}
-        <Component {...pageProps} />
+          {/* <ThemeProvider theme={globalsMUI}> */}
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            {/* <CssBaseline /> */}
+            <Component {...pageProps} />
+          {/* </ThemeProvider> */}
         </ThemeProvider>
       </ThemeProvider>
     </CacheProvider>

@@ -65,6 +65,12 @@ p {
   font-size: 14px;
   margin: 0 0 10px;
 }
+p.primary{
+  color: #490b53;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

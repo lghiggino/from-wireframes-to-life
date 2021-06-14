@@ -1,19 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { siteTitle } from '../src/Layout'
 import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 //components section
 import ControlledAccordion from '../src/ControlledAccordion'
 import CustomRadio from '../src/CustomRadio'
+import { Typography } from '@material-ui/core'
 
 export default function Home({ allPostsData, pokeData }) {
   
   return (
     <Layout2 home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{siteTitle2}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={utilStyles.headingMd}>
@@ -66,6 +66,12 @@ export default function Home({ allPostsData, pokeData }) {
       </section>
       <section>
         <h2>Components Section</h2>
+        
+        <p className="primary"> Is this text bold and purple? </p>
+        <Typography color="primary" >This is a primary paragraph banana</Typography>
+        <Typography color="secondary" >This is a secondary paragraph banana</Typography>
+        <Typography color="textPrimary" >This is a textPrimary paragraph banana</Typography>
+        <Typography color="textSecondary" >This is a textSecondary paragraph banana</Typography>
         <ControlledAccordion />
         <br/>
         <CustomRadio/>

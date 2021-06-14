@@ -65,8 +65,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
   },
   container: {
-    maxWidth: "56em",
+    maxWidth: "66em",
     padding: "2rem 1rem",
+    margin: "0 auto"
   },
   backToHome: {
     margin: "4rem 0 1rem",
@@ -96,6 +97,7 @@ export default function App({ children, home }) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+          {/* MUDAR O CONTEUDO INTERNO DESSSA BARRA PARA O OUTRO COM MENUS */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
