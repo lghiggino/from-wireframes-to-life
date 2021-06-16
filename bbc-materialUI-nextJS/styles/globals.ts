@@ -1,7 +1,7 @@
 import { createMuiTheme, Theme } from "@material-ui/core";
 import { Typography } from "@material-ui/core/styles/createTypography";
 import  createPalette from "@material-ui/core/styles/createPalette";
-import * as typography from "@material-ui/core/Typography/Typography";
+
 
 type Modify<T, R> = Omit<T, keyof R> & R;
 
@@ -9,6 +9,26 @@ export type CustomTypography = Modify<
   Typography,
   {
     secondaryFontFamily: string;
+    h1?: any;
+    h2?: any;
+    h3?: any;
+    h4?: any;
+    h5?: any;
+    h6?: any;
+    subtitle1?: any;
+    subtitle2?: any;
+    body1?: any;
+    body2?: any;
+    caption?: any;
+    button?: any;
+    overline?: any;
+    fontFamily?: string;
+    fontSize?: number;
+    fontWeightLight?: any;
+    fontWeightRegular?: any;
+    fontWeightMedium?: any;
+    fontWeightBold?: any;
+    pxToRem?: any;
   }
 >;
 
@@ -20,18 +40,17 @@ export type CustomTheme = Modify<
 >;
 
 
-export const createMyTheme():CustomTheme => {
+const createMyTheme():CustomTheme => {
   const baseTheme = createMuiTheme({
     palette: createPalette({})
   });
-
   return {
     ...baseTheme,
     typography: {
-      secondaryFontFamily: "Georgia"
+      secondaryFontFamily: "Georgia",
     }
   }
-});
+};
 
 
 // A theme with custom primary and secondary color.
