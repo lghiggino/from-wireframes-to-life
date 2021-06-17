@@ -1,5 +1,5 @@
 import Layout from "../../src/Layout";
-import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
+import Layout2, {siteTile2} from '../../src/DraweAndAppBarLayout'
 
 export default function Sandbox() {
     return (

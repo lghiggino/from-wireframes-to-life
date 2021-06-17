@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Layout from '../../src/Layout';
-import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
+import Layout2, {siteTile2} from '../../src/DraweAndAppBarLayout'
 
 export default function MyComponent() {
   const theme = useTheme();
