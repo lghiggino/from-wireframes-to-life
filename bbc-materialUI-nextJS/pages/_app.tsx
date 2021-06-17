@@ -8,8 +8,6 @@ import createCache from '@emotion/cache';
 export const cache = createCache({ key: 'css', prepend: true });
 
 const globals = require('../styles/globals.css') 
-const globalsMUI = require('../styles/globals.ts')
-//import globalsMUI from '../styles/globals'
 
 // Create a theme instance.
 const theme = createMuiTheme({
