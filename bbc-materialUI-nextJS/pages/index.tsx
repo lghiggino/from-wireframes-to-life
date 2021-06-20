@@ -8,7 +8,8 @@ import Date from "../src/Date"
 //components section
 import ControlledAccordion from '../src/ControlledAccordion'
 import CustomRadio from '../src/CustomRadio'
-import { Typography } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
+import ButtonsSection from "../src/ButtonsSection"
 
 //styles
 import utilStyles from '../styles/utils.module.css'
@@ -83,9 +84,14 @@ export default function Home({ allPostsData, pokeData }) {
         <Typography color="secondary" >This is a secondary paragraph banana</Typography>
         <Typography color="textPrimary" >This is a textPrimary paragraph banana</Typography>
         <Typography color="textSecondary" >This is a textSecondary paragraph banana</Typography>
+        <button className="themed"> click me</button>
+        <Button className="themed"> This is a MuiButton</Button>
+        
         <ControlledAccordion />
         <br/>
         <CustomRadio/>
+        <br/>
+        <ButtonsSection/>
       </section>
     </Layout2>
   )

@@ -146,7 +146,7 @@ export default function App({ children, home }) {
             >
                 <div className={classes.toolbar} />
                 <Divider />
-                <List>
+                <List className="themed">
                     {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
