@@ -1,7 +1,6 @@
 ---
 title: 'Future Press Release'
 date: '2021-05-19'
-id: '0004'
 category: 'Estratégia de Produto'
 ---
 

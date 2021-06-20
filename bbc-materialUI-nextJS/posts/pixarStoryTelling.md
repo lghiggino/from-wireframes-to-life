@@ -1,7 +1,6 @@
 ---
 title: 'Pixar Story Telling'
 date: '2021-05-19'
-id: '0001'
 category: 'Estratégia de Produto'
 ---
 

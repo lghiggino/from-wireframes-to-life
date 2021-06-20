@@ -1,7 +1,6 @@
 ---
 title: 'Personas e Proto-Personas'
 date: '2021-05-20'
-id: '0002'
 category: 'Estratégia de Produto'
 ---
 
