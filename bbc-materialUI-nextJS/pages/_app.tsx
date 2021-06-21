@@ -66,7 +66,7 @@ const theme = createMuiTheme({
     },
     "warning": {
       "light": "#ffb74d",
-      "main": "#E8C547",
+      "main": "#E6E95C",
       "dark": "#f57c00",
       "contrastText": "rgba(0, 0, 0, 0.87)"
     },

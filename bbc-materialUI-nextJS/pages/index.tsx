@@ -10,6 +10,7 @@ import ControlledAccordion from '../src/ControlledAccordion'
 import CustomRadio from '../src/CustomRadio'
 import { Button, Typography } from '@material-ui/core'
 import ButtonsSection from "../src/ButtonsSection"
+import CustomButton from "../src/CustomButton"
 
 //styles
 import utilStyles from '../styles/utils.module.css'
@@ -92,6 +93,8 @@ export default function Home({ allPostsData, pokeData }) {
         <CustomRadio/>
         <br/>
         <ButtonsSection/>
+        <br/>
+        <CustomButton> text </CustomButton>
       </section>
     </Layout2>
   )

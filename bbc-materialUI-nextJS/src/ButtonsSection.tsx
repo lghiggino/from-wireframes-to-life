@@ -7,6 +7,8 @@ import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 
+import CustomButton from "../src/CustomButton"
+
 export default function ButtonsSection() {
 
     return (
@@ -97,6 +99,21 @@ export default function ButtonsSection() {
                 >
                     Save
                 </Button>
+            </section>
+            <section>
+                <h3> Custom buttons</h3>
+                <CustomButton color= "primary">primary</CustomButton>
+                <CustomButton color= "info">info</CustomButton>
+                <CustomButton color= "success">success</CustomButton>
+                <CustomButton color= "warning">warning</CustomButton>
+                <CustomButton color= "danger">danger</CustomButton>
+                <CustomButton color= "rose">rose</CustomButton>
+                <CustomButton color= "white">white</CustomButton>
+                <CustomButton color= "facebook">facebook</CustomButton>
+                <CustomButton color= "twitter">twitter</CustomButton>
+                <CustomButton color= "google">google</CustomButton>
+                <CustomButton color= "github">github</CustomButton>
+                <CustomButton color= "transparent">transparent</CustomButton>
             </section>
         </>
     )

@@ -151,3 +151,7 @@ button.themed {
   padding: 0.5rem 2rem; */
 }
 
+button h3, button h4, button h5, button h6, button span{
+  margin-bottom: 0;
+}
+
