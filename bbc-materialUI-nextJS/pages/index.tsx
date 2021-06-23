@@ -1,12 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
-import utilStyles from '../styles/utils.module.css'
+import classNames from "classnames"
 import { getSortedPostsData } from '../lib/posts'
+import Date from "../src/Date"
+
 //components section
 import ControlledAccordion from '../src/ControlledAccordion'
 import CustomRadio from '../src/CustomRadio'
-import { Typography } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
+import ButtonsSection from "../src/ButtonsSection"
+import CustomButton from "../src/CustomButton"
+
+//styles
+import utilStyles from '../styles/utils.module.css'
 
 export default function Home({ allPostsData, pokeData }) {
   
@@ -16,8 +23,8 @@ export default function Home({ allPostsData, pokeData }) {
         <title>{siteTitle2}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>TypeScript, UX, MaterialUI - by LNG</p>
+      <section className={classNames(utilStyles.headingMd, utilStyles.sectionMB)}>
+        <p>Destaques</p>
         
         <h3 >
           Read{' '}
@@ -52,19 +59,25 @@ export default function Home({ allPostsData, pokeData }) {
           </Link>
         </h3>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={classNames(utilStyles.headingMd, utilStyles.sectionMB, utilStyles.padding1px)}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              
               <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date}/>
+              </small>
+              
             </li>
           ))}
         </ul>
       </section>
-      <section>
+      <section className={classNames(utilStyles.headingMd, utilStyles.sectionMB)}>
         <h2>Components Section</h2>
         
         <p className="primary"> Is this text bold and purple? </p>
@@ -72,9 +85,16 @@ export default function Home({ allPostsData, pokeData }) {
         <Typography color="secondary" >This is a secondary paragraph banana</Typography>
         <Typography color="textPrimary" >This is a textPrimary paragraph banana</Typography>
         <Typography color="textSecondary" >This is a textSecondary paragraph banana</Typography>
+        <button className="themed"> click me</button>
+        <Button className="themed"> This is a MuiButton</Button>
+        
         <ControlledAccordion />
         <br/>
         <CustomRadio/>
+        <br/>
+        <ButtonsSection/>
+        <br/>
+        <CustomButton> text </CustomButton>
       </section>
     </Layout2>
   )

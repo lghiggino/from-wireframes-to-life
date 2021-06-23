@@ -61,11 +61,13 @@ h6 {
   text-transform: uppercase;
   font-weight: 500;
 }
-p {
+p, 
+span {
   font-size: 14px;
   margin: 0 0 10px;
 }
-p.primary{
+p.primary, 
+span.primary.themed{
   color: #490b53;
   font-weight: bold;
   font-size: 2rem;
@@ -140,3 +142,16 @@ img {
 form {
   margin-bottom: 1.125rem;
 }
+
+button.themed {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  /* font-size: 1.125rem;
+  line-height: 1.5em;
+  padding: 0.5rem 2rem; */
+}
+
+button h3, button h4, button h5, button h6, button span{
+  margin-bottom: 0;
+}
+

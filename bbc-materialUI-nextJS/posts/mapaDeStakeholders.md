@@ -1,7 +1,6 @@
 ---
 title: 'Mapa de Stakeholders'
 date: '2021-05-23'
-id: '0003'
 category: 'Estratégia de Produto'
 ---
 
