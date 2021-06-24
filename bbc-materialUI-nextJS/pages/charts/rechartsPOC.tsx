@@ -1,5 +1,7 @@
 import Layout2 from "../../src/DraweAndAppBarLayout"
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, Legend } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, Legend, ReferenceLine } from 'recharts';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 
@@ -8,9 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '100%',
-        },
-        outline: {
-            outline: "2px solid red"
         },
     })
 )
@@ -49,27 +48,27 @@ const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
 // CUSTOM TOOLTIP NO BARCHART
 function getIntroOfPage(label) {
     if (label === 'Page A') {
-      return "Page A is about men's clothing";
+        return "Page A is about men's clothing";
     } if (label === 'Page B') {
-      return "Page B is about women's dress";
+        return "Page B is about women's dress";
     } if (label === 'Page C') {
-      return "Page C is about women's bag";
+        return "Page C is about women's bag";
     } if (label === 'Page D') {
-      return "Page D is about household goods";
+        return "Page D is about household goods";
     } if (label === 'Page E') {
-      return "Page E is about food";
+        return "Page E is about food";
     } if (label === 'Page F') {
-      return "Page F is about baby food";
+        return "Page F is about baby food";
     }
-  }
+}
 
-interface CustomTooltipProps{
+interface CustomTooltipProps {
     payload?: any
     label?: string
     active?: boolean
 }
 
-const CustomTooltip:React.FC<CustomTooltipProps> = ({ payload, label, active }) =>{
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ payload, label, active }) => {
     if (active) {
         return (
             <div className="custom-tooltip">
@@ -85,19 +84,31 @@ const CustomTooltip:React.FC<CustomTooltipProps> = ({ payload, label, active }) 
 
 
 const data = [
-    { name: 'Page A', uv: 400, pv: 2400, amt: 2400, neg: -120 },
-    { name: 'Page B', uv: 800, pv: 2800, amt: 2800, neg: -130 },
-    { name: 'Page C', uv: 600, pv: 2600, amt: 2600, neg: -140 },
-    { name: 'Page D', uv: 1000, pv: 3000, amt: 3000, neg: -120 },
-    { name: 'Page E', uv: 1000, pv: 2600, amt: 2600, neg: -160 },
+    { name: 'Page A', uv: 400, pv: 2400, amt: 2400, neg: -1200 },
+    { name: 'Page B', uv: 800, pv: 2800, amt: 2800, neg: -1300 },
+    { name: 'Page C', uv: 600, pv: 2600, amt: 2600, neg: -1400 },
+    { name: 'Page D', uv: 1000, pv: 3000, amt: 3000, neg: -1200 },
+    { name: 'Page E', uv: 1000, pv: 2600, amt: 2600, neg: -1600 },
 ];
+
+const data2 = [
+    {name: 'Page A', uv: 4000, pv: 2400, amt: 2400,},
+    {name: 'Page B', uv: -3000, pv: 1398, amt: 2210,},
+    {name: 'Page C', uv: -2000, pv: -9800, amt: 2290,},
+    {name: 'Page D', uv: 2780, pv: 3908, amt: 2000,},
+    {name: 'Page E', uv: -1890, pv: 4800, amt: 2181,},
+    {name: 'Page F', uv: 2390, pv: -3800, amt: 2500,},
+    {name: 'Page G', uv: 3490, pv: 4300, amt: 2100,},
+  ];
 
 export default function recharts() {
     const classes = useStyles();
+    const theme = useTheme();
+    const smallDevices = useMediaQuery(theme.breakpoints.down('sm'))
     return (
         <Layout2 home={false}>
-            <div className={classes.outline}>
-                <LineChart width={800} height={300} data={data} margin={{ top: 105, right: 20, bottom: 5, left: 0 }}>
+            <div>
+                <LineChart width={smallDevices? 350: 800} height={300} data={data} margin={{ top: 105, right: 20, bottom: 5, left: 0 }}>
                     <Line type="monotone" dataKey="uv" stroke="#8c8c8c" />
                     <Line type="monotone" dataKey="pv" stroke="#4e4e4e" />
                     <Line type="monotone" dataKey="amt" stroke="#a2a2a2" />
@@ -108,14 +119,35 @@ export default function recharts() {
                 </LineChart>
 
                 <br />
-                <BarChart width={600} height={300} data={data} >
-                    <XAxis dataKey="name" tick={renderCustomAxisTick} allowDataOverflow={true} domain={['auto', 0]}/>
+                <BarChart width={smallDevices? 350:800} height={300} data={data} >
+                    <XAxis dataKey="name" tick={renderCustomAxisTick} allowDataOverflow={true} domain={['auto', 0]} />
                     <YAxis tickCount={8} domain={[0, 'dataMax + 200']} />
                     <Tooltip wrapperStyle={{ width: 100, backgroundColor: '#ccc' }} />
                     <Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} />
                     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                    <Bar dataKey="uv" barSize={30} fill="#8884d8"/>
-                    <Bar dataKey="pv" barSize={30} fill="#a8a4d8"/>
+                    <ReferenceLine y={0} stroke="#000" />
+                    <Bar dataKey="uv" barSize={30} fill="#8884d8" />
+                    <Bar dataKey="pv" barSize={30} fill="#a8a4d8" />
+                    <Bar dataKey="neg" barSize={30} fill="#a8a4d8" />
+                </BarChart>
+
+                <br />
+                <BarChart
+                    width={smallDevices? 350: 600}
+                    height={300}
+                    data={data2}
+                    margin={{
+                        top: 5, right: 30, left: 20, bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <ReferenceLine y={0} stroke="#000" />
+                    <Bar dataKey="pv" fill="#8884d8" />
+                    <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
             </div>
         </Layout2>
