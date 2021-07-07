@@ -30,10 +30,11 @@ const pieChartDataNormalized = (data) => {
 }
 
 const data =[
-    {"name": "AB", "value": 250, "fill": fillColorsArray[0]  },
-    {"name": "CD", "value": 450, "fill": fillColorsArray[1]  },
-    {"name": "EFGHIJKLMNOPQRSTU", "value": 350, "fill": fillColorsArray[2]  },
-    {"name": "VW", "value": 150, "fill": fillColorsArray[3]  }, 
+    {"name": "AB", "value": 250, "fill": fillColorsArray[0]},
+    {"name": "CD", "value": 450, "fill": fillColorsArray[1]},
+    {"name": "EFGHIJKLMNOPQRSTU", "value": 350, "fill": fillColorsArray[2]},
+    {"name": "VW", "value": 150, "fill": fillColorsArray[3]},
+    {"name": "XYZ", "value": 250, "fill": fillColorsArray[4]},  
 ]
 
 export default function pieChart() {
