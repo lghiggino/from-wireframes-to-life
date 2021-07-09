@@ -21,6 +21,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import PersonIcon from '@material-ui/icons/Person';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
+import DropdownMenu from "../src/DropdownMenu.tsx"
+
 //styling
 import utilStyles from '../styles/utils.module.css'
 
@@ -115,6 +117,8 @@ export default function App({ children, home }) {
                     <Typography variant="h6" noWrap className={classes.title}>
                         Material-UI, NextJS, Typescript experimental site
                     </Typography>
+
+                    <DropdownMenu />
                     
                     <IconButton
                         color="inherit"
