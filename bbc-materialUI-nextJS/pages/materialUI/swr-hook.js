@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import useSWR from 'swr'
-import Image from "next/image"
-import Layout from '../../src/Layout';
-import Layout2, {siteTile2} from '../../src/DraweAndAppBarLayout'
+import Layout2, { siteTile2 } from '../../src/DraweAndAppBarLayout'
 import { Button, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGroup, TextField } from '@material-ui/core';
 
 
@@ -10,6 +8,7 @@ import { Button, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGr
 function SwrHookPage() {
   const [drink, setDrink] = useState(null)
   const { data, error } = useSWR(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`, fetcher)
+  const [allFetchedDrinks, setAllFetchedDrinks] = useState([])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -18,7 +17,13 @@ function SwrHookPage() {
 
   function fetcher(...args) {
     console.log(...args)
-    fetch(...args).then(res => res.json()).then(fetchData => console.log(fetchData))
+    fetch(...args)
+      .then(res => res.json())
+      .then(fetchData => {
+        console.log(fetchData)
+        setAllFetchedDrinks(fetchData)
+        console.log(allFetchedDrinks)
+      })
   }
 
 
@@ -29,7 +34,7 @@ function SwrHookPage() {
 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
-          onChange={((e) => { setDrink(e.target.value) })}
+          onChange={((event) => { setDrink(event.target.value) })}
           id="note-title"
           label="Type a drink name"
           variant="outlined"
@@ -44,7 +49,7 @@ function SwrHookPage() {
         // endIcon={}
         >
           Search
-          </Button>
+        </Button>
       </form>
     </Layout2>
   )
@@ -70,8 +75,14 @@ function SwrHookPage() {
         // endIcon={}
         >
           Search
-          </Button>
+        </Button>
       </form>
+
+      {allFetchedDrinks &&
+        allFetchedDrinks.map(drink =>
+        (console.log(drink))
+      )
+      }
 
       {data.drinks.map(drink =>
         <div key={drink.drinkId}>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link"
 import MaskedInput from 'react-text-mask'
 
 import Layout from '../../src/Layout';
@@ -28,6 +29,7 @@ export default function materialComponents(){
                 />
             </section>
 
+            <Link href="/materialUI">back to materialUI index</Link>
         </Layout2>
     )
 }
