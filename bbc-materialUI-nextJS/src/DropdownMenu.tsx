@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from "next/link"
 import styles from '../styles/DropdownMenu.module.css'
 
 
@@ -24,20 +25,21 @@ function Dropdown(){
         <div>
             <button
                 onClick={toggleMenu}
-                className={showMenu ? styles.showMenubutton : styles.button}
+                className={styles.button}
             >
                 Show Menu
             </button>
         </div>
 
         {showMenu && 
-            <div className={styles.menu}>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </div>
+            <ul className={styles.menu}>
+                    <li><Link href="/">home</Link></li>
+                    <li><Link href="/charts/">charts</Link></li>
+                    <li><Link href="/materialUI/">materialUI</Link></li>
+                    <li><Link href="/posts/">posts</Link></li>
+                    <li><Link href="/typescript/">typescript</Link></li>
+            </ul>
+
         }
         </>
     )
