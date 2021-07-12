@@ -7,7 +7,7 @@ import { Button, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGr
 
 function SwrHookPage() {
   const [drink, setDrink] = useState(null)
-  const { data, error } = useSWR(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`, fetcher)
+  const { data, error, isValidating } = useSWR(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`, fetcher)
   const [allFetchedDrinks, setAllFetchedDrinks] = useState([])
 
   function handleSubmit(e) {
@@ -15,9 +15,13 @@ function SwrHookPage() {
     fetcher(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
   }
 
-  function fetcher(...args) {
+  function addDrink(event) {
+    setDrink(event.target.value)
+  }
+
+  async function fetcher(...args) {
     console.log(...args)
-    fetch(...args)
+    await fetch(...args)
       .then(res => res.json())
       .then(fetchData => {
         console.log(fetchData)
@@ -26,41 +30,13 @@ function SwrHookPage() {
       })
   }
 
-
-  if (error) return <div>failed to load</div>
-  if (!data) return (
-    <Layout2>
-      <h3>SWR HOOK TEST PAGE</h3>
-
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <TextField
-          onChange={((event) => { setDrink(event.target.value) })}
-          id="note-title"
-          label="Type a drink name"
-          variant="outlined"
-          color="secondary"
-          fullWidth
-          required />
-
-        <Button
-          type="submit"
-          color="secondary"
-          variant="contained"
-        // endIcon={}
-        >
-          Search
-        </Button>
-      </form>
-    </Layout2>
-  )
-
   return (
     <Layout2>
       <h3>SWR HOOK TEST PAGE</h3>
 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
-          onChange={((e) => { setDrink(e.target.value) })}
+          onChange={(event) => { addDrink(event) }}
           id="note-title"
           label="Type a drink name"
           variant="outlined"
@@ -78,13 +54,19 @@ function SwrHookPage() {
         </Button>
       </form>
 
-      {allFetchedDrinks &&
-        allFetchedDrinks.map(drink =>
-        (console.log(drink))
-      )
+      {error &&
+        <div>
+          <p>Failed to load a drink with this keyword</p>
+        </div>
       }
 
-      {data.drinks.map(drink =>
+      {allFetchedDrinks &&
+
+        (console.log(allFetchedDrinks))
+
+      }
+
+      {/* {data.drinks.map(drink =>
         <div key={drink.drinkId}>
           <h4>{drink.strDrink}</h4>
           <img src={drink.strDrinkThumb} alt={drink.strDrink} />
@@ -92,9 +74,9 @@ function SwrHookPage() {
                   src={drink.strDrinkThumb} 
                   width="144"
                   height="144"
-                  /> */}
+                  /> 
         </div>
-      )}
+      )} */}
 
     </Layout2>
 
