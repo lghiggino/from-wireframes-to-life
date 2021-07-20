@@ -21,7 +21,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import PersonIcon from '@material-ui/icons/Person';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import DropdownMenu from "../src/DropdownMenu.tsx"
+import DropdownMenu from "../src/DropdownMenu"
 
 //styling
 import utilStyles from '../styles/utils.module.css'

@@ -1,8 +1,17 @@
-.button {
+.menuButton {
     position: fixed;
     right: 120px;
     top: 20px;
-    padding: 0.1rem 1rem
+    padding: 0.2rem 1rem;
+    outline: 1px solid white;
+    border-radius: 2px;
+}
+
+.menuButton:hover{
+    background-color: white;
+    color: #2b4570;
+    cursor: pointer;
+    
 }
 
 .menu {

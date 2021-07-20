@@ -23,12 +23,12 @@ function Dropdown(){
     return(
         <>
         <div>
-            <button
+            <a
                 onClick={toggleMenu}
-                className={styles.button}
+                className={styles.menuButton}
             >
                 Show Menu
-            </button>
+            </a>
         </div>
 
         {showMenu && 
