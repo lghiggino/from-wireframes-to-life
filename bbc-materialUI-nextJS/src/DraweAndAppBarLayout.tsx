@@ -89,6 +89,34 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+const menuItemsArray = [
+    {
+        text: "Home",
+        icon: <HomeIcon />,
+        link: "/"
+    },
+    {
+        text: "Charts",
+        icon: <AssessmentIcon />,
+        link: "/charts"
+    },
+    {
+        text: "MaterialUI",
+        icon: <CalendarViewDayIcon />,
+        link: "/materialUI"
+    },
+    {
+        text: "TypeScript",
+        icon: <TitleIcon />,
+        link: "/typescript"
+    },
+    {
+        text: "Posts",
+        icon: <InboxIcon />,
+        link: "/posts"
+    }
+]
+
 export default function App({ children, home }) {
     const classes = useStyles();
     const theme = useTheme();
@@ -158,19 +186,20 @@ export default function App({ children, home }) {
                 <div className={classes.toolbar} />
                 <Divider />
                 <List className="themed">
-                    {["Home", "Charts", "MaterialUI", "TypeScript", "Posts"].map((text, index) => (
-                        <ListItem button key={text}>
+                    {menuItemsArray.map(item => (         
+                        <Link key={item.text} href={item.link} passHref>
+                        <ListItem button>
                             <ListItemIcon>
-                                {index === 0 ? <HomeIcon /> : index === 1 ? <AssessmentIcon /> : index === 2 ? <CalendarViewDayIcon /> : index === 3 ? <TitleIcon /> : <InboxIcon />}
+                                {item.icon}
                             </ListItemIcon>
-                            <ListItemText primary={text} />
+                            <ListItemText primary={item.text} />
                         </ListItem>
+                    </Link>
                     ))}
                 </List>
-                <Divider />
             </Drawer>
             <main className={classes.content}>
-                {/*<Toolbar />  Essa toolbar faz com que o conteudo seja abaixado pela altura de uma toolbar */}
+                {/* <Toolbar />  Essa toolbar faz com que o conteudo seja abaixado pela altura de uma toolbar */}
                 <header className={classes.header}>
                     {home ? (
                         <>
