@@ -15,11 +15,18 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+
+import PersonIcon from '@material-ui/icons/Person';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+
+//Icons
+import HomeIcon from '@material-ui/icons/Home';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import PersonIcon from '@material-ui/icons/Person';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import TitleIcon from '@material-ui/icons/Title';
+import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 
 import DropdownMenu from "../src/DropdownMenu"
 
@@ -119,7 +126,7 @@ export default function App({ children, home }) {
                     </Typography>
 
                     <DropdownMenu />
-                    
+
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -151,26 +158,16 @@ export default function App({ children, home }) {
                 <div className={classes.toolbar} />
                 <Divider />
                 <List className="themed">
-                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+                    {["Home", "Charts", "MaterialUI", "TypeScript", "Posts"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                {index === 0 ? <HomeIcon /> : index === 1 ? <AssessmentIcon /> : index === 2 ? <CalendarViewDayIcon /> : index === 3 ? <TitleIcon /> : <InboxIcon />}
                             </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
                 </List>
                 <Divider />
-                <List>
-                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
             </Drawer>
             <main className={classes.content}>
                 {/*<Toolbar />  Essa toolbar faz com que o conteudo seja abaixado pela altura de uma toolbar */}
