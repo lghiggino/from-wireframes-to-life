@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Container, Grid, Typography } from "@material-ui/core"
 import CustomAppbar from "../../src/CustomAppbar"
 import Hero from "../../src/Hero"
@@ -23,6 +24,7 @@ const heroTestPage = () => {
         <Container maxWidth="xl" disableGutters>
             <Typography component="div" style={{ backgroundColor: '#afa8fa', height: '10vh' }}  />
         </Container>
+        <Link href="/materialUI">back to materialUI index</Link>
         </>
     )
 }
