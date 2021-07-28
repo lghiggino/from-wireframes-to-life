@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout2, { siteTitle2 } from '../src/DraweAndAppBarLayout'
 import classNames from "classnames"
 import { getSortedPostsData } from '../lib/posts'
-import Date from "../src/Date"
+import DateSubtitleComponent from "../src/Date"
 
 //components section
 import ControlledAccordion from '../src/ControlledAccordion'
@@ -70,7 +70,7 @@ export default function Home({ allPostsData, pokeData }) {
               
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date}/>
+                <DateSubtitleComponent dateString={date}/>
               </small>
               
             </li>
