@@ -15,7 +15,7 @@ import CustomButton from "../src/CustomButton"
 //styles
 import utilStyles from '../styles/utils.module.css'
 
-export default function Home({ allPostsData, pokeData }) {
+export default function Home({ allPostsData }) {
   
   return (
     <Layout2 home>
@@ -103,12 +103,10 @@ export default function Home({ allPostsData, pokeData }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-  const pokeData = await res.json()
 
   return {
     props: {
-      allPostsData, pokeData
+      allPostsData
     }
   }
 }
