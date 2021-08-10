@@ -305,7 +305,7 @@ export default function MyApp(props) {
       <Head>
         <title>NextJs + MaterialUI + UX</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet"></link>
+        {/* <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet"></link> */}
       </Head>
       <ThemeProvider theme={theme}>
         <ThemeProvider theme={globals}>
